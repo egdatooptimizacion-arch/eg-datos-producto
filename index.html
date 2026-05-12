@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO: Title y Meta descripción -->
+<title>Consultoría Ficha de Producto, SKU y EAN para Ecommerce | E&amp;G</title>
+<meta name="description" content="Consultoría especializada en ficha de producto, maestro de artículos, SKU, EAN y referenciamiento en retailers. Para emprendedores de ecommerce que quieren vender en Amazon, El Corte Inglés y más.">
+<meta name="keywords" content="ficha de producto, maestro de artículos, SKU, EAN, referenciamiento retailers, consultoría ecommerce, GS1, volumetría logística, Amazon Seller Central">
+<meta name="author" content="E&G Datos de Producto">
+<link rel="canonical" href="https://eg-datos-producto.netlify.app/">
+
+<!-- Open Graph (para redes sociales) -->
+<meta property="og:title" content="Consultoría Ficha de Producto, SKU y EAN | E&G">
+<meta property="og:description" content="Tu catálogo listo para vender en cualquier canal. Especialistas en ficha de producto, EAN, SKU y referenciamiento en retailers.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://eg-datos-producto.netlify.app/">
+<meta property="og:locale" content="es_ES">
+<meta property="og:image" content="https://eg-datos-producto.netlify.app/og-image.png">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Consultoría Ficha de Producto, SKU y EAN | E&G">
+<meta name="twitter:description" content="Tu catálogo listo para vender en cualquier canal. Especialistas en ficha de producto, EAN, SKU y referenciamiento en retailers.">
+<meta name="twitter:image" content="https://eg-datos-producto.netlify.app/og-image.png">
+
+<!-- Indexación -->
+<meta name="robots" content="index, follow">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<meta name="google-site-verification" content="googleed32bf5a1baad2cf">
+
+<!-- Schema.org: Servicio de negocio -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "E&G Datos de Producto",
+  "description": "Consultoría especializada en ficha de producto, maestro de artículos, SKU, EAN y referenciamiento en retailers para ecommerce.",
+  "url": "https://eg-datos-producto.netlify.app",
+  "email": "egdatooptimizacion@gmail.com",
+  "serviceType": [
+    "Ficha de Producto",
+    "Maestro de Artículos",
+    "SKU y Codificación",
+    "EAN y Registro GS1",
+    "Referenciamiento en Retailers",
+    "Volumetría y Datos Logísticos",
+    "SEO con IA"
+  ],
+  "areaServed": {
+    "@type": "Place",
+    "name": "España y Latinoamérica"
+  },
+  "offers": {
+    "@type": "Offer",
+    "description": "Diagnóstico gratuito de catálogo de producto",
+    "price": "0",
+    "priceCurrency": "EUR"
+  }
+}
+</script>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: #f8f9fc;
+  color: #1a1a2e;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+
+:root {
+  --verde: #18a058;
+  --verde-dark: #15894a;
+  --negro: #ffffff;
+  --negro2: #f3f4f8;
+  --negro3: #eaecf2;
+  --gris: #6b7280;
+  --borde: rgba(0,0,0,0.08);
+}
+
+/* NAV */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+  background: #0a0a0a;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding: 0 5%; height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo { font-size: 1.2rem; font-weight: 700; color: #fff; letter-spacing: -0.02em; }
+.nav-logo span { color: var(--verde); }
+.nav-menu { display: flex; align-items: center; gap: 2.2rem; list-style: none; }
+.nav-menu li a {
+  font-size: 0.875rem; color: rgba(255,255,255,0.65);
+  white-space: nowrap; transition: color 0.2s;
+}
+.nav-menu li a:hover { color: #fff; }
+
+/* DROPDOWN */
+.nav-drop { position: relative; }
+.nav-drop-btn {
+  display: flex; align-items: center; gap: 0.4rem;
+  font-size: 0.875rem; color: rgba(255,255,255,0.65);
+  cursor: pointer; background: none; border: none;
+  font-family: inherit; padding: 0; transition: color 0.2s;
+}
+.nav-drop-btn:hover { color: #fff; }
+.nav-drop-btn::after {
+  content: ""; display: inline-block;
+  width: 7px; height: 7px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform 0.2s;
+}
+.nav-drop:hover .nav-drop-btn::after,
+.nav-drop:focus-within .nav-drop-btn::after {
+  transform: rotate(-135deg) translateY(2px);
+}
+.nav-drop-panel {
+  position: absolute; top: calc(100% + 18px); left: 50%;
+  transform: translateX(-50%);
+  background: #181818; border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px; padding: 0.4rem;
+  min-width: 180px;
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transition: opacity 0.18s, visibility 0.18s, transform 0.18s;
+  transform: translateX(-50%) translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+}
+.nav-drop:hover .nav-drop-panel,
+.nav-drop:focus-within .nav-drop-panel {
+  opacity: 1; visibility: visible; pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+/* puente para no perder hover */
+.nav-drop::after {
+  content: ""; position: absolute;
+  top: 100%; left: -12px; right: -12px; height: 20px;
+}
+.nav-drop-link {
+  display: block; padding: 0.65rem 1rem;
+  border-radius: 8px; font-size: 0.84rem;
+  color: rgba(255,255,255,0.7); transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+.nav-drop-link:hover { background: rgba(255,255,255,0.07); color: #fff; }
+.nav-drop-divider { height: 1px; background: rgba(255,255,255,0.07); margin: 0.3rem 0.4rem; }
+.nav-btn {
+  background: transparent !important; color: #fff !important;
+  padding: 0.42rem 1.1rem; border-radius: 100px;
+  font-weight: 600; font-size: 0.82rem !important;
+  border: 1px solid rgba(255,255,255,0.35) !important;
+  white-space: nowrap; margin-left: 0.75rem;
+}
+.nav-btn:hover { border-color: #fff !important; background: rgba(255,255,255,0.08) !important; }
+
+
+/* HERO */
+.hero {
+  padding: 160px 5% 100px;
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+.hero-glow {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px; height: 700px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(46,204,113,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+.pill {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  border: 1px solid rgba(46,204,113,0.35);
+  background: rgba(46,204,113,0.08);
+  color: var(--verde); font-size: 0.75rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  padding: 0.35rem 0.9rem; border-radius: 100px; margin-bottom: 2rem;
+}
+.hero h1 {
+  font-size: clamp(2.4rem, 6.5vw, 4.8rem);
+  font-weight: 800; line-height: 1.08; letter-spacing: -0.03em;
+  color: #1a1a2e; margin-bottom: 1.5rem;
+  max-width: 840px; margin-left: auto; margin-right: auto;
+}
+.hero h1 .accent { color: var(--verde); }
+.hero-desc {
+  font-size: 1.05rem; color: var(--gris);
+  max-width: 540px; margin: 0 auto 2.5rem; line-height: 1.75;
+}
+.btn-group {
+  display: flex; gap: 0.75rem; justify-content: center;
+  flex-wrap: wrap; margin-bottom: 3rem;
+}
+.btn {
+  display: inline-block; padding: 0.82rem 1.8rem; border-radius: 100px;
+  font-size: 0.9rem; font-weight: 600; transition: all 0.2s;
+  cursor: pointer; border: none; font-family: inherit;
+}
+.btn-green {
+  background: var(--verde); color: #fff;
+  box-shadow: 0 4px 16px rgba(24,160,88,0.25);
+}
+.btn-green:hover {
+  background: var(--verde-dark); transform: translateY(-2px);
+  box-shadow: 0 0 40px rgba(46,204,113,0.35);
+}
+.btn-ghost {
+  background: transparent; color: #1a1a2e; border: 1px solid rgba(0,0,0,0.15);
+}
+.btn-ghost:hover { border-color: var(--verde); color: var(--verde); }
+.trust-row { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+.trust-item { display: flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; color: #4b5563; }
+.trust-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--verde); flex-shrink: 0; }
+
+/* DOLOR */
+.dolor-band {
+  background: var(--negro2);
+  border-top: 1px solid var(--borde); border-bottom: 1px solid var(--borde);
+  padding: 5rem 5%; text-align: center;
+}
+.dolor-band h2 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 700; color: #1a1a2e;
+  letter-spacing: -0.02em; max-width: 740px; margin: 0 auto 3rem; line-height: 1.35;
+}
+.dolor-band h2 .accent { color: var(--verde); }
+.dolor-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem; max-width: 900px; margin: 0 auto;
+}
+.dolor-card {
+  background: var(--negro3); border: 1px solid var(--borde);
+  border-radius: 14px; padding: 1.8rem; text-align: left;
+}
+.dolor-icon { font-size: 1.4rem; margin-bottom: 0.8rem; }
+.dolor-title { font-size: 0.9rem; font-weight: 700; color: #1a1a2e; margin-bottom: 0.4rem; }
+.dolor-desc { font-size: 0.82rem; color: var(--gris); line-height: 1.6; }
+
+/* STATS */
+.stats-bar {
+  border-top: 1px solid var(--borde); border-bottom: 1px solid var(--borde);
+  padding: 3rem 5%; display: flex; justify-content: center; flex-wrap: wrap;
+}
+.stat { flex: 1; min-width: 160px; max-width: 220px; text-align: center; padding: 1rem 1.5rem; border-right: 1px solid var(--borde); }
+.stat:last-child { border-right: none; }
+.stat-number { font-size: 2.4rem; font-weight: 800; color: #1a1a2e; letter-spacing: -0.04em; line-height: 1; margin-bottom: 0.3rem; }
+.stat-number .g { color: var(--verde); }
+.stat-label { font-size: 0.75rem; color: var(--gris); text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* SECCIONES */
+.section { padding: 90px 5%; }
+.bg2 { background: var(--negro2); border-top: 1px solid var(--borde); border-bottom: 1px solid var(--borde); }
+.section-label {
+  display: inline-block; font-size: 0.72rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.1em; color: var(--verde);
+  background: rgba(46,204,113,0.09); padding: 0.28rem 0.75rem;
+  border-radius: 100px; margin-bottom: 1.2rem;
+}
+.section-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 800;
+  letter-spacing: -0.03em; line-height: 1.1; color: #1a1a2e;
+  max-width: 560px; margin-bottom: 1rem;
+}
+.section-title .accent { color: var(--verde); }
+.section-sub { font-size: 0.975rem; color: var(--gris); max-width: 480px; line-height: 1.75; margin-bottom: 3rem; }
+
+/* SERVICIOS */
+.services-wrap { display: flex; flex-direction: column; gap: 0; }
+.svc-flat {
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--borde);
+}
+.svc-flat:first-child { border-top: 1px solid var(--borde); }
+.svc-flat-head {
+  display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;
+}
+.svc-num { font-size: 0.7rem; font-weight: 700; color: var(--verde); letter-spacing: 0.08em; min-width: 22px; }
+.svc-icon { font-size: 1.3rem; line-height: 1; }
+.svc-name { font-size: 1.05rem; font-weight: 700; color: #1a1a2e; flex: 1; }
+.svc-badge {
+  font-size: 0.65rem; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.07em; color: var(--verde);
+  border: 1px solid rgba(24,160,88,0.3); padding: 0.2rem 0.6rem;
+  border-radius: 100px; white-space: nowrap;
+}
+.svc-desc { font-size: 0.9rem; color: var(--gris); line-height: 1.72; margin-bottom: 1rem; }
+.svc-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem 1rem; list-style: none; }
+.svc-list li {
+  font-size: 0.82rem; color: #6b7280;
+  padding-left: 1.1rem; position: relative; line-height: 1.4;
+}
+.svc-list li::before { content: "\2713"; position: absolute; left: 0; color: var(--verde); font-weight: 700; }
+
+/* PROCESO */
+.steps-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1px; background: var(--borde);
+  border-radius: 16px; overflow: hidden;
+}
+.step { background: var(--negro3); padding: 2.2rem 1.8rem; transition: background 0.2s; }
+.step:hover { background: #e0e3ef; }
+.step-num { font-size: 3rem; font-weight: 800; color: rgba(46,204,113,0.13); letter-spacing: -0.06em; line-height: 1; margin-bottom: 1rem; }
+.step-title { font-size: 0.95rem; font-weight: 700; color: #1a1a2e; margin-bottom: 0.5rem; }
+.step-desc { font-size: 0.82rem; color: var(--gris); line-height: 1.65; }
+
+/* PARA QUIEN */
+.quien-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;
+}
+.quien-card {
+  background: var(--negro3); border: 1px solid var(--borde);
+  border-radius: 14px; padding: 2rem;
+  transition: border-color 0.2s;
+}
+.quien-card:hover { border-color: rgba(46,204,113,0.25); }
+.quien-icon { font-size: 1.6rem; margin-bottom: 1rem; }
+.quien-title { font-size: 1rem; font-weight: 700; color: #1a1a2e; margin-bottom: 0.5rem; }
+.quien-desc { font-size: 0.84rem; color: var(--gris); line-height: 1.65; }
+
+/* FAQ */
+.faq-list { max-width: 720px; display: flex; flex-direction: column; gap: 1.5rem; }
+.faq-item {
+  border-left: 3px solid var(--verde);
+  padding-left: 1.2rem;
+}
+.faq-q-text {
+  font-size: 1rem; font-weight: 700; color: #1a1a2e;
+  margin: 0 0 0.5rem; line-height: 1.4;
+}
+.faq-a-text {
+  font-size: 0.875rem; color: var(--gris); line-height: 1.75; margin: 0;
+}
+
+/* CTA / CONTACTO */
+@keyframes grid-move {
+  from { background-position: 0 0; }
+  to { background-position: 40px 40px; }
+}
+@keyframes marquee-fwd {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes marquee-bwd {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+.marquee-band {
+  position: relative; z-index: 1;
+  width: 100%; overflow: hidden;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.marquee-band:first-child {
+  border-top: 1px solid rgba(255,255,255,0.07);
+  margin-top: 60px;
+}
+.marquee-band:last-of-type {
+  margin-bottom: 60px;
+}
+.marquee-track {
+  display: flex; width: max-content; align-items: center;
+  animation: marquee-fwd 22s linear infinite;
+}
+.marquee-track.rev {
+  animation: marquee-bwd 22s linear infinite;
+}
+.marquee-item {
+  display: flex; align-items: center; gap: 1.4rem;
+  white-space: nowrap; padding: 0 1.4rem;
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: rgba(255,255,255,0.38);
+}
+.marquee-dot { color: var(--verde); font-size: 0.45rem; line-height: 1; }
+.cta-section {
+  background: #0a0a0a; padding: 0; display: flex; flex-direction: column; align-items: stretch;
+  position: relative; overflow: hidden;
+}
+.cta-inner {
+  width: 100%;
+  padding: 90px 5%;
+  display: flex; justify-content: center;
+}
+.cta-section::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: grid-move 8s linear infinite;
+  pointer-events: none;
+}
+.cta-section::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 50% 60%, rgba(24,160,88,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-section > * { position: relative; z-index: 1; }
+.cta-box { max-width: 820px; width: 100%; text-align: center; }
+.cta-sub {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--verde); margin-bottom: 1rem;
+}
+.cta-box h2 {
+  font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 800;
+  color: #fff; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 2.5rem;
+}
+.cta-box h2 .accent { color: var(--verde); }
+.contact-form { text-align: left; display: flex; flex-direction: column; gap: 1rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-field { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-field label { font-size: 0.78rem; font-weight: 600; color: #9ca3af; letter-spacing: 0.03em; }
+.form-field input, .form-field select, .form-field textarea {
+  padding: 0.85rem 1.1rem; border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.06); color: #fff;
+  font-size: 0.88rem; font-family: inherit; outline: none;
+  transition: border-color 0.2s;
+}
+.form-field input::placeholder, .form-field textarea::placeholder { color: #555; }
+.form-field input:focus, .form-field select:focus, .form-field textarea:focus { border-color: rgba(24,160,88,0.5); }
+.form-field select { cursor: pointer; appearance: none; }
+.form-field select option { background: #1a1a2e; }
+.form-field textarea { resize: vertical; min-height: 110px; }
+.service-btns { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.svc-btn {
+  padding: 0.5rem 1rem; border-radius: 100px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: transparent; color: #9ca3af;
+  font-size: 0.78rem; font-weight: 500; cursor: pointer;
+  font-family: inherit; transition: all 0.15s;
+}
+.svc-btn:hover { border-color: var(--verde); color: var(--verde); }
+.svc-btn.active { background: var(--verde); border-color: var(--verde); color: #fff; }
+.form-submit {
+  background: var(--verde); color: #fff; border: none;
+  border-radius: 10px; padding: 1rem 2rem;
+  font-size: 0.92rem; font-weight: 700; cursor: pointer;
+  font-family: inherit; letter-spacing: 0.06em;
+  text-transform: uppercase; transition: background 0.2s, transform 0.2s; width: 100%;
+}
+.form-submit:hover { background: var(--verde-dark); transform: translateY(-1px); }
+.cta-note { font-size: 0.75rem; color: #555; text-align: center; margin-top: 0.5rem; }
+.cta-note a { color: var(--verde); }
+
+/* FOOTER */
+.footer {
+  background: var(--negro2); border-top: 1px solid var(--borde);
+  padding: 2rem 5%; display: flex;
+  align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 1rem;
+}
+.footer-logo { font-size: 1rem; font-weight: 700; color: #1a1a2e; }
+.footer-logo span { color: var(--verde); }
+.footer-links { display: flex; gap: 1.75rem; list-style: none; }
+.footer-links a { font-size: 0.8rem; color: var(--gris); transition: color 0.2s; }
+.footer-links a:hover { color: var(--verde); }
+.footer-copy { font-size: 0.75rem; color: #9ca3af; }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .steps-grid { grid-template-columns: 1fr 1fr; }
+  .dolor-grid { grid-template-columns: 1fr 1fr; }
+  .quien-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 700px) {
+  .nav-menu { display: none; }
+  .svc { grid-template-columns: 1fr; }
+  .svc-left { border-right: none; border-bottom: 1px solid var(--borde); }
+  .svc-list { grid-template-columns: 1fr; }
+  .steps-grid { grid-template-columns: 1fr; }
+  .faq-grid { grid-template-columns: 1fr; }
+  .dolor-grid { grid-template-columns: 1fr; }
+  .quien-grid { grid-template-columns: 1fr; }
+  .stats-bar { flex-direction: column; align-items: center; }
+  .stat { border-right: none; border-bottom: 1px solid var(--borde); max-width: 100%; }
+  .stat:last-child { border-bottom: none; }
+  .footer { flex-direction: column; text-align: center; }
+  .footer-links { justify-content: center; }
+  .cta-box { padding: 3rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo">E<span>&</span>G</div>
+  <ul class="nav-menu">
+    <li class="nav-drop">
+      <button class="nav-drop-btn">Servicios</button>
+      <div class="nav-drop-panel">
+        <a href="#servicios" class="nav-drop-link">📄 Ficha de Producto</a>
+        <a href="#servicios" class="nav-drop-link">🗂️ Maestro de Artículos</a>
+        <a href="#servicios" class="nav-drop-link">🔢 SKU y Codificación</a>
+        <a href="#servicios" class="nav-drop-link">🏷️ EAN y Registro GS1</a>
+        <a href="#servicios" class="nav-drop-link">🛒 Referenciamiento Retailers</a>
+        <a href="#servicios" class="nav-drop-link">📦 Volumetría Logística</a>
+        <a href="#servicios" class="nav-drop-link">🔍 SEO con IA</a>
+      </div>
+    </li>
+    <li><a href="#para-quien">Para quién es</a></li>
+    <li><a href="#proceso">Cómo trabajamos</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="#contacto" class="nav-btn">Hablamos</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="pill">&#10022; Datos de Producto para Ecommerce</div>
+  <h1>Tu catálogo, <span class="accent">listo para vender</span> en cualquier canal.</h1>
+  <p class="hero-desc">
+    Consultoría especializada en ficha de producto, maestro de artículos, SKU, EAN,
+    referenciamiento y volumetría. Para emprendedores de ecommerce que quieren
+    entrar en marketplaces y retailers sin perder tiempo ni ventas.
+  </p>
+  <div class="btn-group">
+    <a href="#contacto" class="btn btn-green">Pedir diagnóstico gratuito</a>
+  </div>
+  <div class="trust-row">
+    <div class="trust-item"><div class="trust-dot"></div>Fichas listas para Amazon, El Corte Inglés y más</div>
+    <div class="trust-item"><div class="trust-dot"></div>EAN y SKU sin errores</div>
+    <div class="trust-item"><div class="trust-dot"></div>Sin contratos de permanencia</div>
+  </div>
+</section>
+
+<!-- DOLOR -->
+<section class="dolor-band">
+  <h2>Cuando los datos de tu producto están mal,<br><span class="accent">todo lo demás falla.</span></h2>
+  <div class="dolor-grid">
+    <div class="dolor-card">
+      <div class="dolor-icon">&#10060;</div>
+      <div class="dolor-title">El retailer rechaza tu catálogo</div>
+      <p class="dolor-desc">Amazon, El Corte Inglés, Carrefour... cada plataforma exige un formato distinto. Un campo mal rellenado y tu producto no se publica.</p>
+    </div>
+    <div class="dolor-card">
+      <div class="dolor-icon">&#128451;</div>
+      <div class="dolor-title">Maestro de artículos desorganizado</div>
+      <p class="dolor-desc">SKUs duplicados, EANs incorrectos, atributos que faltan. El caos en tu base de datos de producto frena cada expansión.</p>
+    </div>
+    <div class="dolor-card">
+      <div class="dolor-icon">&#128230;</div>
+      <div class="dolor-title">Volumetría incorrecta, logística rota</div>
+      <p class="dolor-desc">Pesos y medidas mal registrados generan errores en el cálculo de envío, devoluciones y costes de almacenamiento que no esperabas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat">
+    <div class="stat-number">-70<span class="g">%</span></div>
+    <div class="stat-label">Rechazos en catálogo</div>
+  </div>
+  <div class="stat">
+    <div class="stat-number">+40<span class="g">%</span></div>
+    <div class="stat-label">Velocidad de alta en retailer</div>
+  </div>
+  <div class="stat">
+    <div class="stat-number">100<span class="g">%</span></div>
+    <div class="stat-label">EAN validados GS1</div>
+  </div>
+  <div class="stat">
+    <div class="stat-number">30<span class="g">dias</span></div>
+    <div class="stat-label">Catálogo listo para vender</div>
+  </div>
+</div>
+
+<!-- SERVICIOS -->
+<section class="section" id="servicios">
+  <div class="section-label">Servicios</div>
+  <h2 class="section-title">Cada servicio resuelve <span class="accent">un problema concreto</span></h2>
+  <p class="section-sub">No vendemos paquetes genéricos. Atacamos exactamente donde están los cuellos de botella de tu catálogo.</p>
+
+  <div class="services-wrap">
+
+    <div class="svc-flat">
+      <div class="svc-flat-head">
+        <span class="svc-num">01</span>
+        <span class="svc-icon">&#128196;</span>
+        <span class="svc-name">Ficha de Producto</span>
+        <span class="svc-badge">Base de ventas</span>
+      </div>
+      <p class="svc-desc">Una ficha mal hecha es dinero perdido. Auditamos y reescribimos tus fichas con los atributos, descripciones y keywords correctas para cada canal — tienda propia, Amazon, Google Shopping o cualquier retailer.</p>
+      <ul class="svc-list">
+        <li>Auditoría del catálogo actual</li><li>Redacción de títulos optimizados</li>
+        <li>Descripción larga y corta por canal</li><li>Atributos obligatorios y opcionales</li>
+        <li>Especificaciones técnicas</li><li>Checklist de completitud por SKU</li>
+      </ul>
+    </div>
+
+    <div class="svc-flat">
+      <div class="svc-flat-head">
+        <span class="svc-num">02</span>
+        <span class="svc-icon">&#128203;</span>
+        <span class="svc-name">Maestro de Artículos</span>
+        <span class="svc-badge">Orden en el catálogo</span>
+      </div>
+      <p class="svc-desc">El maestro de artículos es la fuente de verdad de tu negocio. Si está desordenado, todo lo demás falla — logística, contabilidad, marketplaces. Lo estructuramos, limpiamos y escalamos.</p>
+      <ul class="svc-list">
+        <li>Auditoría y mapeo del maestro actual</li><li>Eliminación de duplicados y errores</li>
+        <li>Estandarización de atributos</li><li>Jerarquía de categorías y familias</li>
+        <li>Plantilla maestra lista para exportar</li><li>Protocolo de alta de nuevos artículos</li>
+      </ul>
+    </div>
+
+    <div class="svc-flat">
+      <div class="svc-flat-head">
+        <span class="svc-num">03</span>
+        <span class="svc-icon">&#128211;</span>
+        <span class="svc-name">SKU y Codificación</span>
+        <span class="svc-badge">Trazabilidad total</span>
+      </div>
+      <p class="svc-desc">Una estructura de SKU bien diseñada facilita la gestión de stock, las devoluciones y la integración con cualquier ERP o marketplace. Diseñamos tu lógica desde cero o revisamos la existente.</p>
+      <ul class="svc-list">
+        <li>Diseño de estructura de SKU</li><li>Nomenclatura por familia y variante</li>
+        <li>Gestión de variantes (talla, color, formato)</li><li>Relación SKU padre e hijo</li>
+        <li>Migración de códigos existentes</li><li>Documentación y manual de uso</li>
+      </ul>
+    </div>
+
+    <div class="svc-flat">
+      <div class="svc-flat-head">
+        <span class="svc-num">04</span>
+        <span class="svc-icon">&#9642;</span>
+        <span class="svc-name">EAN y Registro GS1</span>
+        <span class="svc-badge">Obligatorio para retail</span>
+      </div>
+      <p class="svc-desc">Sin EAN válido no hay retail. Te guiamos en el proceso completo de registro, asignación y validación de EAN en GS1 para cada uno de tus artículos y variantes.</p>
+      <ul class="svc-list">
+        <li>Alta en GS1 Spain o GS1 LATAM</li><li>Asignación de EAN-13 por artículo</li>
+        <li>Validación de códigos existentes</li><li>EAN para variantes y packs</li>
+        <li>Códigos ITF-14 para caja logística</li><li>Base de datos de EANs documentada</li>
+      </ul>
+    </div>
+
+    <div class="svc-flat">
+      <div class="svc-flat-head">
+        <span class="svc-num">05</span>
+        <span class="svc-icon">&#127968;</span>
+        <span class="svc-name">Referenciamiento en Retailers</span>
+        <span class="svc-badge">Acceso a nuevos canales</span>
+      </div>
+      <p class="svc-desc">Entrar en Amazon, El Corte Inglés, Carrefour o MediaMarkt tiene un proceso específico. Preparamos tu catálogo con el formato exacto y te acompañamos hasta que tu producto esté publicado y vendiendo.</p>
+      <ul class="svc-list">
+        <li>Análisis de requisitos por retailer</li><li>Adaptación de ficha por plataforma</li>
+        <li>Alta en Seller Central, Mirakl, etc.</li><li>Carga masiva de catálogos</li>
+        <li>Resolución de errores e incidencias</li><li>Seguimiento hasta publicación</li>
+      </ul>
+    </div>
+
+    <div class="svc-flat">
+      <div class="svc-flat-head">
+        <span class="svc-num">06</span>
+        <span class="svc-icon">&#128230;</span>
+        <span class="svc-name">Volumetría y Datos Logísticos</span>
+        <span class="svc-badge">Costes bajo control</span>
+      </div>
+      <p class="svc-desc">Peso, dimensiones, unidades por caja, configuración de palet. Datos que determinan tus costes de envío y si tu producto puede entrar en el almacén del distribuidor. Los medimos y estructuramos correctamente.</p>
+      <ul class="svc-list">
+        <li>Medición y registro de dimensiones</li><li>Peso neto y bruto por SKU</li>
+        <li>Configuración de pack y caja logística</li><li>Datos de paletización y MOQ</li>
+        <li>Formato SSCC y GS1-128</li><li>Integración con ERP y WMS</li>
+      </ul>
+    </div>
+
+    <div class="svc-flat">
+      <div class="svc-flat-head">
+        <span class="svc-num">07</span>
+        <span class="svc-icon">&#129302;</span>
+        <span class="svc-name">SEO con IA</span>
+        <span class="svc-badge">Visibilidad total</span>
+      </div>
+      <p class="svc-desc">El SEO ya no es solo Google. ChatGPT, Gemini y Perplexity son el nuevo primer resultado. Optimizamos tus fichas y arquitectura web para aparecer tanto en buscadores como en IA — donde tu competencia todavía no está.</p>
+      <ul class="svc-list">
+        <li>Auditoría SEO de tu tienda</li><li>Optimización de fichas para Google</li>
+        <li>GEO — posicionamiento en ChatGPT y Gemini</li><li>Keywords de producto con IA</li>
+        <li>Datos estructurados y rich snippets</li><li>Informe mensual de visibilidad</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- PARA QUIEN -->
+<section class="section bg2" id="para-quien">
+  <div class="section-label">Para quién es</div>
+  <h2 class="section-title">Si te reconoces aquí,<span class="accent"> esto es para ti.</span></h2>
+  <p class="section-sub">Trabajamos con emprendedores y empresas en diferentes momentos de su ecommerce.</p>
+  <div class="quien-grid">
+    <div class="quien-card">
+      <div class="quien-icon">&#128640;</div>
+      <div class="quien-title">Lanzas tu primera tienda</div>
+      <p class="quien-desc">Necesitas estructurar tu catálogo desde el principio, con SKUs, EANs y fichas bien hechas para no tener que rehacerlo todo cuando crezcas.</p>
+    </div>
+    <div class="quien-card">
+      <div class="quien-icon">&#128722;</div>
+      <div class="quien-title">Quieres entrar en Amazon o retailers</div>
+      <p class="quien-desc">Tu tienda funciona pero no consigues que tus productos se publiquen correctamente en los grandes canales. Los formularios te rechazan y no sabes por qué.</p>
+    </div>
+    <div class="quien-card">
+      <div class="quien-icon">&#128260;</div>
+      <div class="quien-title">Escalas y el catálogo está hecho un caos</div>
+      <p class="quien-desc">Empezaste pequeño, ya tienes 500 referencias y tu maestro de artículos es un Excel con errores por todas partes. Necesitas orden para poder crecer.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section class="section" id="proceso">
+  <div class="section-label">Cómo trabajamos</div>
+  <h2 class="section-title">Del catálogo roto al <span class="accent">catálogo que vende.</span></h2>
+  <p class="section-sub">Cuatro pasos claros, con entregables concretos en cada uno.</p>
+  <div class="steps-grid">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-title">Diagnóstico gratuito</div>
+      <p class="step-desc">Revisamos tu catálogo actual, tus EANs, tu estructura de SKU y las exigencias de los canales donde quieres vender. Te decimos exactamente qué falta.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-title">Plan de acción</div>
+      <p class="step-desc">Priorizamos los problemas por impacto. Primero lo que está bloqueando tus ventas hoy, después lo que necesitas para escalar mañana.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-title">Ejecución y entregables</div>
+      <p class="step-desc">Hacemos el trabajo: fichas, maestro, EANs, volumetría. Te entregamos archivos listos para importar en cualquier plataforma o ERP.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div class="step-title">Seguimiento y soporte</div>
+      <p class="step-desc">Resolvemos incidencias durante el alta, respondemos las preguntas del retailer y nos quedamos hasta que tu producto esté publicado y sin errores.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="section-label">FAQ</div>
+  <h2 class="section-title">Preguntas <span class="accent">frecuentes</span></h2>
+  <p class="section-sub">Lo que nos preguntan antes de empezar.</p>
+  <div class="faq-list">
+    <div class="faq-item faq-open">
+      <p class="faq-q-text">¿Cuántos productos podéis gestionar?</p>
+      <p class="faq-a-text">Trabajamos desde catálogos de 10 referencias hasta varios miles. El scope y el tiempo de entrega se definen en el diagnóstico inicial, según el tamaño y estado del catálogo.</p>
+    </div>
+    <div class="faq-item faq-open">
+      <p class="faq-q-text">¿Necesito tener un ERP para trabajar con vosotros?</p>
+      <p class="faq-a-text">No. Trabajamos con Excel, Google Sheets, Shopify, WooCommerce, Prestashop o cualquier sistema que ya uses. Entregamos en el formato que necesites.</p>
+    </div>
+    <div class="faq-item faq-open">
+      <p class="faq-q-text">¿Me ayudáis con Amazon específicamente?</p>
+      <p class="faq-a-text">Sí. Cubrimos el proceso completo de Amazon Seller Central: alta de ASINs, carga de catálogos planos, resolución de errores de atributos y suppressed listings.</p>
+    </div>
+    <div class="faq-item faq-open">
+      <p class="faq-q-text">¿Qué es GS1 y necesito registrarme?</p>
+      <p class="faq-a-text">GS1 es la organización que emite EANs oficiales. La mayoría de retailers grandes los exigen. Si no los tienes o los compraste en sitios no oficiales, te ayudamos a regularizarlo.</p>
+    </div>
+    <div class="faq-item faq-open">
+      <p class="faq-q-text">¿Cuánto tarda el proceso?</p>
+      <p class="faq-a-text">Depende del tamaño del catálogo. Un catálogo de hasta 100 referencias puede estar listo en 2-3 semanas. Para catálogos grandes, hacemos un plan por fases con fechas concretas.</p>
+    </div>
+    <div class="faq-item faq-open">
+      <p class="faq-q-text">¿Qué pasa si el retailer sigue rechazando mis productos?</p>
+      <p class="faq-a-text">Seguimos hasta solucionarlo. No damos el trabajo por terminado hasta que el producto esté publicado y operativo en el canal. Las incidencias del retailer las gestionamos nosotros.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contacto">
+
+  <div class="marquee-band">
+    <div class="marquee-track">
+      <div class="marquee-item">Ficha de Producto <span class="marquee-dot">✦</span> Maestro de Artículos <span class="marquee-dot">✦</span> SKU y Codificación <span class="marquee-dot">✦</span> EAN y GS1 <span class="marquee-dot">✦</span> Referenciamiento <span class="marquee-dot">✦</span> Volumetría Logística <span class="marquee-dot">✦</span> SEO con IA <span class="marquee-dot">✦</span></div>
+      <div class="marquee-item">Ficha de Producto <span class="marquee-dot">✦</span> Maestro de Artículos <span class="marquee-dot">✦</span> SKU y Codificación <span class="marquee-dot">✦</span> EAN y GS1 <span class="marquee-dot">✦</span> Referenciamiento <span class="marquee-dot">✦</span> Volumetría Logística <span class="marquee-dot">✦</span> SEO con IA <span class="marquee-dot">✦</span></div>
+    </div>
+  </div>
+
+  <div class="marquee-band">
+    <div class="marquee-track rev">
+      <div class="marquee-item">Amazon <span class="marquee-dot">✦</span> El Corte Inglés <span class="marquee-dot">✦</span> Carrefour <span class="marquee-dot">✦</span> Leroy Merlin <span class="marquee-dot">✦</span> Decathlon <span class="marquee-dot">✦</span> FNAC <span class="marquee-dot">✦</span> MediaMarkt <span class="marquee-dot">✦</span> Alcampo <span class="marquee-dot">✦</span></div>
+      <div class="marquee-item">Amazon <span class="marquee-dot">✦</span> El Corte Inglés <span class="marquee-dot">✦</span> Carrefour <span class="marquee-dot">✦</span> Leroy Merlin <span class="marquee-dot">✦</span> Decathlon <span class="marquee-dot">✦</span> FNAC <span class="marquee-dot">✦</span> MediaMarkt <span class="marquee-dot">✦</span> Alcampo <span class="marquee-dot">✦</span></div>
+    </div>
+  </div>
+
+  <div class="cta-inner"><div class="cta-box">
+    <p class="cta-sub">¿Preparado para que tu catálogo venda en todos los canales?</p>
+    <h2>Hablamos</h2>
+    <form class="contact-form" onsubmit="return false;">
+      <div class="form-row">
+        <div class="form-field">
+          <label>Tu nombre *</label>
+          <input type="text" placeholder="Elisabeth García">
+        </div>
+        <div class="form-field">
+          <label>Correo electrónico *</label>
+          <input type="email" placeholder="tu@empresa.com">
+        </div>
+      </div>
+      <div class="form-field">
+        <label>Número de referencias en tu catálogo</label>
+        <select>
+          <option value="">Selecciona una opción</option>
+          <option>Menos de 50</option>
+          <option>50 – 200</option>
+          <option>200 – 1.000</option>
+          <option>Más de 1.000</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label>¿En qué podemos ayudarte?</label>
+        <div class="service-btns">
+          <button type="button" class="svc-btn">Ficha de Producto</button>
+          <button type="button" class="svc-btn">Maestro de Artículos</button>
+          <button type="button" class="svc-btn">SKU y Codificación</button>
+          <button type="button" class="svc-btn">EAN y GS1</button>
+          <button type="button" class="svc-btn">Referenciamiento Retailers</button>
+          <button type="button" class="svc-btn">Volumetría Logística</button>
+          <button type="button" class="svc-btn">SEO con IA</button>
+        </div>
+      </div>
+      <div class="form-field">
+        <label>Cuéntanos tu situación</label>
+        <textarea placeholder="Tengo 200 referencias y quiero entrar en Amazon, pero me rechazan las fichas..."></textarea>
+      </div>
+      <button type="submit" class="form-submit">Enviar →</button>
+      <p class="cta-note">O escríbenos a <a href="mailto:egdatooptimizacion@gmail.com">egdatooptimizacion@gmail.com</a> · Respuesta en menos de 24h</p>
+    </form>
+  </div></div>
+</section>
+
+<script>
+document.querySelectorAll('.svc-btn').forEach(btn => {
+  btn.addEventListener('click', () => btn.classList.toggle('active'));
+});
+</script>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-logo">E<span>&</span>G</div>
+  <ul class="footer-links">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#para-quien">Para quién</a></li>
+    <li><a href="#proceso">Proceso</a></li>
+    <li><a href="mailto:egdatooptimizacion@gmail.com">egdatooptimizacion@gmail.com</a></li>
+  </ul>
+  <div class="footer-copy">2026 E&amp;G · <a href="privacidad.html" style="color:inherit;text-decoration:underline;">Política de privacidad</a></div>
+</footer>
+
+<!-- COOKIE BANNER -->
+<style>
+#cookie-banner {
+  position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
+  background: #fff; border: 1px solid var(--borde);
+  border-radius: 16px; padding: 1.2rem 1.5rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+  max-width: 780px; width: calc(100% - 3rem);
+  z-index: 9999; font-size: 0.82rem; color: #4b5563;
+  transition: opacity 0.4s, transform 0.4s;
+}
+#cookie-banner p { margin: 0; flex: 1; min-width: 200px; line-height: 1.6; }
+#cookie-banner p a { color: var(--verde); text-decoration: underline; }
+.cookie-btns { display: flex; gap: 0.6rem; flex-shrink: 0; }
+#cookie-accept {
+  background: var(--verde); color: #fff;
+  border: none; border-radius: 100px;
+  padding: 0.5rem 1.2rem; font-size: 0.82rem;
+  font-weight: 600; cursor: pointer; font-family: inherit;
+  transition: background 0.2s;
+}
+#cookie-accept:hover { background: var(--verde-dark); }
+#cookie-reject {
+  background: transparent; color: #6b7280;
+  border: 1px solid var(--borde); border-radius: 100px;
+  padding: 0.5rem 1.2rem; font-size: 0.82rem;
+  font-weight: 600; cursor: pointer; font-family: inherit;
+  transition: border-color 0.2s, color 0.2s;
+}
+#cookie-reject:hover { border-color: #9ca3af; color: #1a1a2e; }
+#cookie-banner.hidden { opacity: 0; transform: translateX(-50%) translateY(20px); pointer-events: none; }
+</style>
+
+<div id="cookie-banner">
+  <p>🍪 Usamos cookies propias para mejorar tu experiencia. <a href="privacidad.html">Política de privacidad</a></p>
+  <div class="cookie-btns">
+    <button id="cookie-reject">Rechazar</button>
+    <button id="cookie-accept">Aceptar todas</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  var banner = document.getElementById('cookie-banner');
+  if (localStorage.getItem('cookie-consent')) {
+    banner.classList.add('hidden');
+    return;
+  }
+  document.getElementById('cookie-accept').addEventListener('click', function() {
+    localStorage.setItem('cookie-consent', 'all');
+    banner.classList.add('hidden');
+  });
+  document.getElementById('cookie-reject').addEventListener('click', function() {
+    localStorage.setItem('cookie-consent', 'essential');
+    banner.classList.add('hidden');
+  });
+})();
+</script>
+
+</body>
+</html>

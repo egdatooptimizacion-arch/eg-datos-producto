@@ -1,0 +1,35 @@
+# E&G Datos de Producto
+
+> Consultoría especializada en datos de producto para ecommerce. Ayudamos a emprendedores y marcas a estructurar su catálogo para vender en Amazon, El Corte Inglés, Carrefour, Leroy Merlin y otros retailers y marketplaces sin errores ni rechazos.
+
+## Qué hacemos
+
+- **Ficha de Producto**: Creación y optimización de fichas técnicas completas, cumpliendo los requisitos de cada canal de venta.
+- **Maestro de Artículos**: Estructuración del catálogo con todos los atributos necesarios para retailers y marketplaces.
+- **SKU y Codificación**: Definición de sistemas de codificación internos claros y escalables.
+- **EAN y Registro GS1**: Obtención y gestión de códigos de barras EAN/GTIN con registro oficial en GS1 España.
+- **Referenciamiento en Retailers**: Preparación del expediente completo para entrar en El Corte Inglés, Carrefour, Leroy Merlin, Alcampo y otros.
+- **Volumetría y Datos Logísticos**: Medición y documentación de dimensiones, pesos y datos de embalaje para logística.
+- **SEO con IA**: Optimización de títulos y descripciones de producto con inteligencia artificial para mejorar visibilidad en buscadores.
+
+## Para quién es
+
+Emprendedores de ecommerce, marcas que quieren entrar en grandes superficies, importadores y distribuidores que necesitan estructurar su catálogo de producto correctamente para ser aceptados en canales de venta exigentes.
+
+## Cómo trabajamos
+
+1. Diagnóstico gratuito del catálogo actual
+2. Plan de acción personalizado
+3. Ejecución y entrega de archivos listos para subir
+4. Soporte durante el proceso de referenciamiento
+
+## Contacto
+
+- Web: https://eg-datos-producto.netlify.app
+- Email: egdatooptimizacion@gmail.com
+- Diagnóstico gratuito sin compromiso
+
+## Páginas
+
+- [Inicio](https://eg-datos-producto.netlify.app/)
+- [Política de privacidad](https://eg-datos-producto.netlify.app/privacidad.html)
