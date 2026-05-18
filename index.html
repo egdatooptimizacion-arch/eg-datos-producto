@@ -5,25 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- SEO: Title y Meta descripción -->
-<title>Consultoría Ficha de Producto, SKU y EAN para Ecommerce | E&amp;G</title>
-<meta name="description" content="Consultoría especializada en ficha de producto, maestro de artículos, SKU, EAN y referenciamiento en retailers. Para emprendedores de ecommerce que quieren vender en Amazon, El Corte Inglés y más.">
-<meta name="keywords" content="ficha de producto, maestro de artículos, SKU, EAN, referenciamiento retailers, consultoría ecommerce, GS1, volumetría logística, Amazon Seller Central">
+<title>Referenciamiento Retailers, GS1 y Ficha de Producto para Ecommerce | E&amp;G</title>
+<meta name="description" content="Consultoría especializada en referenciamiento en retailers, GS1, Mirakl, Amazon Seller Central y ficha de producto. Te ayudamos a entrar en Carrefour, El Corte Inglés y Mercadona con los datos correctos.">
+<meta name="keywords" content="referenciamiento retailers, GS1 Spain, GLN proveedor, ficha de producto, maestro de artículos, SKU, EAN, GTIN, Mirakl, Amazon Seller Central, entrar en Carrefour, entrar en El Corte Inglés, alta producto Mercadona, volumetría logística, consultoría ecommerce">
 <meta name="author" content="E&G Datos de Producto">
-<link rel="canonical" href="https://eg-datos-producto.netlify.app/">
+<link rel="canonical" href="https://egdatooptimizacion-arch.github.io/eg-datos-producto/">
 
 <!-- Open Graph (para redes sociales) -->
 <meta property="og:title" content="Consultoría Ficha de Producto, SKU y EAN | E&G">
 <meta property="og:description" content="Tu catálogo listo para vender en cualquier canal. Especialistas en ficha de producto, EAN, SKU y referenciamiento en retailers.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://eg-datos-producto.netlify.app/">
+<meta property="og:url" content="https://egdatooptimizacion-arch.github.io/eg-datos-producto/">
 <meta property="og:locale" content="es_ES">
-<meta property="og:image" content="https://eg-datos-producto.netlify.app/og-image.png">
+<meta property="og:image" content="https://egdatooptimizacion-arch.github.io/eg-datos-producto/og-image.png">
 
 <!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Consultoría Ficha de Producto, SKU y EAN | E&G">
 <meta name="twitter:description" content="Tu catálogo listo para vender en cualquier canal. Especialistas en ficha de producto, EAN, SKU y referenciamiento en retailers.">
-<meta name="twitter:image" content="https://eg-datos-producto.netlify.app/og-image.png">
+<meta name="twitter:image" content="https://egdatooptimizacion-arch.github.io/eg-datos-producto/og-image.png">
 
 <!-- Indexación -->
 <meta name="robots" content="index, follow">
@@ -37,7 +37,7 @@
   "@type": "ProfessionalService",
   "name": "E&G Datos de Producto",
   "description": "Consultoría especializada en ficha de producto, maestro de artículos, SKU, EAN y referenciamiento en retailers para ecommerce.",
-  "url": "https://eg-datos-producto.netlify.app",
+  "url": "https://egdatooptimizacion-arch.github.io/eg-datos-producto",
   "email": "egdatooptimizacion@gmail.com",
   "serviceType": [
     "Ficha de Producto",
@@ -160,6 +160,20 @@ a { color: inherit; text-decoration: none; }
 }
 .nav-btn:hover { border-color: #fff !important; background: rgba(255,255,255,0.08) !important; }
 
+/* HAMBURGER */
+.nav-hamburger {
+  display: none;
+  flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 6px;
+}
+.nav-hamburger span {
+  display: block; width: 22px; height: 2px;
+  background: rgba(255,255,255,0.85); border-radius: 2px;
+  transition: all 0.22s;
+}
+.nav-hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
 /* HERO */
 .hero {
@@ -251,6 +265,48 @@ a { color: inherit; text-decoration: none; }
 .stat-number { font-size: 2.4rem; font-weight: 800; color: #111827; letter-spacing: -0.04em; line-height: 1; margin-bottom: 0.3rem; }
 .stat-number .g { color: var(--verde); }
 .stat-label { font-size: 0.75rem; color: var(--gris); text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* CANALES */
+.canales-section { background: var(--negro2); border-top: 1px solid var(--borde); border-bottom: 1px solid var(--borde); }
+.canales-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem; margin-top: 2.5rem;
+}
+.canal-card {
+  background: var(--negro); border: 1px solid var(--borde);
+  border-radius: 16px; overflow: hidden;
+  display: flex; flex-direction: column;
+}
+.canal-logo-wrap {
+  padding: 1.2rem 1.5rem; display: flex; flex-direction: column; gap: 0.15rem;
+  border-bottom: 1px solid var(--borde);
+}
+.canal-amazon { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); }
+.canal-eci { background: linear-gradient(135deg, #1a1222 0%, #2d1b4e 100%); }
+.canal-gs1 { background: linear-gradient(135deg, #0f2027 0%, #1a3a2e 100%); }
+.canal-mercadona { background: linear-gradient(135deg, #1c1c1c 0%, #2a2a1a 100%); }
+.canal-name { font-size: 0.95rem; font-weight: 700; color: #fff; }
+.canal-platform { font-size: 0.72rem; color: rgba(255,255,255,0.5); font-weight: 500; letter-spacing: 0.04em; }
+.canal-reqs {
+  list-style: none; padding: 1.2rem 1.5rem; margin: 0;
+  display: flex; flex-direction: column; gap: 0.65rem; flex: 1;
+}
+.canal-reqs li { font-size: 0.82rem; color: #d1d5db; display: flex; align-items: flex-start; gap: 0.5rem; line-height: 1.4; }
+.canal-reqs li strong { color: #f9fafb; font-weight: 600; }
+.req-dot {
+  width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 0.3rem;
+}
+.req-red { background: #ef4444; }
+.req-orange { background: #f59e0b; }
+.canales-note {
+  margin-top: 1.5rem; font-size: 0.8rem; color: var(--gris);
+  display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap;
+}
+.canales-note-dot {
+  display: inline-block; width: 8px; height: 8px; border-radius: 50%;
+}
+.accent-link { color: var(--verde); text-decoration: underline; font-weight: 600; }
+.accent-link:hover { opacity: 0.8; }
 
 /* SECCIONES */
 .section { padding: 90px 5%; }
@@ -461,7 +517,37 @@ a { color: inherit; text-decoration: none; }
   .quien-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 700px) {
-  .nav-menu { display: none; }
+  /* NAV HAMBURGER */
+  .nav-hamburger { display: flex; }
+  .nav-btn { display: none; }
+  .nav-menu {
+    display: none;
+    position: absolute; top: 64px; left: 0; right: 0;
+    background: #0f0f0f;
+    flex-direction: column; gap: 0;
+    padding: 0.5rem 0 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+  .nav-menu.nav-open { display: flex; }
+  .nav-menu li { border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .nav-menu li a { padding: 0.85rem 5%; display: block; font-size: 0.95rem; }
+  .nav-drop-btn { padding: 0.85rem 5%; width: 100%; font-size: 0.95rem; justify-content: space-between; }
+  .nav-drop-panel {
+    position: static; opacity: 1; visibility: visible; pointer-events: auto;
+    transform: none; box-shadow: none; background: rgba(255,255,255,0.04);
+    border: none; border-radius: 0; padding: 0; min-width: 0;
+    display: none;
+  }
+  .nav-drop.drop-open .nav-drop-panel { display: block; }
+  .nav-drop-link { padding: 0.7rem 8%; font-size: 0.88rem; }
+
+  /* HERO */
+  .hero { padding: 100px 5% 60px; }
+  .hero h1 { font-size: clamp(2rem, 9vw, 3rem); }
+  .trust-row { flex-direction: column; gap: 0.6rem; align-items: flex-start; }
+
+  /* GRIDS */
   .svc { grid-template-columns: 1fr; }
   .svc-left { border-right: none; border-bottom: 1px solid var(--borde); }
   .svc-list { grid-template-columns: 1fr; }
@@ -469,12 +555,20 @@ a { color: inherit; text-decoration: none; }
   .faq-grid { grid-template-columns: 1fr; }
   .dolor-grid { grid-template-columns: 1fr; }
   .quien-grid { grid-template-columns: 1fr; }
+
+  /* STATS */
   .stats-bar { flex-direction: column; align-items: center; }
-  .stat { border-right: none; border-bottom: 1px solid var(--borde); max-width: 100%; }
+  .stat { border-right: none; border-bottom: 1px solid var(--borde); max-width: 100%; width: 100%; }
   .stat:last-child { border-bottom: none; }
+
+  /* FORMULARIO */
+  .form-row { grid-template-columns: 1fr; }
+  .cta-box { padding: 0; }
+  .cta-inner { padding: 60px 5%; }
+
+  /* FOOTER */
   .footer { flex-direction: column; text-align: center; }
   .footer-links { justify-content: center; }
-  .cta-box { padding: 3rem 1.5rem; }
 }
 </style>
 </head>
@@ -501,24 +595,27 @@ a { color: inherit; text-decoration: none; }
     <li><a href="#faq">FAQ</a></li>
   </ul>
   <a href="#contacto" class="nav-btn">Hablamos</a>
+  <button class="nav-hamburger" aria-label="Abrir menú">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-glow"></div>
-  <div class="pill">&#10022; Datos de Producto para Ecommerce</div>
-  <h1>Tu catálogo, <span class="accent">listo para vender</span> en cualquier canal.</h1>
+  <div class="pill">&#10022; Referenciamiento Retailers · GS1 · Ecommerce</div>
+  <h1>Tu producto, <span class="accent">referenciado y visible</span> en cada retailer.</h1>
   <p class="hero-desc">
-    Consultoría especializada en ficha de producto, maestro de artículos, SKU, EAN,
-    referenciamiento y volumetría. Para emprendedores de ecommerce que quieren
-    entrar en marketplaces y retailers sin perder tiempo ni ventas.
+    Consultoría especializada en referenciamiento en retailers, GS1, Mirakl,
+    Amazon Seller Central y ficha de producto. Entramos en Carrefour, El Corte Inglés
+    y Mercadona con los datos que cada plataforma exige — sin rechazos, sin retrasos.
   </p>
   <div class="btn-group">
-    <a href="#contacto" class="btn btn-green">Pedir diagnóstico gratuito</a>
+    <a href="#contacto" class="btn btn-green">Diagnóstico gratuito de tu catálogo</a>
   </div>
   <div class="trust-row">
-    <div class="trust-item"><div class="trust-dot"></div>Fichas listas para Amazon, El Corte Inglés y más</div>
-    <div class="trust-item"><div class="trust-dot"></div>EAN y SKU sin errores</div>
+    <div class="trust-item"><div class="trust-dot"></div>Formato GS1, Mirakl y Amazon Seller Central</div>
+    <div class="trust-item"><div class="trust-dot"></div>EAN y GTIN validados sin errores</div>
     <div class="trust-item"><div class="trust-dot"></div>Sin contratos de permanencia</div>
   </div>
 </section>
@@ -529,18 +626,18 @@ a { color: inherit; text-decoration: none; }
   <div class="dolor-grid">
     <div class="dolor-card">
       <div class="dolor-icon">&#10060;</div>
-      <div class="dolor-title">El retailer rechaza tu catálogo</div>
-      <p class="dolor-desc">Amazon, El Corte Inglés, Carrefour... cada plataforma exige un formato distinto. Un campo mal rellenado y tu producto no se publica.</p>
+      <div class="dolor-title">GS1 DATA no encuentra tu EAN — te bloquean la alta</div>
+      <p class="dolor-desc">Carrefour, Mercadona y El Corte Inglés físico validan tus GTINs contra la base de GS1. Si el EAN no está registrado o los atributos no coinciden, rechazan el alta automáticamente.</p>
     </div>
     <div class="dolor-card">
       <div class="dolor-icon">&#128451;</div>
-      <div class="dolor-title">Maestro de artículos desorganizado</div>
-      <p class="dolor-desc">SKUs duplicados, EANs incorrectos, atributos que faltan. El caos en tu base de datos de producto frena cada expansión.</p>
+      <div class="dolor-title">Mirakl rechaza tu feed por campos obligatorios vacíos</div>
+      <p class="dolor-desc">El Corte Inglés online, FNAC y MediaMarkt usan Mirakl. Un campo requerido vacío — leadtime, shipping-zone o price-with-vat — y tu catálogo no se publica en ninguno de ellos.</p>
     </div>
     <div class="dolor-card">
       <div class="dolor-icon">&#128230;</div>
-      <div class="dolor-title">Volumetría incorrecta, logística rota</div>
-      <p class="dolor-desc">Pesos y medidas mal registrados generan errores en el cálculo de envío, devoluciones y costes de almacenamiento que no esperabas.</p>
+      <div class="dolor-title">Amazon te pide el flat file y no sabes por dónde empezar</div>
+      <p class="dolor-desc">Cada categoría tiene su propio flat file con 50 a 250 columnas. Un bullet point mal formateado, los keywords sobre el límite o la imagen sin fondo blanco, y tu listing queda inactivo.</p>
     </div>
   </div>
 </section>
@@ -564,6 +661,83 @@ a { color: inherit; text-decoration: none; }
     <div class="stat-label">Catálogo listo para vender</div>
   </div>
 </div>
+
+<!-- CANALES -->
+<section class="section canales-section" id="canales">
+  <div class="section-label">Por canal</div>
+  <h2 class="section-title">Lo que exige cada retailer <span class="accent">para dar de alta tu producto</span></h2>
+  <p class="section-sub">Cada plataforma usa su propio formato y su propio validador. Esto es lo que necesitas tener listo antes de empezar.</p>
+
+  <div class="canales-grid">
+
+    <div class="canal-card">
+      <div class="canal-logo-wrap canal-amazon">
+        <span class="canal-name">Amazon</span>
+        <span class="canal-platform">Seller Central</span>
+      </div>
+      <ul class="canal-reqs">
+        <li><span class="req-dot req-red"></span><strong>Flat file por categoría</strong> (50–250 columnas)</li>
+        <li><span class="req-dot req-red"></span>GTIN / EAN válido o exención de marca</li>
+        <li><span class="req-dot req-red"></span>5 bullet points ≤ 200 caracteres cada uno</li>
+        <li><span class="req-dot req-red"></span>Imagen principal: fondo blanco, ≥ 1.000 px</li>
+        <li><span class="req-dot req-orange"></span>generic_keywords ≤ 249 caracteres</li>
+        <li><span class="req-dot req-orange"></span>variation_theme si hay tallas o colores</li>
+      </ul>
+    </div>
+
+    <div class="canal-card">
+      <div class="canal-logo-wrap canal-eci">
+        <span class="canal-name">El Corte Inglés</span>
+        <span class="canal-platform">Mirakl (online)</span>
+      </div>
+      <ul class="canal-reqs">
+        <li><span class="req-dot req-red"></span>Feed Mirakl con campos obligatorios completos</li>
+        <li><span class="req-dot req-red"></span>price-with-vat, leadtime-to-ship, shipping-zone</li>
+        <li><span class="req-dot req-red"></span>EAN / GTIN-13 sin errores de dígito de control</li>
+        <li><span class="req-dot req-red"></span>Descripción ≥ 200 caracteres en castellano</li>
+        <li><span class="req-dot req-orange"></span>Imágenes adicionales (mínimo 3)</li>
+        <li><span class="req-dot req-orange"></span>Atributos de variante por línea separada</li>
+      </ul>
+    </div>
+
+    <div class="canal-card">
+      <div class="canal-logo-wrap canal-gs1">
+        <span class="canal-name">El Corte Inglés / Carrefour</span>
+        <span class="canal-platform">GS1 DATA (físico)</span>
+      </div>
+      <ul class="canal-reqs">
+        <li><span class="req-dot req-red"></span>GTIN-13 registrado y activo en GS1 Spain</li>
+        <li><span class="req-dot req-red"></span>GLN del proveedor dado de alta</li>
+        <li><span class="req-dot req-red"></span>GPC Brick Code asignado correctamente</li>
+        <li><span class="req-dot req-red"></span>Dimensiones en mm y peso neto/bruto en kg</li>
+        <li><span class="req-dot req-orange"></span>GTIN-14 para unidad de embalaje (caja)</li>
+        <li><span class="req-dot req-orange"></span>Imágenes GS1 (fondo blanco, ángulos requeridos)</li>
+      </ul>
+    </div>
+
+    <div class="canal-card">
+      <div class="canal-logo-wrap canal-mercadona">
+        <span class="canal-name">Mercadona</span>
+        <span class="canal-platform">GS1 DATA + SIGE</span>
+      </div>
+      <ul class="canal-reqs">
+        <li><span class="req-dot req-red"></span>GTIN-13 validado en GS1 Spain</li>
+        <li><span class="req-dot req-red"></span>Certificados de calidad y composición</li>
+        <li><span class="req-dot req-red"></span>Ficha técnica de producto completa</li>
+        <li><span class="req-dot req-red"></span>Volumetría y configuración de palet</li>
+        <li><span class="req-dot req-orange"></span>SSCC en etiqueta GS1-128 por palet</li>
+        <li><span class="req-dot req-orange"></span>Datos nutricionales y alérgenos si aplica</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="canales-note">
+    <span class="canales-note-dot req-red"></span> Obligatorio &nbsp;&nbsp;
+    <span class="canales-note-dot req-orange"></span> Muy recomendado
+    &nbsp;·&nbsp; ¿No sabes si tu catálogo cumple? <a href="#contacto" class="accent-link">Pide el diagnóstico gratuito →</a>
+  </div>
+</section>
 
 <!-- SERVICIOS -->
 <section class="section" id="servicios">
@@ -787,20 +961,25 @@ a { color: inherit; text-decoration: none; }
   <div class="cta-inner"><div class="cta-box">
     <p class="cta-sub">¿Preparado para que tu catálogo venda en todos los canales?</p>
     <h2>Hablamos</h2>
-    <form class="contact-form" onsubmit="return false;">
+    <div id="form-success" style="display:none; padding:2rem; background:rgba(34,197,94,0.08); border:1px solid rgba(34,197,94,0.3); border-radius:12px; text-align:center; margin-bottom:1rem;">
+      <div style="font-size:2rem; margin-bottom:0.5rem;">✅</div>
+      <p style="font-weight:700; color:#111827; margin-bottom:0.3rem;">¡Mensaje recibido!</p>
+      <p style="color:#6b7280; font-size:0.9rem;">Te responderemos en menos de 24h.</p>
+    </div>
+    <form class="contact-form" id="contact-form" action="https://formspree.io/f/xykovwry" method="POST">
       <div class="form-row">
         <div class="form-field">
           <label>Tu nombre *</label>
-          <input type="text" placeholder="Elisabeth García">
+          <input type="text" name="nombre" placeholder="Elisabeth García" required>
         </div>
         <div class="form-field">
           <label>Correo electrónico *</label>
-          <input type="email" placeholder="tu@empresa.com">
+          <input type="email" name="email" placeholder="tu@empresa.com" required>
         </div>
       </div>
       <div class="form-field">
         <label>Número de referencias en tu catálogo</label>
-        <select>
+        <select name="referencias">
           <option value="">Selecciona una opción</option>
           <option>Menos de 50</option>
           <option>50 – 200</option>
@@ -810,6 +989,7 @@ a { color: inherit; text-decoration: none; }
       </div>
       <div class="form-field">
         <label>¿En qué podemos ayudarte?</label>
+        <input type="hidden" name="servicios" id="servicios-hidden" value="">
         <div class="service-btns">
           <button type="button" class="svc-btn">Ficha de Producto</button>
           <button type="button" class="svc-btn">Maestro de Artículos</button>
@@ -822,7 +1002,7 @@ a { color: inherit; text-decoration: none; }
       </div>
       <div class="form-field">
         <label>Cuéntanos tu situación</label>
-        <textarea placeholder="Tengo 200 referencias y quiero entrar en Amazon, pero me rechazan las fichas..."></textarea>
+        <textarea name="situacion" placeholder="Tengo 200 referencias y quiero entrar en Amazon, pero me rechazan las fichas..."></textarea>
       </div>
       <button type="submit" class="form-submit">Enviar →</button>
       <p class="cta-note">O escríbenos a <a href="mailto:egdatooptimizacion@gmail.com">egdatooptimizacion@gmail.com</a> · Respuesta en menos de 24h</p>
@@ -831,9 +1011,82 @@ a { color: inherit; text-decoration: none; }
 </section>
 
 <script>
-document.querySelectorAll('.svc-btn').forEach(btn => {
-  btn.addEventListener('click', () => btn.classList.toggle('active'));
+// Hamburger menu
+var hamburger = document.querySelector('.nav-hamburger');
+var navMenu = document.querySelector('.nav-menu');
+if (hamburger && navMenu) {
+  hamburger.addEventListener('click', function() {
+    navMenu.classList.toggle('nav-open');
+    hamburger.classList.toggle('open');
+  });
+  // Cerrar al hacer clic en un enlace
+  navMenu.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      navMenu.classList.remove('nav-open');
+      hamburger.classList.remove('open');
+    });
+  });
+  // Dropdown en móvil
+  document.querySelectorAll('.nav-drop').forEach(function(drop) {
+    drop.querySelector('.nav-drop-btn').addEventListener('click', function(e) {
+      if (window.innerWidth <= 700) {
+        e.preventDefault();
+        drop.classList.toggle('drop-open');
+      }
+    });
+  });
+}
+
+// Fix scroll de anclas (hash navigation)
+document.addEventListener('click', function(e) {
+  var link = e.target.closest('a[href^="#"]');
+  if (!link) return;
+  var id = link.getAttribute('href').slice(1);
+  if (!id) return;
+  var target = document.getElementById(id);
+  if (!target) return;
+  e.preventDefault();
+  var navH = 64;
+  var top = target.getBoundingClientRect().top + window.pageYOffset - navH;
+  window.scrollTo({ top: top, behavior: 'smooth' });
+  history.pushState(null, '', '#' + id);
 });
+
+// Botones de servicio
+document.querySelectorAll('.svc-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.classList.toggle('active');
+    var activos = Array.from(document.querySelectorAll('.svc-btn.active')).map(b => b.textContent).join(', ');
+    document.getElementById('servicios-hidden').value = activos;
+  });
+});
+
+// Formulario Formspree con AJAX
+var form = document.getElementById('contact-form');
+if (form) {
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var btn = form.querySelector('.form-submit');
+    btn.textContent = 'Enviando...';
+    btn.disabled = true;
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(function(r) {
+      if (r.ok) {
+        form.style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+      } else {
+        btn.textContent = 'Error — inténtalo de nuevo';
+        btn.disabled = false;
+      }
+    }).catch(function() {
+      btn.textContent = 'Error — inténtalo de nuevo';
+      btn.disabled = false;
+    });
+  });
+}
 </script>
 
 <!-- FOOTER -->
