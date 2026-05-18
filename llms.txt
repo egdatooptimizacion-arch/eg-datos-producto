@@ -25,11 +25,11 @@ Emprendedores de ecommerce, marcas que quieren entrar en grandes superficies, im
 
 ## Contacto
 
-- Web: https://eg-datos-producto.netlify.app
+- Web: https://egdatooptimizacion-arch.github.io/eg-datos-producto
 - Email: egdatooptimizacion@gmail.com
 - Diagnóstico gratuito sin compromiso
 
 ## Páginas
 
-- [Inicio](https://eg-datos-producto.netlify.app/)
-- [Política de privacidad](https://eg-datos-producto.netlify.app/privacidad.html)
+- [Inicio](https://egdatooptimizacion-arch.github.io/eg-datos-producto/)
+- [Política de privacidad](https://egdatooptimizacion-arch.github.io/eg-datos-producto/privacidad.html)

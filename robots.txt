@@ -26,4 +26,4 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://eg-datos-producto.netlify.app/sitemap.xml
+Sitemap: https://egdatooptimizacion-arch.github.io/eg-datos-producto/sitemap.xml
