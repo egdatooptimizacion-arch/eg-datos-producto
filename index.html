@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-ES">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Rendimiento: preconnect -->
+<link rel="preconnect" href="https://formspree.io">
+<link rel="dns-prefetch" href="https://formspree.io">
 
 <!-- SEO: Title y Meta descripción -->
 <title>Referenciamiento en Retailers y GS1 — Entra en Amazon, Carrefour y El Corte Inglés | E&amp;G</title>
@@ -33,6 +37,11 @@
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <link rel="sitemap" type="application/xml" href="/eg-datos-producto/sitemap.xml">
 <meta name="google-site-verification" content="googleed32bf5a1baad2cf">
+
+<!-- hreflang: targeting España y latinoamérica en español -->
+<link rel="alternate" hreflang="es-ES" href="https://egdatooptimizacion-arch.github.io/eg-datos-producto/">
+<link rel="alternate" hreflang="es" href="https://egdatooptimizacion-arch.github.io/eg-datos-producto/">
+<link rel="alternate" hreflang="x-default" href="https://egdatooptimizacion-arch.github.io/eg-datos-producto/">
 
 <!-- Schema.org: ProfessionalService -->
 <script type="application/ld+json">
@@ -128,6 +137,30 @@
         "@type": "Answer",
         "text": "Seguimos hasta solucionarlo. No damos el trabajo por terminado hasta que el producto esté publicado y operativo en el canal. Las incidencias del retailer las gestionamos nosotros."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta daros de alta un producto en Amazon Seller Central?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El coste depende del número de referencias y del estado de tu catálogo. Ofrecemos un diagnóstico gratuito para valorar el trabajo real antes de darte un presupuesto cerrado, sin sorpresas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Podéis ayudarme a entrar en El Corte Inglés online?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. El Corte Inglés online opera sobre Mirakl. Te preparamos el feed con todos los campos requeridos — leadtime, shipping-zone, price-with-vat, GTINs válidos — y gestionamos el alta hasta que tu catálogo esté publicado y activo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué diferencia hay entre un EAN comprado online y uno registrado en GS1?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Los EANs comprados en terceros no están vinculados a tu empresa en la base de datos GS1 DATA. Carrefour, Mercadona y El Corte Inglés validan el GTIN contra esa base: si el titular no coincide, rechazan el alta. Solo los EANs registrados oficialmente en GS1 España evitan este problema."
+      }
     }
   ]
 }
@@ -148,6 +181,61 @@
   ]
 }
 </script>
+
+<!-- Schema.org: WebSite (habilita el Sitelinks Searchbox en Google) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "E&G Datos de Producto",
+  "url": "https://egdatooptimizacion-arch.github.io/eg-datos-producto/",
+  "description": "Consultoría especializada en referenciamiento en retailers, ficha de producto, EAN y GS1 en España.",
+  "inLanguage": "es-ES",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://egdatooptimizacion-arch.github.io/eg-datos-producto/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<!-- Schema.org: Organization (entidad de marca para Knowledge Panel) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "E&G Datos de Producto",
+  "alternateName": "EG Datos de Producto",
+  "url": "https://egdatooptimizacion-arch.github.io/eg-datos-producto/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://egdatooptimizacion-arch.github.io/eg-datos-producto/og-image.png",
+    "width": 1200,
+    "height": 630
+  },
+  "email": "egdatooptimizacion@gmail.com",
+  "description": "Especialistas en referenciamiento en retailers, ficha de producto, maestro de artículos, SKU, EAN y GS1 en España.",
+  "foundingLocation": {
+    "@type": "Place",
+    "name": "España"
+  },
+  "areaServed": [
+    { "@type": "Country", "name": "España" },
+    { "@type": "Place", "name": "Latinoamérica" }
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/company/eg-datos-de-producto"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "egdatooptimizacion@gmail.com",
+    "contactType": "customer service",
+    "availableLanguage": "Spanish",
+    "areaServed": ["ES", "LatAm"]
+  }
+}
+</script>
+
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
