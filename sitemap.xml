@@ -26,6 +26,22 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://egdatooptimizacion-arch.github.io/eg-datos-producto/ean-codigo-barras-gs1-espana.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://egdatooptimizacion-arch.github.io/eg-datos-producto/ean-codigo-barras-gs1-espana.html"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://egdatooptimizacion-arch.github.io/eg-datos-producto/ean-codigo-barras-gs1-espana.html"/>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://egdatooptimizacion-arch.github.io/eg-datos-producto/ficha-de-producto-ecommerce.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://egdatooptimizacion-arch.github.io/eg-datos-producto/ficha-de-producto-ecommerce.html"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://egdatooptimizacion-arch.github.io/eg-datos-producto/ficha-de-producto-ecommerce.html"/>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://egdatooptimizacion-arch.github.io/eg-datos-producto/privacidad.html</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>yearly</changefreq>
