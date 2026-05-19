@@ -776,6 +776,8 @@ a { color: inherit; text-decoration: none; }
   </button>
 </nav>
 
+<main id="main-content">
+
 <!-- HERO -->
 <section class="hero">
   <div class="hero-glow"></div>
@@ -1090,29 +1092,41 @@ a { color: inherit; text-decoration: none; }
   <h2 class="section-title">Preguntas <span class="accent">frecuentes</span></h2>
   <p class="section-sub">Lo que nos preguntan antes de empezar.</p>
   <div class="faq-list">
-    <div class="faq-item faq-open">
-      <p class="faq-q-text">¿Cuántos productos podéis gestionar?</p>
+    <div class="faq-item faq-open" id="faq-cuantos-productos">
+      <h3 class="faq-q-text">¿Cuántos productos podéis gestionar?</h3>
       <p class="faq-a-text">Trabajamos desde catálogos de 10 referencias hasta varios miles. El scope y el tiempo de entrega se definen en el diagnóstico inicial, según el tamaño y estado del catálogo.</p>
     </div>
-    <div class="faq-item faq-open">
-      <p class="faq-q-text">¿Necesito tener un ERP para trabajar con vosotros?</p>
+    <div class="faq-item faq-open" id="faq-erp">
+      <h3 class="faq-q-text">¿Necesito tener un ERP para trabajar con vosotros?</h3>
       <p class="faq-a-text">No. Trabajamos con Excel, Google Sheets, Shopify, WooCommerce, Prestashop o cualquier sistema que ya uses. Entregamos en el formato que necesites.</p>
     </div>
-    <div class="faq-item faq-open">
-      <p class="faq-q-text">¿Me ayudáis con Amazon específicamente?</p>
+    <div class="faq-item faq-open" id="faq-amazon">
+      <h3 class="faq-q-text">¿Me ayudáis con Amazon específicamente?</h3>
       <p class="faq-a-text">Sí. Cubrimos el proceso completo de Amazon Seller Central: alta de ASINs, carga de catálogos planos, resolución de errores de atributos y suppressed listings.</p>
     </div>
-    <div class="faq-item faq-open">
-      <p class="faq-q-text">¿Qué es GS1 y necesito registrarme?</p>
+    <div class="faq-item faq-open" id="faq-gs1">
+      <h3 class="faq-q-text">¿Qué es GS1 y necesito registrarme?</h3>
       <p class="faq-a-text">GS1 es la organización que emite EANs oficiales. La mayoría de retailers grandes los exigen. Si no los tienes o los compraste en sitios no oficiales, te ayudamos a regularizarlo.</p>
     </div>
-    <div class="faq-item faq-open">
-      <p class="faq-q-text">¿Cuánto tarda el proceso?</p>
+    <div class="faq-item faq-open" id="faq-tiempo">
+      <h3 class="faq-q-text">¿Cuánto tarda el proceso?</h3>
       <p class="faq-a-text">Depende del tamaño del catálogo. Un catálogo de hasta 100 referencias puede estar listo en 2-3 semanas. Para catálogos grandes, hacemos un plan por fases con fechas concretas.</p>
     </div>
-    <div class="faq-item faq-open">
-      <p class="faq-q-text">¿Qué pasa si el retailer sigue rechazando mis productos?</p>
+    <div class="faq-item faq-open" id="faq-rechazo">
+      <h3 class="faq-q-text">¿Qué pasa si el retailer sigue rechazando mis productos?</h3>
       <p class="faq-a-text">Seguimos hasta solucionarlo. No damos el trabajo por terminado hasta que el producto esté publicado y operativo en el canal. Las incidencias del retailer las gestionamos nosotros.</p>
+    </div>
+    <div class="faq-item faq-open" id="faq-coste-amazon">
+      <h3 class="faq-q-text">¿Cuánto cuesta daros de alta un producto en Amazon Seller Central?</h3>
+      <p class="faq-a-text">El coste depende del número de referencias y del estado de tu catálogo. Ofrecemos un diagnóstico gratuito para valorar el trabajo real antes de darte un presupuesto cerrado, sin sorpresas.</p>
+    </div>
+    <div class="faq-item faq-open" id="faq-corte-ingles">
+      <h3 class="faq-q-text">¿Podéis ayudarme a entrar en El Corte Inglés online?</h3>
+      <p class="faq-a-text">Sí. El Corte Inglés online opera sobre Mirakl. Te preparamos el feed con todos los campos requeridos — leadtime, shipping-zone, price-with-vat, GTINs válidos — y gestionamos el alta hasta que tu catálogo esté publicado y activo.</p>
+    </div>
+    <div class="faq-item faq-open" id="faq-ean-gs1">
+      <h3 class="faq-q-text">¿Qué diferencia hay entre un EAN comprado online y uno registrado en GS1?</h3>
+      <p class="faq-a-text">Los EANs comprados en terceros no están vinculados a tu empresa en la base de datos GS1 DATA. Carrefour, Mercadona y El Corte Inglés validan el GTIN contra esa base: si el titular no coincide, rechazan el alta. Solo los EANs registrados oficialmente en GS1 España evitan este problema.</p>
     </div>
   </div>
 </section>
@@ -1264,6 +1278,8 @@ if (form) {
   });
 }
 </script>
+
+</main>
 
 <!-- FOOTER -->
 <footer class="footer">
