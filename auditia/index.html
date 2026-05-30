@@ -167,50 +167,46 @@
     .level-chip.visible      { color: #2563EB; border-color: #BFDBFE; background: #EFF6FF; }
     .level-chip.referente    { color: #16A34A; border-color: #BBF7D0; background: #F0FDF4; }
 
-    /* ── HERO OSCURO ── */
+    /* ── HERO: LAYOUT 2 COLUMNAS ── */
     #screen-hero {
-      background: #0A0A0A !important;
-      position: relative;
-      overflow: hidden;
+      background: var(--bg) !important;
+      justify-content: flex-start !important;
+      padding-top: 80px !important;
+      padding-bottom: 48px !important;
+      gap: 0;
     }
 
-    /* Gradientes de fondo — profundidad */
-    #screen-hero::before {
-      content: '';
-      position: absolute; inset: 0; pointer-events: none; z-index: 0;
-      background:
-        radial-gradient(ellipse 700px 500px at 15% 60%, rgba(34,197,94,0.07) 0%, transparent 70%),
-        radial-gradient(ellipse 500px 350px at 85% 15%, rgba(96,165,250,0.05) 0%, transparent 65%),
-        radial-gradient(ellipse 400px 300px at 75% 85%, rgba(34,197,94,0.04) 0%, transparent 60%);
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 52px;
+      max-width: 1060px; width: 100%;
+      align-items: center;
+      padding: 0 24px;
     }
 
-    /* Grain texture */
-    #screen-hero::after {
-      content: '';
-      position: absolute; inset: 0; pointer-events: none; z-index: 1;
-      opacity: 0.25;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+    .hero-left {
+      display: flex; flex-direction: column;
+      align-items: flex-start; text-align: left; gap: 0;
     }
-
-    #screen-hero > * { position: relative; z-index: 2; }
-    #screen-hero .hero-badge {
-      background: rgba(34,197,94,0.12);
-      border-color: rgba(34,197,94,0.25);
-      color: #22C55E;
+    .hero-left .hero-badge   { margin-bottom: 20px; }
+    .hero-left .hero-title   { margin-bottom: 14px; text-align: left; font-size: clamp(30px, 3.8vw, 50px); }
+    .hero-left .hero-subtitle { text-align: left; margin: 0 0 22px; }
+    .hero-left .hero-levels  { margin-bottom: 24px; justify-content: flex-start; }
+    .hero-left .btn          { margin-bottom: 20px; }
+    .hero-left .hero-stats   {
+      max-width: 100%; background: none; border: none;
+      border-radius: 0; overflow: visible;
+      gap: 0; justify-content: flex-start;
     }
-    #screen-hero .hero-title { color: #ffffff; }
-    #screen-hero .hero-subtitle { color: rgba(255,255,255,0.55); }
-    #screen-hero .hero-stats {
-      background: rgba(255,255,255,0.04);
-      border-color: rgba(255,255,255,0.08);
+    .hero-left .hero-stat {
+      border-right: none;
+      border-left: 3px solid var(--green);
+      padding: 6px 14px;
+      text-align: left;
     }
-    #screen-hero .hero-stat { border-color: rgba(255,255,255,0.08); }
-    #screen-hero .hero-stat .num { color: #22C55E; }
-    #screen-hero .hero-stat .label { color: rgba(255,255,255,0.4); }
-    #screen-hero .level-chip.invisible    { color: rgba(255,255,255,0.4);  border-color: rgba(255,255,255,0.1); background: rgba(255,255,255,0.04); }
-    #screen-hero .level-chip.construccion { color: #FBBF24; border-color: rgba(251,191,36,0.25); background: rgba(251,191,36,0.08); }
-    #screen-hero .level-chip.visible      { color: #60A5FA; border-color: rgba(96,165,250,0.25);  background: rgba(96,165,250,0.08); }
-    #screen-hero .level-chip.referente    { color: #22C55E; border-color: rgba(34,197,94,0.25);   background: rgba(34,197,94,0.08); }
+    .hero-left .hero-stat .num { font-size: 20px; }
+    .hero-left .hero-stat .label { font-size: 11px; }
 
     /* Shimmer en "IA predictiva" */
     @keyframes shimmerText {
@@ -218,7 +214,7 @@
       100% { background-position: 200% center; }
     }
     .hero-title span {
-      background: linear-gradient(90deg, #22C55E 0%, #4ade80 40%, #86efac 55%, #22C55E 100%);
+      background: linear-gradient(90deg, #16A34A 0%, #22C55E 40%, #4ade80 55%, #22C55E 100%);
       background-size: 300% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -226,69 +222,102 @@
       animation: shimmerText 4s linear infinite;
     }
 
-    /* Glow badge superior */
-    #screen-hero .hero-badge {
-      background: rgba(34,197,94,0.12);
-      border-color: rgba(34,197,94,0.25);
-      color: #22C55E;
-      box-shadow: 0 0 20px rgba(34,197,94,0.15);
+    /* ── DASHBOARD CARD ── */
+    .hero-right {
+      display: flex; align-items: center; justify-content: center;
+    }
+    .dashboard-card {
+      background: #0F172A;
+      border-radius: 20px; padding: 26px; width: 100%; max-width: 460px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.15), 0 0 0 1px rgba(255,255,255,0.06);
+      animation: heroFadeUp 0.6s ease 0.35s both;
+    }
+    .dashboard-header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 18px; padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .dashboard-logo { font-size: 12px; font-weight: 800; color: #22C55E; letter-spacing: 0.5px; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.35} }
+    .dashboard-live {
+      font-size: 10px; font-weight: 700; color: #22C55E;
+      letter-spacing: 0.8px; text-transform: uppercase;
+      animation: blink 2s ease infinite;
+    }
+    .dashboard-score-row {
+      display: flex; align-items: center; gap: 16px; margin-bottom: 18px;
+    }
+    .dashboard-ring-wrap { position: relative; flex-shrink: 0; width: 84px; height: 84px; }
+    .dashboard-ring-label {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%,-50%); text-align: center; line-height: 1;
+    }
+    #dashboard-score { font-size: 22px; font-weight: 900; color: #60a5fa; display: block; }
+    .dashboard-ring-sub { font-size: 10px; color: rgba(255,255,255,0.25); }
+    .dashboard-score-info { flex: 1; display: flex; flex-direction: column; gap: 7px; }
+    .dashboard-level-badge {
+      display: inline-block; font-size: 11px; font-weight: 700;
+      color: #60a5fa; background: rgba(96,165,250,0.12);
+      border: 1px solid rgba(96,165,250,0.2); border-radius: 50px;
+      padding: 3px 10px; width: fit-content;
+    }
+    .dashboard-verdict { font-size: 11px; color: rgba(255,255,255,0.38); line-height: 1.5; }
+    .dashboard-blocks {
+      display: flex; flex-direction: column; gap: 9px;
+      margin-bottom: 16px; padding-bottom: 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .dashboard-block-row { display: flex; align-items: center; gap: 8px; }
+    .db-icon { font-size: 13px; flex-shrink: 0; width: 18px; }
+    .db-name { font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.5); width: 66px; flex-shrink: 0; }
+    .db-bar-track { flex: 1; height: 5px; background: rgba(255,255,255,0.07); border-radius: 3px; overflow: hidden; }
+    .db-bar-fill { height: 100%; border-radius: 3px; width: 0%; transition: width 1.3s cubic-bezier(0.4,0,0.2,1); }
+    .db-score { font-size: 11px; font-weight: 700; width: 26px; text-align: right; flex-shrink: 0; }
+    .dashboard-action {
+      display: flex; align-items: flex-start; gap: 10px;
+      background: rgba(34,197,94,0.06); border: 1px solid rgba(34,197,94,0.15);
+      border-radius: 12px; padding: 11px 13px;
+    }
+    .dashboard-action > span:first-child { font-size: 15px; flex-shrink: 0; margin-top: 1px; }
+    .da-title { font-size: 12px; font-weight: 700; color: #fff; margin-bottom: 2px; }
+    .da-sub { font-size: 11px; color: rgba(255,255,255,0.38); line-height: 1.4; }
+    .da-badge {
+      font-size: 10px; font-weight: 700; white-space: nowrap; margin-top: 2px;
+      background: rgba(239,68,68,0.12); color: #ef4444;
+      border: 1px solid rgba(239,68,68,0.2); border-radius: 50px; padding: 2px 8px; flex-shrink: 0;
     }
 
-    /* Preview card con glow verde */
-    .hero-preview-card {
-      box-shadow: 0 0 50px rgba(34,197,94,0.08), 0 0 0 1px rgba(255,255,255,0.07), inset 0 1px 0 rgba(255,255,255,0.06);
-    }
-    /* Línea de acento verde inferior en preview card */
-    .hero-preview-card::after {
-      content: '';
-      display: block;
-      margin-top: 16px;
-      height: 2px;
-      border-radius: 1px;
-      background: linear-gradient(90deg, transparent, rgba(34,197,94,0.4), transparent);
-    }
-
-    /* CTA button glow más intenso */
-    #screen-hero .btn-primary {
-      box-shadow: 0 4px 32px rgba(34,197,94,0.45), 0 0 0 1px rgba(34,197,94,0.2);
-    }
-    #screen-hero .btn-primary:hover {
-      box-shadow: 0 8px 40px rgba(34,197,94,0.55), 0 0 0 1px rgba(34,197,94,0.3);
-    }
-
-    /* ── PROBLEMA BAR ── */
-    .hero-problem-bar {
-      display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;
-      align-items: center;
-      padding: 20px 24px;
-      border-top: 1px solid rgba(255,255,255,0.07);
-      margin-top: 36px; max-width: 680px; width: 100%;
-    }
-    .hero-problem-bar span { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.5; text-align: center; }
-    .hero-problem-bar .hp-highlight { color: rgba(255,255,255,0.75); font-weight: 600; }
-    .hero-problem-sep { color: rgba(255,255,255,0.15) !important; font-size: 18px !important; }
-
-    /* ── CÓMO FUNCIONA ── */
+    /* ── CÓMO FUNCIONA (light) ── */
     .hero-how-works {
       display: flex; align-items: flex-start; gap: 12px;
-      padding: 28px 20px 8px; max-width: 700px; width: 100%;
+      padding: 32px 24px 8px; max-width: 960px; width: 100%;
       flex-wrap: wrap; justify-content: center;
+      border-top: 1px solid var(--border); margin-top: 48px;
     }
-    .how-step {
-      display: flex; align-items: flex-start; gap: 12px;
-      flex: 1; min-width: 175px; max-width: 200px;
-    }
+    .how-step { display: flex; align-items: flex-start; gap: 12px; flex: 1; min-width: 175px; max-width: 220px; }
     .how-step-num {
       width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0;
-      background: rgba(34,197,94,0.12); border: 1px solid rgba(34,197,94,0.3);
-      color: #22C55E; font-size: 13px; font-weight: 800;
+      background: var(--green-light); border: 1px solid #BBF7D0;
+      color: var(--green-dark); font-size: 13px; font-weight: 800;
       display: flex; align-items: center; justify-content: center;
     }
     .how-step-text { display: flex; flex-direction: column; gap: 3px; }
-    .how-step-text strong { color: #fff; font-size: 13px; font-weight: 700; }
-    .how-step-text span { color: rgba(255,255,255,0.38); font-size: 12px; line-height: 1.4; }
-    .how-arrow { color: rgba(255,255,255,0.15); font-size: 16px; padding-top: 7px; flex-shrink: 0; }
-    @media (max-width: 540px) { .how-arrow { display: none; } .how-step { min-width: 100%; max-width: 100%; } }
+    .how-step-text strong { color: var(--text); font-size: 13px; font-weight: 700; }
+    .how-step-text span { color: var(--muted); font-size: 12px; line-height: 1.4; }
+    .how-arrow { color: var(--border-strong); font-size: 16px; padding-top: 7px; flex-shrink: 0; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; max-width: 520px; gap: 32px; }
+      .hero-left { align-items: center; text-align: center; }
+      .hero-left .hero-title { text-align: center; }
+      .hero-left .hero-subtitle { text-align: center; }
+      .hero-left .hero-levels { justify-content: center; }
+    }
+    @media (max-width: 540px) {
+      .how-arrow { display: none; }
+      .how-step { min-width: 100%; max-width: 100%; }
+    }
 
     /* ── HERO ENTRANCE ANIMATIONS ── */
     @keyframes heroFadeUp {
@@ -301,23 +330,23 @@
       100% { opacity: 1; transform: scale(1); }
     }
 
-    /* Stagger — cada hijo del hero entra escalonado */
-    #screen-hero.active > *:nth-child(1)  { animation: heroFadeUp 0.5s ease 0.04s both; }
-    #screen-hero.active > *:nth-child(2)  { animation: heroFadeUp 0.5s ease 0.12s both; }
-    #screen-hero.active > *:nth-child(3)  { animation: heroFadeUp 0.5s ease 0.22s both; }
-    #screen-hero.active > *:nth-child(4)  { animation: heroFadeUp 0.5s ease 0.32s both; }
-    #screen-hero.active > *:nth-child(5)  { animation: heroFadeUp 0.5s ease 0.42s both; }
-    #screen-hero.active > *:nth-child(6)  { animation: heroFadeUp 0.5s ease 0.52s both; }
-    #screen-hero.active > *:nth-child(7)  { animation: heroFadeUp 0.5s ease 0.62s both; }
-    #screen-hero.active > *:nth-child(8)  { animation: heroFadeUp 0.5s ease 0.80s both; }
-    #screen-hero.active > *:nth-child(9)  { animation: heroFadeUp 0.5s ease 0.98s both; }
-    #screen-hero.active > *:nth-child(10) { animation: heroFadeUp 0.5s ease 1.12s both; }
+    /* Stagger hero-inner y how-works */
+    #screen-hero.active > *:nth-child(1) { animation: heroFadeUp 0.55s ease 0.05s both; }
+    #screen-hero.active > *:nth-child(2) { animation: heroFadeUp 0.55s ease 0.35s both; }
+
+    /* Stagger elementos de la columna izquierda */
+    .hero-left > *:nth-child(1) { animation: heroFadeUp 0.5s ease 0.08s both; }
+    .hero-left > *:nth-child(2) { animation: heroFadeUp 0.5s ease 0.16s both; }
+    .hero-left > *:nth-child(3) { animation: heroFadeUp 0.5s ease 0.24s both; }
+    .hero-left > *:nth-child(4) { animation: heroFadeUp 0.5s ease 0.32s both; }
+    .hero-left > *:nth-child(5) { animation: heroFadeUp 0.5s ease 0.40s both; }
+    .hero-left > *:nth-child(6) { animation: heroFadeUp 0.5s ease 0.48s both; }
 
     /* Level chips pop con rebote */
-    .hero-levels .level-chip:nth-child(1) { animation: chipPop 0.35s ease 0.40s both; }
-    .hero-levels .level-chip:nth-child(2) { animation: chipPop 0.35s ease 0.47s both; }
-    .hero-levels .level-chip:nth-child(3) { animation: chipPop 0.35s ease 0.54s both; }
-    .hero-levels .level-chip:nth-child(4) { animation: chipPop 0.35s ease 0.61s both; }
+    .hero-levels .level-chip:nth-child(1) { animation: chipPop 0.35s ease 0.30s both; }
+    .hero-levels .level-chip:nth-child(2) { animation: chipPop 0.35s ease 0.37s both; }
+    .hero-levels .level-chip:nth-child(3) { animation: chipPop 0.35s ease 0.44s both; }
+    .hero-levels .level-chip:nth-child(4) { animation: chipPop 0.35s ease 0.51s both; }
 
     /* ── PREVIEW CARD ── */
     .hero-preview-card {
@@ -623,13 +652,61 @@
       .result-hero { padding: 28px 20px; }
       .hero-stats { max-width: 100%; }
     }
+
+    /* ── DASHBOARD CARD: FASE ESCANEO ── */
+    .db-phase { transition: opacity 0.4s ease; }
+    .db-scan-url-row {
+      display: flex; align-items: center; gap: 8px;
+      padding: 10px 14px; border-radius: 10px;
+      background: rgba(255,255,255,0.05); margin-bottom: 16px;
+    }
+    .db-scan-url-label {
+      font-size: 10px; font-weight: 700; letter-spacing: 1.2px;
+      text-transform: uppercase; color: rgba(255,255,255,0.35); flex-shrink: 0;
+    }
+    .db-scan-url-text {
+      font-size: 13px; font-weight: 700; color: #22C55E;
+      font-family: 'Courier New', monospace; letter-spacing: 0;
+    }
+    .db-cursor {
+      display: inline-block; width: 2px; height: 13px;
+      background: #22C55E; vertical-align: middle; margin-left: 1px;
+      animation: blink 0.75s step-end infinite;
+    }
+    .db-scan-steps { display: flex; flex-direction: column; gap: 9px; margin-bottom: 16px; }
+    .db-scan-step {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 12px; color: rgba(255,255,255,0.35);
+      opacity: 0; transform: translateX(-6px);
+      transition: opacity 0.3s ease, transform 0.3s ease, color 0.3s ease;
+    }
+    .db-scan-step.active  { opacity: 1; transform: translateX(0); color: rgba(255,255,255,0.6); }
+    .db-scan-step.done    { opacity: 1; transform: translateX(0); color: rgba(255,255,255,0.75); }
+    .db-scan-step .step-icon { font-size: 13px; flex-shrink: 0; }
+    .db-step-check { margin-left: auto; font-size: 11px; font-weight: 800; color: #22C55E; opacity: 0; transition: opacity 0.25s; }
+    .db-step-check.show { opacity: 1; }
+    .db-scan-prog-wrap {
+      height: 3px; background: rgba(255,255,255,0.07);
+      border-radius: 2px; overflow: hidden; margin-bottom: 12px;
+    }
+    .db-scan-prog-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #16A34A, #22C55E, #4ade80);
+      border-radius: 2px; width: 0%;
+    }
+    .db-gen-text {
+      font-size: 11px; color: rgba(255,255,255,0.3);
+      font-style: italic; text-align: center; min-height: 16px;
+      transition: opacity 0.4s, color 0.4s;
+    }
+    .db-gen-text.ready { color: #22C55E; opacity: 1 !important; }
   </style>
 </head>
 <body>
 
 <!-- TOPBAR EG DATOS -->
 <nav class="eg-topbar">
-  <a href="../" class="eg-topbar-logo">E<span>&</span>G <span style="color:rgba(255,255,255,0.35);font-weight:400;margin:0 6px;">·</span> <span style="color:#22C55E;">AuditIA</span></a>
+  <a href="../" class="eg-topbar-logo"><span style="color:#22C55E;">AuditIA</span></a>
   <a href="../#contacto" class="eg-topbar-link">← Volver a servicios</a>
 </nav>
 
@@ -637,81 +714,120 @@
 <!-- SCREEN 1 · HERO                             -->
 <!-- ════════════════════════════════════════════ -->
 <div id="screen-hero" class="screen active">
-  <div style="font-size:11px; font-weight:700; letter-spacing:2px; color:rgba(255,255,255,0.3); margin-bottom:16px; text-transform:uppercase;">AuditIA</div>
-  <div class="hero-badge">⚡ Diagnóstico gratuito · 3 minutos</div>
-  <h1 class="hero-title">¿La <span>IA predictiva</span><br>sabe que existes?</h1>
-  <p class="hero-subtitle">Descubre si ChatGPT, Perplexity o Google AI te mencionan cuando alguien busca lo que vendes — y exactamente qué cambiar.</p>
 
-  <div class="hero-levels">
-    <div class="level-chip invisible">😶 Invisible</div>
-    <div class="level-chip construccion">🔧 En construcción</div>
-    <div class="level-chip visible">👁️ Visible</div>
-    <div class="level-chip referente">⭐ Referente</div>
-  </div>
+  <!-- ── GRID 2 COLUMNAS ── -->
+  <div class="hero-inner">
 
-  <div class="hero-stats">
-    <div class="hero-stat"><div class="num">4</div><div class="label">bloques auditados</div></div>
-    <div class="hero-stat"><div class="num">8</div><div class="label">preguntas clave</div></div>
-    <div class="hero-stat"><div class="num">3′</div><div class="label">de tu tiempo</div></div>
-    <div class="hero-stat"><div class="num">0</div><div class="label">registro previo</div></div>
-  </div>
+    <!-- IZQUIERDA -->
+    <div class="hero-left">
+      <div class="hero-badge">⚡ Diagnóstico gratuito · 3 minutos</div>
+      <h1 class="hero-title">¿La <span>IA predictiva</span><br>sabe que existes?</h1>
+      <p class="hero-subtitle">Descubre si ChatGPT, Perplexity o Google AI te mencionan cuando alguien busca lo que vendes — y exactamente qué cambiar.</p>
 
-  <button class="btn btn-primary" onclick="goTo('onboarding')" style="font-size:18px; padding: 18px 48px;">
-    Descubrir mi visibilidad →
-  </button>
-
-  <!-- PREVIEW DIAGNÓSTICO -->
-  <div class="hero-preview-card">
-    <div class="preview-label">Ejemplo de resultado</div>
-    <div class="preview-content">
-      <div class="preview-ring-wrap">
-        <svg width="76" height="76" viewBox="0 0 76 76">
-          <circle cx="38" cy="38" r="30" stroke="rgba(255,255,255,0.06)" stroke-width="5" fill="none"/>
-          <circle id="preview-ring-circle" cx="38" cy="38" r="30"
-            stroke="#60a5fa" stroke-width="5" fill="none"
-            stroke-dasharray="188.5" stroke-dashoffset="188.5"
-            stroke-linecap="round"
-            transform="rotate(-90 38 38)"/>
-        </svg>
-        <div class="preview-ring-text">
-          <span id="preview-score-num">0</span>
-          <span class="preview-ring-max">/24</span>
-        </div>
+      <div class="hero-levels">
+        <div class="level-chip invisible">😶 Invisible</div>
+        <div class="level-chip construccion">🔧 En construcción</div>
+        <div class="level-chip visible">👁️ Visible</div>
+        <div class="level-chip referente">⭐ Referente</div>
       </div>
-      <div class="preview-info">
-        <div class="preview-badge-mini">👁️ Visible</div>
-        <div class="preview-bars">
-          <div class="preview-bar-row">
-            <span>📝</span>
-            <div class="preview-bar-track"><div class="preview-bar-fill" style="background:#818cf8" data-w="55"></div></div>
+
+      <button class="btn btn-primary" onclick="goTo('onboarding')" style="font-size:16px; padding:16px 36px;">
+        Descubrir mi visibilidad →
+      </button>
+
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="num">4</div><div class="label">bloques auditados</div></div>
+        <div class="hero-stat"><div class="num">8</div><div class="label">preguntas clave</div></div>
+        <div class="hero-stat"><div class="num">3′</div><div class="label">de tu tiempo</div></div>
+        <div class="hero-stat"><div class="num">0</div><div class="label">registro previo</div></div>
+      </div>
+    </div>
+
+    <!-- DERECHA: Dashboard vivo -->
+    <div class="hero-right">
+      <div class="dashboard-card">
+        <div class="dashboard-header">
+          <span class="dashboard-logo">AuditIA</span>
+          <span class="dashboard-live">● Diagnóstico en vivo</span>
+        </div>
+
+        <!-- FASE 1: ESCANEO -->
+        <div id="db-scan" class="db-phase">
+          <div class="db-scan-url-row">
+            <span class="db-scan-url-label">Analizando</span>
+            <span id="db-url" class="db-scan-url-text"></span><span class="db-cursor">|</span>
           </div>
-          <div class="preview-bar-row">
-            <span>🏆</span>
-            <div class="preview-bar-track"><div class="preview-bar-fill" style="background:#f59e0b" data-w="80"></div></div>
+          <div class="db-scan-steps">
+            <div class="db-scan-step" id="db-step-0"><span class="step-icon">📝</span> Contenido de producto<span class="db-step-check" id="db-check-0">✓</span></div>
+            <div class="db-scan-step" id="db-step-1"><span class="step-icon">🏆</span> Autoridad externa<span class="db-step-check" id="db-check-1">✓</span></div>
+            <div class="db-scan-step" id="db-step-2"><span class="step-icon">⚙️</span> Estructura técnica<span class="db-step-check" id="db-check-2">✓</span></div>
+            <div class="db-scan-step" id="db-step-3"><span class="step-icon">📡</span> Presencia en IA<span class="db-step-check" id="db-check-3">✓</span></div>
           </div>
-          <div class="preview-bar-row">
-            <span>⚙️</span>
-            <div class="preview-bar-track"><div class="preview-bar-fill" style="background:#60a5fa" data-w="65"></div></div>
+          <div class="db-scan-prog-wrap">
+            <div id="db-scan-prog" class="db-scan-prog-fill"></div>
           </div>
-          <div class="preview-bar-row">
-            <span>📡</span>
-            <div class="preview-bar-track"><div class="preview-bar-fill" style="background:#10b981" data-w="75"></div></div>
+          <div id="db-gen-text" class="db-gen-text">Iniciando análisis…</div>
+        </div>
+
+        <!-- FASE 2: RESULTADOS -->
+        <div id="db-results" class="db-phase" style="display:none; opacity:0">
+          <div class="dashboard-score-row">
+            <div class="dashboard-ring-wrap">
+              <svg width="84" height="84" viewBox="0 0 84 84">
+                <circle cx="42" cy="42" r="34" stroke="rgba(255,255,255,0.07)" stroke-width="6" fill="none"/>
+                <circle id="dashboard-ring" cx="42" cy="42" r="34"
+                  stroke="#60a5fa" stroke-width="6" fill="none"
+                  stroke-dasharray="213.6" stroke-dashoffset="213.6"
+                  stroke-linecap="round" transform="rotate(-90 42 42)"/>
+              </svg>
+              <div class="dashboard-ring-label">
+                <span id="dashboard-score">0</span>
+                <span class="dashboard-ring-sub">/24</span>
+              </div>
+            </div>
+            <div class="dashboard-score-info">
+              <div id="db-level-badge" class="dashboard-level-badge">👁️ Visible</div>
+              <div id="db-verdict" class="dashboard-verdict">La IA te conoce pero no eres la primera opción.</div>
+            </div>
+          </div>
+
+          <div class="dashboard-blocks">
+            <div class="dashboard-block-row">
+              <span class="db-icon">📝</span><span class="db-name">Contenido</span>
+              <div class="db-bar-track"><div class="db-bar-fill" id="db-bar-0" style="background:#818cf8"></div></div>
+              <span class="db-score" id="db-score-0" style="color:#818cf8">3/6</span>
+            </div>
+            <div class="dashboard-block-row">
+              <span class="db-icon">🏆</span><span class="db-name">Autoridad</span>
+              <div class="db-bar-track"><div class="db-bar-fill" id="db-bar-1" style="background:#f59e0b"></div></div>
+              <span class="db-score" id="db-score-1" style="color:#f59e0b">5/6</span>
+            </div>
+            <div class="dashboard-block-row">
+              <span class="db-icon">⚙️</span><span class="db-name">Estructura</span>
+              <div class="db-bar-track"><div class="db-bar-fill" id="db-bar-2" style="background:#60a5fa"></div></div>
+              <span class="db-score" id="db-score-2" style="color:#60a5fa">4/6</span>
+            </div>
+            <div class="dashboard-block-row">
+              <span class="db-icon">📡</span><span class="db-name">Presencia</span>
+              <div class="db-bar-track"><div class="db-bar-fill" id="db-bar-3" style="background:#10b981"></div></div>
+              <span class="db-score" id="db-score-3" style="color:#10b981">4/6</span>
+            </div>
+          </div>
+
+          <div class="dashboard-action" id="db-action">
+            <span>⚡</span>
+            <div>
+              <div class="da-title" id="db-action-title">Tu playbook: acción prioritaria</div>
+              <div class="da-sub" id="db-action-sub">Reescribe las descripciones con voz propia</div>
+            </div>
+            <span class="da-badge" id="db-action-badge">🔴 Alto</span>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- PROBLEMA -->
-  <div class="hero-problem-bar">
-    <span class="hp-highlight">El 40% de las búsquedas terminan sin un clic.</span>
-    <span class="hero-problem-sep">·</span>
-    <span>La gente pregunta directamente a la IA.</span>
-    <span class="hero-problem-sep">·</span>
-    <span class="hp-highlight">¿Estás ahí cuando te buscan?</span>
-  </div>
-
-  <!-- CÓMO FUNCIONA -->
+  <!-- CÓMO FUNCIONA — franja completa -->
   <div class="hero-how-works">
     <div class="how-step">
       <div class="how-step-num">1</div>
@@ -725,7 +841,7 @@
       <div class="how-step-num">2</div>
       <div class="how-step-text">
         <strong>Analizamos 4 bloques</strong>
-        <span>Lo que la IA necesita para recomendarte</span>
+        <span>Lo que la IA predictiva necesita para recomendarte</span>
       </div>
     </div>
     <div class="how-arrow">→</div>
@@ -1982,30 +2098,194 @@ function animateCounter(el, target, duration, delay) {
   }, delay);
 }
 
-function animatePreviewCard() {
-  const circle = document.getElementById('preview-ring-circle');
-  const numEl  = document.getElementById('preview-score-num');
-  if (!circle || !numEl) return;
+// ── HERO DEMO: bucle de diagnósticos en vivo ──────────────────────────────
+const heroDemos = [
+  {
+    url: 'cafeteria-sol.es',
+    score: 8, level: '😶 Invisible', levelColor: '#94a3b8',
+    verdict: 'La IA no te menciona cuando alguien busca una cafetería.',
+    ringColor: '#94a3b8',
+    bars: [
+      { pct: 18, score: '1/6', color: '#818cf8' },
+      { pct: 35, score: '2/6', color: '#f59e0b' },
+      { pct: 52, score: '3/6', color: '#60a5fa' },
+      { pct: 18, score: '1/6', color: '#10b981' },
+    ],
+    action: 'Crea una ficha de negocio optimizada en Google',
+    priority: '🔴 Alto',
+    priBg: 'rgba(239,68,68,0.12)', priCol: '#ef4444', priBo: 'rgba(239,68,68,0.25)'
+  },
+  {
+    url: 'tienda-textil-vera.com',
+    score: 14, level: '🔧 En construcción', levelColor: '#f59e0b',
+    verdict: 'Contenido básico, pero faltan autoridad y menciones IA.',
+    ringColor: '#f59e0b',
+    bars: [
+      { pct: 55, score: '3/6', color: '#818cf8' },
+      { pct: 35, score: '2/6', color: '#f59e0b' },
+      { pct: 68, score: '4/6', color: '#60a5fa' },
+      { pct: 82, score: '5/6', color: '#10b981' },
+    ],
+    action: 'Añade reseñas reales de clientes en Google',
+    priority: '🟡 Medio',
+    priBg: 'rgba(245,158,11,0.12)', priCol: '#f59e0b', priBo: 'rgba(245,158,11,0.25)'
+  },
+  {
+    url: 'consultoria-marta.es',
+    score: 18, level: '👁️ Visible', levelColor: '#60a5fa',
+    verdict: 'La IA te conoce, pero no eres la primera opción.',
+    ringColor: '#60a5fa',
+    bars: [
+      { pct: 55, score: '3/6', color: '#818cf8' },
+      { pct: 82, score: '5/6', color: '#f59e0b' },
+      { pct: 82, score: '5/6', color: '#60a5fa' },
+      { pct: 82, score: '5/6', color: '#10b981' },
+    ],
+    action: 'Publica 2 artículos de autoridad este mes',
+    priority: '🟡 Medio',
+    priBg: 'rgba(245,158,11,0.12)', priCol: '#f59e0b', priBo: 'rgba(245,158,11,0.25)'
+  },
+];
 
-  const targetScore   = 18;
-  const circumference = 188.5;
-  const targetOffset  = circumference - (targetScore / 24) * circumference;
+let _demoIdx = 0;
+let _demoTimer = null;
 
-  // Ring
+function runHeroDemo() {
+  const scanEl    = document.getElementById('db-scan');
+  const resultsEl = document.getElementById('db-results');
+  if (!scanEl || !resultsEl) return;
+
+  const demo = heroDemos[_demoIdx];
+  _demoIdx = (_demoIdx + 1) % heroDemos.length;
+
+  // ── Reset fase scan ──
+  scanEl.style.opacity = '1';
+  scanEl.style.display = 'block';
+  resultsEl.style.display = 'none';
+  resultsEl.style.opacity = '0';
+
+  for (let i = 0; i < 4; i++) {
+    const s = document.getElementById('db-step-' + i);
+    const c = document.getElementById('db-check-' + i);
+    if (s) { s.classList.remove('active', 'done'); }
+    if (c) c.classList.remove('show');
+  }
+  const prog = document.getElementById('db-scan-prog');
+  const gen  = document.getElementById('db-gen-text');
+  const urlEl = document.getElementById('db-url');
+  if (prog) { prog.style.transition = 'none'; prog.style.width = '0%'; }
+  if (gen)  { gen.textContent = 'Iniciando análisis…'; gen.classList.remove('ready'); gen.style.opacity = '0.35'; }
+  if (urlEl) urlEl.textContent = '';
+
+  // ── Teclear URL ──
+  let ci = 0;
+  const typeInt = setInterval(() => {
+    if (!urlEl) { clearInterval(typeInt); return; }
+    urlEl.textContent += demo.url[ci++];
+    if (ci >= demo.url.length) clearInterval(typeInt);
+  }, 52);
+
+  // ── Barra de progreso ──
   setTimeout(() => {
-    circle.style.transition = 'stroke-dashoffset 1.6s cubic-bezier(0.4,0,0.2,1)';
-    circle.style.strokeDashoffset = targetOffset;
-  }, 1000);
+    if (!prog) return;
+    prog.style.transition = 'width 3.1s cubic-bezier(0.4,0,0.2,1)';
+    prog.style.width = '100%';
+  }, 500);
 
-  // Contador del score
-  animateCounter(numEl, targetScore, 1600, 1000);
+  // ── Pasos con checkmarks ──
+  [850, 1550, 2250, 2950].forEach((delay, i) => {
+    setTimeout(() => {
+      const step  = document.getElementById('db-step-' + i);
+      const check = document.getElementById('db-check-' + i);
+      if (step)  { step.classList.add('active'); }
+      setTimeout(() => {
+        if (step)  step.classList.add('done');
+        if (check) check.classList.add('show');
+        if (i === 3 && gen) { gen.textContent = 'Generando playbook…'; gen.classList.add('ready'); }
+      }, 300);
+    }, delay);
+  });
 
-  // Barras de bloques
+  // ── Mostrar resultados ──
   setTimeout(() => {
-    document.querySelectorAll('.preview-bar-fill').forEach(bar => {
-      bar.style.width = bar.dataset.w + '%';
-    });
-  }, 1100);
+    if (!scanEl) return;
+    scanEl.style.transition = 'opacity 0.35s';
+    scanEl.style.opacity = '0';
+
+    setTimeout(() => {
+      scanEl.style.display = 'none';
+
+      // Configurar datos del demo
+      const ring    = document.getElementById('dashboard-ring');
+      const scoreEl = document.getElementById('dashboard-score');
+      const badge   = document.getElementById('db-level-badge');
+      const verdict = document.getElementById('db-verdict');
+      const actionT = document.getElementById('db-action-title');
+      const actionS = document.getElementById('db-action-sub');
+      const actionB = document.getElementById('db-action-badge');
+
+      if (ring) {
+        ring.style.transition = 'none';
+        ring.style.stroke = demo.ringColor;
+        ring.style.strokeDashoffset = '213.6';
+      }
+      if (scoreEl) scoreEl.textContent = '0';
+      if (badge) {
+        badge.textContent = demo.level;
+        badge.style.color = demo.levelColor;
+        badge.style.background = demo.levelColor + '22';
+        badge.style.borderColor = demo.levelColor + '44';
+      }
+      if (verdict) verdict.textContent = demo.verdict;
+      if (actionT) actionT.textContent = 'Acción prioritaria';
+      if (actionS) actionS.textContent = demo.action;
+      if (actionB) {
+        actionB.textContent = demo.priority;
+        actionB.style.background  = demo.priBg;
+        actionB.style.color       = demo.priCol;
+        actionB.style.borderColor = demo.priBo;
+      }
+
+      // Resetear barras
+      demo.bars.forEach((bar, i) => {
+        const b = document.getElementById('db-bar-' + i);
+        const s = document.getElementById('db-score-' + i);
+        if (b) { b.style.transition = 'none'; b.style.width = '0%'; b.style.background = bar.color; }
+        if (s) { s.textContent = bar.score; s.style.color = bar.color; }
+      });
+
+      // Mostrar resultados con fade
+      resultsEl.style.opacity = '0';
+      resultsEl.style.transition = 'none';
+      resultsEl.style.display = 'block';
+
+      setTimeout(() => {
+        resultsEl.style.transition = 'opacity 0.45s ease';
+        resultsEl.style.opacity = '1';
+
+        // Animar ring
+        setTimeout(() => {
+          if (ring) {
+            const offset = 213.6 - (demo.score / 24) * 213.6;
+            ring.style.transition = 'stroke-dashoffset 1.3s cubic-bezier(0.4,0,0.2,1)';
+            ring.style.strokeDashoffset = offset;
+          }
+          if (scoreEl) animateCounter(scoreEl, demo.score, 1300, 0);
+        }, 100);
+
+        // Animar barras escalonadas
+        demo.bars.forEach((bar, i) => {
+          setTimeout(() => {
+            const b = document.getElementById('db-bar-' + i);
+            if (b) { b.style.transition = 'width 0.85s cubic-bezier(0.4,0,0.2,1)'; b.style.width = bar.pct + '%'; }
+          }, 180 + i * 140);
+        });
+      }, 40);
+    }, 380);
+  }, 3800);
+
+  // ── Siguiente ciclo (scan 3.8s + fade 0.38 + results 5.5s) ──
+  _demoTimer = setTimeout(runHeroDemo, 10200);
 }
 
 function animateHeroStats() {
@@ -2020,7 +2300,7 @@ function animateHeroStats() {
 
 document.addEventListener('DOMContentLoaded', () => {
   animateHeroStats();
-  animatePreviewCard();
+  setTimeout(runHeroDemo, 400);
 });
 </script>
 </body>
