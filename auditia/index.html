@@ -189,9 +189,14 @@
       display: flex; flex-direction: column;
       align-items: flex-start; text-align: left; gap: 0;
     }
+    .hero-explain {
+      font-size: 13px; color: var(--green-dark); font-weight: 600;
+      margin: -10px 0 22px; line-height: 1.5;
+    }
     .hero-left .hero-badge   { margin-bottom: 20px; }
-    .hero-left .hero-title   { margin-bottom: 14px; text-align: left; font-size: clamp(30px, 3.8vw, 50px); }
-    .hero-left .hero-subtitle { text-align: left; margin: 0 0 22px; }
+    .hero-left .hero-title   { margin-bottom: 10px; text-align: left; font-size: clamp(30px, 3.8vw, 50px); }
+    .hero-left .hero-subtitle { text-align: left; margin: 0 0 8px; }
+    .hero-left .hero-explain  { text-align: left; }
     .hero-left .hero-levels  { margin-bottom: 24px; justify-content: flex-start; }
     .hero-left .btn          { margin-bottom: 20px; }
     .hero-left .hero-stats   {
@@ -228,13 +233,13 @@
     }
     .dashboard-card {
       background: #0F172A;
-      border-radius: 20px; padding: 26px; width: 100%; max-width: 460px;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.15), 0 0 0 1px rgba(255,255,255,0.06);
+      border-radius: 20px; padding: 22px 24px; width: 100%; max-width: 460px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.18), 0 0 0 1px rgba(255,255,255,0.07);
       animation: heroFadeUp 0.6s ease 0.35s both;
     }
     .dashboard-header {
       display: flex; align-items: center; justify-content: space-between;
-      margin-bottom: 18px; padding-bottom: 14px;
+      margin-bottom: 16px; padding-bottom: 13px;
       border-bottom: 1px solid rgba(255,255,255,0.06);
     }
     .dashboard-logo { font-size: 12px; font-weight: 800; color: #22C55E; letter-spacing: 0.5px; }
@@ -244,45 +249,97 @@
       letter-spacing: 0.8px; text-transform: uppercase;
       animation: blink 2s ease infinite;
     }
-    .dashboard-score-row {
-      display: flex; align-items: center; gap: 16px; margin-bottom: 18px;
+
+    /* Búsqueda fase scan */
+    .db-search-bar {
+      display: flex; align-items: center; gap: 9px;
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px; padding: 10px 14px; margin-bottom: 16px;
     }
-    .dashboard-ring-wrap { position: relative; flex-shrink: 0; width: 84px; height: 84px; }
-    .dashboard-ring-label {
-      position: absolute; top: 50%; left: 50%;
-      transform: translate(-50%,-50%); text-align: center; line-height: 1;
+    .db-search-icon { font-size: 13px; flex-shrink: 0; opacity: 0.5; }
+    #db-query-text {
+      font-size: 12px; color: rgba(255,255,255,0.7);
+      font-style: italic; flex: 1; min-height: 16px;
     }
-    #dashboard-score { font-size: 22px; font-weight: 900; color: #60a5fa; display: block; }
-    .dashboard-ring-sub { font-size: 10px; color: rgba(255,255,255,0.25); }
-    .dashboard-score-info { flex: 1; display: flex; flex-direction: column; gap: 7px; }
+
+    /* Filas modelos de IA (scan) */
+    .db-model-rows { display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; }
+    .db-model-row {
+      display: flex; align-items: center; gap: 10px;
+      opacity: 0; transform: translateX(-5px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .db-model-row.active { opacity: 1; transform: translateX(0); }
+    .db-model-badge {
+      width: 24px; height: 24px; border-radius: 6px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 10px; font-weight: 900;
+    }
+    .db-model-name { font-size: 12px; color: rgba(255,255,255,0.55); flex: 1; }
+    .db-model-dots {
+      display: flex; gap: 3px;
+    }
+    .db-model-dot {
+      width: 4px; height: 4px; border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      animation: dotPulse 1.2s ease infinite;
+    }
+    .db-model-dot:nth-child(2) { animation-delay: 0.2s; }
+    .db-model-dot:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes dotPulse {
+      0%,100% { opacity: 0.2; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.3); }
+    }
+
+    /* Filas resultado por modelo (results) */
+    .db-ai-rows { display: flex; flex-direction: column; margin-bottom: 14px; }
+    .db-ai-row {
+      display: flex; align-items: center; gap: 10px;
+      padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+      opacity: 0; transform: translateY(4px);
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+    .db-ai-row:last-child { border-bottom: none; }
+    .db-ai-row.show { opacity: 1; transform: translateY(0); }
+    .db-ai-badge {
+      width: 26px; height: 26px; border-radius: 7px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 900;
+    }
+    .db-ai-name { font-size: 12px; color: rgba(255,255,255,0.65); flex: 1; font-weight: 500; }
+    .db-ai-result { font-size: 12px; font-weight: 700; }
+    .db-ai-result.found { color: #22C55E; }
+    .db-ai-result.not-found { color: rgba(255,255,255,0.22); }
+
+    /* Score header resultados */
+    .db-result-top {
+      display: flex; align-items: center; gap: 14px; margin-bottom: 14px;
+      padding-bottom: 13px; border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .db-result-score-wrap { position: relative; flex-shrink: 0; width: 72px; height: 72px; }
+    .db-result-score-label {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+      text-align: center; line-height: 1;
+    }
+    #dashboard-score { font-size: 20px; font-weight: 900; display: block; }
+    .db-score-sub { font-size: 9px; color: rgba(255,255,255,0.25); }
+    .db-result-info { flex: 1; }
     .dashboard-level-badge {
       display: inline-block; font-size: 11px; font-weight: 700;
-      color: #60a5fa; background: rgba(96,165,250,0.12);
-      border: 1px solid rgba(96,165,250,0.2); border-radius: 50px;
-      padding: 3px 10px; width: fit-content;
+      border-radius: 50px; padding: 3px 10px; width: fit-content; margin-bottom: 5px;
     }
-    .dashboard-verdict { font-size: 11px; color: rgba(255,255,255,0.38); line-height: 1.5; }
-    .dashboard-blocks {
-      display: flex; flex-direction: column; gap: 9px;
-      margin-bottom: 16px; padding-bottom: 16px;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-    .dashboard-block-row { display: flex; align-items: center; gap: 8px; }
-    .db-icon { font-size: 13px; flex-shrink: 0; width: 18px; }
-    .db-name { font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.5); width: 66px; flex-shrink: 0; }
-    .db-bar-track { flex: 1; height: 5px; background: rgba(255,255,255,0.07); border-radius: 3px; overflow: hidden; }
-    .db-bar-fill { height: 100%; border-radius: 3px; width: 0%; transition: width 1.3s cubic-bezier(0.4,0,0.2,1); }
-    .db-score { font-size: 11px; font-weight: 700; width: 26px; text-align: right; flex-shrink: 0; }
+    .dashboard-verdict { font-size: 11px; color: rgba(255,255,255,0.38); line-height: 1.45; }
+
+    /* Acción playbook */
     .dashboard-action {
-      display: flex; align-items: flex-start; gap: 10px;
+      display: flex; align-items: center; gap: 10px;
       background: rgba(34,197,94,0.06); border: 1px solid rgba(34,197,94,0.15);
-      border-radius: 12px; padding: 11px 13px;
+      border-radius: 10px; padding: 10px 13px;
     }
-    .dashboard-action > span:first-child { font-size: 15px; flex-shrink: 0; margin-top: 1px; }
-    .da-title { font-size: 12px; font-weight: 700; color: #fff; margin-bottom: 2px; }
-    .da-sub { font-size: 11px; color: rgba(255,255,255,0.38); line-height: 1.4; }
+    .dashboard-action > span:first-child { font-size: 14px; flex-shrink: 0; }
+    .da-sub { font-size: 11px; color: rgba(255,255,255,0.6); flex: 1; line-height: 1.4; }
     .da-badge {
-      font-size: 10px; font-weight: 700; white-space: nowrap; margin-top: 2px;
+      font-size: 10px; font-weight: 700; white-space: nowrap;
       background: rgba(239,68,68,0.12); color: #ef4444;
       border: 1px solid rgba(239,68,68,0.2); border-radius: 50px; padding: 2px 8px; flex-shrink: 0;
     }
@@ -722,7 +779,8 @@
     <div class="hero-left">
       <div class="hero-badge">⚡ Diagnóstico gratuito · 3 minutos</div>
       <h1 class="hero-title">¿La <span>IA predictiva</span><br>sabe que existes?</h1>
-      <p class="hero-subtitle">Descubre si ChatGPT, Perplexity o Google AI te mencionan cuando alguien busca lo que vendes — y exactamente qué cambiar.</p>
+      <p class="hero-subtitle">ChatGPT, Perplexity y Google AI responden directamente cuando alguien busca. Si no te mencionan, ese cliente nunca llega a tu web.</p>
+      <p class="hero-explain">Audita en 3 minutos si los modelos de IA te recomiendan — y qué hacer para que lo hagan.</p>
 
       <div class="hero-levels">
         <div class="level-chip invisible">😶 Invisible</div>
@@ -753,73 +811,89 @@
 
         <!-- FASE 1: ESCANEO -->
         <div id="db-scan" class="db-phase">
-          <div class="db-scan-url-row">
-            <span class="db-scan-url-label">Analizando</span>
-            <span id="db-url" class="db-scan-url-text"></span><span class="db-cursor">|</span>
+          <!-- Barra de búsqueda simulada -->
+          <div class="db-search-bar">
+            <span class="db-search-icon">🔍</span>
+            <span id="db-query-text"></span><span class="db-cursor">|</span>
           </div>
-          <div class="db-scan-steps">
-            <div class="db-scan-step" id="db-step-0"><span class="step-icon">📝</span> Contenido de producto<span class="db-step-check" id="db-check-0">✓</span></div>
-            <div class="db-scan-step" id="db-step-1"><span class="step-icon">🏆</span> Autoridad externa<span class="db-step-check" id="db-check-1">✓</span></div>
-            <div class="db-scan-step" id="db-step-2"><span class="step-icon">⚙️</span> Estructura técnica<span class="db-step-check" id="db-check-2">✓</span></div>
-            <div class="db-scan-step" id="db-step-3"><span class="step-icon">📡</span> Presencia en IA<span class="db-step-check" id="db-check-3">✓</span></div>
+          <!-- Modelos consultándose -->
+          <div class="db-model-rows">
+            <div class="db-model-row" id="db-step-0">
+              <div class="db-model-badge" style="background:rgba(16,163,127,0.15);color:#10a37f">C</div>
+              <span class="db-model-name">ChatGPT</span>
+              <div class="db-model-dots"><div class="db-model-dot"></div><div class="db-model-dot"></div><div class="db-model-dot"></div></div>
+            </div>
+            <div class="db-model-row" id="db-step-1">
+              <div class="db-model-badge" style="background:rgba(139,92,246,0.15);color:#a78bfa">P</div>
+              <span class="db-model-name">Perplexity</span>
+              <div class="db-model-dots"><div class="db-model-dot"></div><div class="db-model-dot"></div><div class="db-model-dot"></div></div>
+            </div>
+            <div class="db-model-row" id="db-step-2">
+              <div class="db-model-badge" style="background:rgba(66,133,244,0.15);color:#4285f4">G</div>
+              <span class="db-model-name">Google AI</span>
+              <div class="db-model-dots"><div class="db-model-dot"></div><div class="db-model-dot"></div><div class="db-model-dot"></div></div>
+            </div>
+            <div class="db-model-row" id="db-step-3">
+              <div class="db-model-badge" style="background:rgba(0,120,212,0.15);color:#38bdf8">B</div>
+              <span class="db-model-name">Copilot</span>
+              <div class="db-model-dots"><div class="db-model-dot"></div><div class="db-model-dot"></div><div class="db-model-dot"></div></div>
+            </div>
           </div>
-          <div class="db-scan-prog-wrap">
-            <div id="db-scan-prog" class="db-scan-prog-fill"></div>
-          </div>
-          <div id="db-gen-text" class="db-gen-text">Iniciando análisis…</div>
+          <div class="db-scan-prog-wrap"><div id="db-scan-prog" class="db-scan-prog-fill"></div></div>
+          <div id="db-gen-text" class="db-gen-text">Consultando modelos de IA…</div>
         </div>
 
-        <!-- FASE 2: RESULTADOS -->
+        <!-- FASE 2: RESULTADOS POR MODELO -->
         <div id="db-results" class="db-phase" style="display:none; opacity:0">
-          <div class="dashboard-score-row">
-            <div class="dashboard-ring-wrap">
-              <svg width="84" height="84" viewBox="0 0 84 84">
-                <circle cx="42" cy="42" r="34" stroke="rgba(255,255,255,0.07)" stroke-width="6" fill="none"/>
-                <circle id="dashboard-ring" cx="42" cy="42" r="34"
-                  stroke="#60a5fa" stroke-width="6" fill="none"
-                  stroke-dasharray="213.6" stroke-dashoffset="213.6"
-                  stroke-linecap="round" transform="rotate(-90 42 42)"/>
+          <!-- Score + nivel -->
+          <div class="db-result-top">
+            <div class="db-result-score-wrap">
+              <svg width="72" height="72" viewBox="0 0 72 72">
+                <circle cx="36" cy="36" r="28" stroke="rgba(255,255,255,0.07)" stroke-width="5" fill="none"/>
+                <circle id="dashboard-ring" cx="36" cy="36" r="28"
+                  stroke="#94a3b8" stroke-width="5" fill="none"
+                  stroke-dasharray="175.9" stroke-dashoffset="175.9"
+                  stroke-linecap="round" transform="rotate(-90 36 36)"/>
               </svg>
-              <div class="dashboard-ring-label">
-                <span id="dashboard-score">0</span>
-                <span class="dashboard-ring-sub">/24</span>
+              <div class="db-result-score-label">
+                <span id="dashboard-score" style="color:#94a3b8">0</span>
+                <span class="db-score-sub">/24</span>
               </div>
             </div>
-            <div class="dashboard-score-info">
-              <div id="db-level-badge" class="dashboard-level-badge">👁️ Visible</div>
-              <div id="db-verdict" class="dashboard-verdict">La IA te conoce pero no eres la primera opción.</div>
+            <div class="db-result-info">
+              <div id="db-level-badge" class="dashboard-level-badge" style="color:#94a3b8;background:rgba(148,163,184,0.12);border:1px solid rgba(148,163,184,0.25)">😶 Invisible</div>
+              <div id="db-verdict" class="dashboard-verdict">La IA no te menciona cuando buscan.</div>
             </div>
           </div>
 
-          <div class="dashboard-blocks">
-            <div class="dashboard-block-row">
-              <span class="db-icon">📝</span><span class="db-name">Contenido</span>
-              <div class="db-bar-track"><div class="db-bar-fill" id="db-bar-0" style="background:#818cf8"></div></div>
-              <span class="db-score" id="db-score-0" style="color:#818cf8">3/6</span>
+          <!-- Resultados por modelo -->
+          <div class="db-ai-rows">
+            <div class="db-ai-row" id="db-ai-row-0">
+              <div class="db-ai-badge" style="background:rgba(16,163,127,0.12);color:#10a37f">C</div>
+              <span class="db-ai-name">ChatGPT</span>
+              <span class="db-ai-result not-found" id="db-ai-0">✕ Sin menciones</span>
             </div>
-            <div class="dashboard-block-row">
-              <span class="db-icon">🏆</span><span class="db-name">Autoridad</span>
-              <div class="db-bar-track"><div class="db-bar-fill" id="db-bar-1" style="background:#f59e0b"></div></div>
-              <span class="db-score" id="db-score-1" style="color:#f59e0b">5/6</span>
+            <div class="db-ai-row" id="db-ai-row-1">
+              <div class="db-ai-badge" style="background:rgba(139,92,246,0.12);color:#a78bfa">P</div>
+              <span class="db-ai-name">Perplexity</span>
+              <span class="db-ai-result not-found" id="db-ai-1">✕ Sin menciones</span>
             </div>
-            <div class="dashboard-block-row">
-              <span class="db-icon">⚙️</span><span class="db-name">Estructura</span>
-              <div class="db-bar-track"><div class="db-bar-fill" id="db-bar-2" style="background:#60a5fa"></div></div>
-              <span class="db-score" id="db-score-2" style="color:#60a5fa">4/6</span>
+            <div class="db-ai-row" id="db-ai-row-2">
+              <div class="db-ai-badge" style="background:rgba(66,133,244,0.12);color:#4285f4">G</div>
+              <span class="db-ai-name">Google AI</span>
+              <span class="db-ai-result not-found" id="db-ai-2">✕ Sin menciones</span>
             </div>
-            <div class="dashboard-block-row">
-              <span class="db-icon">📡</span><span class="db-name">Presencia</span>
-              <div class="db-bar-track"><div class="db-bar-fill" id="db-bar-3" style="background:#10b981"></div></div>
-              <span class="db-score" id="db-score-3" style="color:#10b981">4/6</span>
+            <div class="db-ai-row" id="db-ai-row-3">
+              <div class="db-ai-badge" style="background:rgba(56,189,248,0.12);color:#38bdf8">B</div>
+              <span class="db-ai-name">Copilot</span>
+              <span class="db-ai-result not-found" id="db-ai-3">✕ Sin menciones</span>
             </div>
           </div>
 
-          <div class="dashboard-action" id="db-action">
+          <!-- Acción -->
+          <div class="dashboard-action">
             <span>⚡</span>
-            <div>
-              <div class="da-title" id="db-action-title">Tu playbook: acción prioritaria</div>
-              <div class="da-sub" id="db-action-sub">Reescribe las descripciones con voz propia</div>
-            </div>
+            <div class="da-sub" id="db-action-sub">Crea una ficha de negocio optimizada</div>
             <span class="da-badge" id="db-action-badge">🔴 Alto</span>
           </div>
         </div>
@@ -2099,51 +2173,49 @@ function animateCounter(el, target, duration, delay) {
 }
 
 // ── HERO DEMO: bucle de diagnósticos en vivo ──────────────────────────────
+// Circunferencia para r=28: 2π×28 = 175.9
 const heroDemos = [
   {
-    url: 'cafeteria-sol.es',
-    score: 8, level: '😶 Invisible', levelColor: '#94a3b8',
-    verdict: 'La IA no te menciona cuando alguien busca una cafetería.',
+    query: '"cafetería recomendada en Madrid"',
+    score: 7, level: '😶 Invisible', levelColor: '#94a3b8',
+    verdict: 'Ningún modelo de IA te menciona en tu sector.',
     ringColor: '#94a3b8',
-    bars: [
-      { pct: 18, score: '1/6', color: '#818cf8' },
-      { pct: 35, score: '2/6', color: '#f59e0b' },
-      { pct: 52, score: '3/6', color: '#60a5fa' },
-      { pct: 18, score: '1/6', color: '#10b981' },
+    ai: [
+      { text: '✕ Sin menciones', found: false },
+      { text: '✕ Sin menciones', found: false },
+      { text: '✕ Sin menciones', found: false },
+      { text: '✕ Sin menciones', found: false },
     ],
     action: 'Crea una ficha de negocio optimizada en Google',
-    priority: '🔴 Alto',
-    priBg: 'rgba(239,68,68,0.12)', priCol: '#ef4444', priBo: 'rgba(239,68,68,0.25)'
+    priBg: 'rgba(239,68,68,0.12)', priCol: '#ef4444', priBo: 'rgba(239,68,68,0.25)', priTxt: '🔴 Alto'
   },
   {
-    url: 'tienda-textil-vera.com',
+    query: '"tienda de telas online España"',
     score: 14, level: '🔧 En construcción', levelColor: '#f59e0b',
-    verdict: 'Contenido básico, pero faltan autoridad y menciones IA.',
+    verdict: 'Presencia parcial — invisible para ChatGPT.',
     ringColor: '#f59e0b',
-    bars: [
-      { pct: 55, score: '3/6', color: '#818cf8' },
-      { pct: 35, score: '2/6', color: '#f59e0b' },
-      { pct: 68, score: '4/6', color: '#60a5fa' },
-      { pct: 82, score: '5/6', color: '#10b981' },
+    ai: [
+      { text: '✕ Sin menciones', found: false },
+      { text: '✓ 2 menciones',   found: true  },
+      { text: '✓ 3 menciones',   found: true  },
+      { text: '✕ Sin menciones', found: false },
     ],
-    action: 'Añade reseñas reales de clientes en Google',
-    priority: '🟡 Medio',
-    priBg: 'rgba(245,158,11,0.12)', priCol: '#f59e0b', priBo: 'rgba(245,158,11,0.25)'
+    action: 'Añade reseñas de clientes y crea contenido de autoridad',
+    priBg: 'rgba(245,158,11,0.12)', priCol: '#f59e0b', priBo: 'rgba(245,158,11,0.25)', priTxt: '🟡 Medio'
   },
   {
-    url: 'consultoria-marta.es',
+    query: '"consultoría marketing digital Madrid"',
     score: 18, level: '👁️ Visible', levelColor: '#60a5fa',
-    verdict: 'La IA te conoce, pero no eres la primera opción.',
+    verdict: 'La IA te menciona, pero no eres la primera opción.',
     ringColor: '#60a5fa',
-    bars: [
-      { pct: 55, score: '3/6', color: '#818cf8' },
-      { pct: 82, score: '5/6', color: '#f59e0b' },
-      { pct: 82, score: '5/6', color: '#60a5fa' },
-      { pct: 82, score: '5/6', color: '#10b981' },
+    ai: [
+      { text: '✓ 5 menciones', found: true },
+      { text: '✓ 4 menciones', found: true },
+      { text: '✓ 6 menciones', found: true },
+      { text: '✓ 2 menciones', found: true },
     ],
     action: 'Publica 2 artículos de autoridad este mes',
-    priority: '🟡 Medio',
-    priBg: 'rgba(245,158,11,0.12)', priCol: '#f59e0b', priBo: 'rgba(245,158,11,0.25)'
+    priBg: 'rgba(245,158,11,0.12)', priCol: '#f59e0b', priBo: 'rgba(245,158,11,0.25)', priTxt: '🟡 Medio'
   },
 ];
 
@@ -2158,103 +2230,101 @@ function runHeroDemo() {
   const demo = heroDemos[_demoIdx];
   _demoIdx = (_demoIdx + 1) % heroDemos.length;
 
-  // ── Reset fase scan ──
-  scanEl.style.opacity = '1';
+  // ── Reset scan ──
   scanEl.style.display = 'block';
+  scanEl.style.opacity = '1';
+  scanEl.style.transition = 'none';
   resultsEl.style.display = 'none';
   resultsEl.style.opacity = '0';
 
   for (let i = 0; i < 4; i++) {
     const s = document.getElementById('db-step-' + i);
-    const c = document.getElementById('db-check-' + i);
-    if (s) { s.classList.remove('active', 'done'); }
-    if (c) c.classList.remove('show');
+    if (s) s.classList.remove('active');
   }
-  const prog = document.getElementById('db-scan-prog');
-  const gen  = document.getElementById('db-gen-text');
-  const urlEl = document.getElementById('db-url');
-  if (prog) { prog.style.transition = 'none'; prog.style.width = '0%'; }
-  if (gen)  { gen.textContent = 'Iniciando análisis…'; gen.classList.remove('ready'); gen.style.opacity = '0.35'; }
-  if (urlEl) urlEl.textContent = '';
+  const prog  = document.getElementById('db-scan-prog');
+  const gen   = document.getElementById('db-gen-text');
+  const query = document.getElementById('db-query-text');
+  if (prog)  { prog.style.transition = 'none'; prog.style.width = '0%'; }
+  if (gen)   { gen.textContent = 'Consultando modelos de IA…'; gen.classList.remove('ready'); gen.style.opacity = '0.35'; }
+  if (query) query.textContent = '';
 
-  // ── Teclear URL ──
+  // ── Teclear query de búsqueda ──
   let ci = 0;
+  const q = demo.query;
   const typeInt = setInterval(() => {
-    if (!urlEl) { clearInterval(typeInt); return; }
-    urlEl.textContent += demo.url[ci++];
-    if (ci >= demo.url.length) clearInterval(typeInt);
-  }, 52);
+    if (!query) { clearInterval(typeInt); return; }
+    query.textContent += q[ci++];
+    if (ci >= q.length) clearInterval(typeInt);
+  }, 45);
 
   // ── Barra de progreso ──
   setTimeout(() => {
     if (!prog) return;
-    prog.style.transition = 'width 3.1s cubic-bezier(0.4,0,0.2,1)';
+    prog.style.transition = 'width 3.0s cubic-bezier(0.4,0,0.2,1)';
     prog.style.width = '100%';
-  }, 500);
+  }, 400);
 
-  // ── Pasos con checkmarks ──
-  [850, 1550, 2250, 2950].forEach((delay, i) => {
+  // ── Modelos aparecen consultándose ──
+  [600, 1200, 1800, 2400].forEach((delay, i) => {
     setTimeout(() => {
-      const step  = document.getElementById('db-step-' + i);
-      const check = document.getElementById('db-check-' + i);
-      if (step)  { step.classList.add('active'); }
-      setTimeout(() => {
-        if (step)  step.classList.add('done');
-        if (check) check.classList.add('show');
-        if (i === 3 && gen) { gen.textContent = 'Generando playbook…'; gen.classList.add('ready'); }
-      }, 300);
+      const s = document.getElementById('db-step-' + i);
+      if (s) s.classList.add('active');
+      if (i === 3 && gen) { gen.textContent = 'Generando diagnóstico…'; gen.classList.add('ready'); gen.style.opacity = '1'; }
     }, delay);
   });
 
-  // ── Mostrar resultados ──
+  // ── Transición a resultados ──
   setTimeout(() => {
-    if (!scanEl) return;
-    scanEl.style.transition = 'opacity 0.35s';
+    scanEl.style.transition = 'opacity 0.35s ease';
     scanEl.style.opacity = '0';
 
     setTimeout(() => {
       scanEl.style.display = 'none';
 
-      // Configurar datos del demo
+      // Configurar resultados
       const ring    = document.getElementById('dashboard-ring');
       const scoreEl = document.getElementById('dashboard-score');
       const badge   = document.getElementById('db-level-badge');
       const verdict = document.getElementById('db-verdict');
-      const actionT = document.getElementById('db-action-title');
       const actionS = document.getElementById('db-action-sub');
       const actionB = document.getElementById('db-action-badge');
 
+      const circ = 175.9; // r=28
       if (ring) {
         ring.style.transition = 'none';
         ring.style.stroke = demo.ringColor;
-        ring.style.strokeDashoffset = '213.6';
+        ring.setAttribute('stroke-dasharray', circ);
+        ring.style.strokeDashoffset = circ;
       }
-      if (scoreEl) scoreEl.textContent = '0';
+      if (scoreEl) { scoreEl.textContent = '0'; scoreEl.style.color = demo.levelColor; }
       if (badge) {
         badge.textContent = demo.level;
         badge.style.color = demo.levelColor;
-        badge.style.background = demo.levelColor + '22';
-        badge.style.borderColor = demo.levelColor + '44';
+        badge.style.background = demo.levelColor + '1a';
+        badge.style.borderColor = demo.levelColor + '40';
+        badge.style.border = '1px solid ' + demo.levelColor + '40';
       }
       if (verdict) verdict.textContent = demo.verdict;
-      if (actionT) actionT.textContent = 'Acción prioritaria';
       if (actionS) actionS.textContent = demo.action;
       if (actionB) {
-        actionB.textContent = demo.priority;
+        actionB.textContent = demo.priTxt;
         actionB.style.background  = demo.priBg;
         actionB.style.color       = demo.priCol;
         actionB.style.borderColor = demo.priBo;
       }
 
-      // Resetear barras
-      demo.bars.forEach((bar, i) => {
-        const b = document.getElementById('db-bar-' + i);
-        const s = document.getElementById('db-score-' + i);
-        if (b) { b.style.transition = 'none'; b.style.width = '0%'; b.style.background = bar.color; }
-        if (s) { s.textContent = bar.score; s.style.color = bar.color; }
-      });
+      // Reset filas AI
+      for (let i = 0; i < 4; i++) {
+        const row = document.getElementById('db-ai-row-' + i);
+        const res = document.getElementById('db-ai-' + i);
+        if (row) row.classList.remove('show');
+        if (res) {
+          res.className = 'db-ai-result ' + (demo.ai[i].found ? 'found' : 'not-found');
+          res.textContent = demo.ai[i].text;
+        }
+      }
 
-      // Mostrar resultados con fade
+      // Fade in resultados
       resultsEl.style.opacity = '0';
       resultsEl.style.transition = 'none';
       resultsEl.style.display = 'block';
@@ -2263,29 +2333,29 @@ function runHeroDemo() {
         resultsEl.style.transition = 'opacity 0.45s ease';
         resultsEl.style.opacity = '1';
 
-        // Animar ring
+        // Ring animado
         setTimeout(() => {
           if (ring) {
-            const offset = 213.6 - (demo.score / 24) * 213.6;
-            ring.style.transition = 'stroke-dashoffset 1.3s cubic-bezier(0.4,0,0.2,1)';
+            const offset = circ - (demo.score / 24) * circ;
+            ring.style.transition = 'stroke-dashoffset 1.4s cubic-bezier(0.4,0,0.2,1)';
             ring.style.strokeDashoffset = offset;
           }
-          if (scoreEl) animateCounter(scoreEl, demo.score, 1300, 0);
-        }, 100);
+          if (scoreEl) animateCounter(scoreEl, demo.score, 1400, 0);
+        }, 80);
 
-        // Animar barras escalonadas
-        demo.bars.forEach((bar, i) => {
+        // Filas AI aparecen escalonadas
+        [200, 380, 560, 740].forEach((delay, i) => {
           setTimeout(() => {
-            const b = document.getElementById('db-bar-' + i);
-            if (b) { b.style.transition = 'width 0.85s cubic-bezier(0.4,0,0.2,1)'; b.style.width = bar.pct + '%'; }
-          }, 180 + i * 140);
+            const row = document.getElementById('db-ai-row-' + i);
+            if (row) row.classList.add('show');
+          }, delay);
         });
       }, 40);
-    }, 380);
-  }, 3800);
+    }, 350);
+  }, 3600);
 
-  // ── Siguiente ciclo (scan 3.8s + fade 0.38 + results 5.5s) ──
-  _demoTimer = setTimeout(runHeroDemo, 10200);
+  // ── Siguiente ciclo ──
+  _demoTimer = setTimeout(runHeroDemo, 10000);
 }
 
 function animateHeroStats() {
