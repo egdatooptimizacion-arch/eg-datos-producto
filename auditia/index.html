@@ -1,0 +1,1789 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AuditIA — ¿Apareces cuando la IA recomienda proveedores? | E&G Datos de Producto</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Descubre si ChatGPT, Gemini y Perplexity te recomiendan cuando alguien busca tu servicio. Auditoría gratuita de visibilidad en IA para empresas en España.">
+  <meta name="keywords" content="visibilidad IA, aparecer en ChatGPT, SEO para IA, AEO answer engine optimization, Perplexity recomendación, Gemini búsqueda, optimización IA España">
+  <meta name="author" content="E&G Datos de Producto">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="https://egdatooptimizacion-arch.github.io/eg-datos-producto/auditia/">
+
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="es-ES" href="https://egdatooptimizacion-arch.github.io/eg-datos-producto/auditia/">
+  <link rel="alternate" hreflang="es" href="https://egdatooptimizacion-arch.github.io/eg-datos-producto/auditia/">
+  <link rel="alternate" hreflang="x-default" href="https://egdatooptimizacion-arch.github.io/eg-datos-producto/auditia/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AuditIA — ¿Te recomienda la IA cuando buscan tu servicio?">
+  <meta property="og:description" content="Comprueba si ChatGPT, Gemini y Perplexity te mencionan cuando alguien busca lo que tú ofreces. Auditoría gratuita de visibilidad en IA.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://egdatooptimizacion-arch.github.io/eg-datos-producto/auditia/">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="E&G Datos de Producto">
+  <meta property="og:image" content="https://egdatooptimizacion-arch.github.io/eg-datos-producto/og-image.png">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AuditIA — ¿Te recomienda la IA? | E&G">
+  <meta name="twitter:description" content="Comprueba si ChatGPT, Gemini y Perplexity te mencionan cuando buscan tu servicio.">
+  <meta name="twitter:image" content="https://egdatooptimizacion-arch.github.io/eg-datos-producto/og-image.png">
+
+  <!-- Schema.org: Service -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "AuditIA — Auditoría de Visibilidad en IA",
+    "description": "Auditoría gratuita que analiza si ChatGPT, Gemini y Perplexity recomiendan tu empresa cuando alguien busca tus servicios.",
+    "url": "https://egdatooptimizacion-arch.github.io/eg-datos-producto/auditia/",
+    "provider": {
+      "@type": "Organization",
+      "name": "E&G Datos de Producto",
+      "url": "https://egdatooptimizacion-arch.github.io/eg-datos-producto/",
+      "email": "egdatooptimizacion@gmail.com"
+    },
+    "offers": {
+      "@type": "Offer",
+      "name": "Auditoría AuditIA gratuita",
+      "price": "0",
+      "priceCurrency": "EUR"
+    },
+    "areaServed": { "@type": "Country", "name": "España" },
+    "inLanguage": "es-ES"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #F8F9FB;
+      --bg-alt: #F1F3F5;
+      --card: #ffffff;
+      --border: #E5E7EB;
+      --border-strong: #D1D5DB;
+      --green: #22C55E;
+      --green-light: #DCFCE7;
+      --green-dark: #16A34A;
+      --navy: #0F172A;
+      --red: #EF4444;
+      --yellow: #F59E0B;
+      --blue: #3B82F6;
+      --text: #111827;
+      --muted: #6B7280;
+      --muted-light: #9CA3AF;
+      --radius: 16px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      min-height: 100vh;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ── TOPBAR EG ── */
+    .eg-topbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+      background: #0a0a0a;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      height: 52px; padding: 0 5%;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .eg-topbar-logo {
+      font-size: 1rem; font-weight: 800; color: #fff; letter-spacing: -0.01em;
+    }
+    .eg-topbar-logo span { color: #22C55E; }
+    .eg-topbar-link {
+      font-size: 0.78rem; color: rgba(255,255,255,0.6);
+      padding: 0.35rem 1rem; border-radius: 100px;
+      border: 1px solid rgba(255,255,255,0.2);
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .eg-topbar-link:hover { color: #fff; border-color: rgba(255,255,255,0.5); }
+    .screen { padding-top: 72px; }
+
+    /* ── SCREENS ── */
+    .screen { display: none; min-height: 100vh; padding: 40px 20px; }
+    .screen.active { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+
+    /* ── HERO ── */
+    #screen-hero { text-align: center; gap: 0; background: var(--bg); }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--green-light);
+      border: 1px solid #BBF7D0;
+      color: var(--green-dark);
+      font-size: 12px; font-weight: 700;
+      letter-spacing: 1.2px; text-transform: uppercase;
+      padding: 6px 16px; border-radius: 50px; margin-bottom: 32px;
+    }
+    .hero-title {
+      font-size: clamp(32px, 6vw, 60px);
+      font-weight: 900; line-height: 1.08;
+      letter-spacing: -2px; margin-bottom: 20px; max-width: 700px;
+      color: var(--text);
+    }
+    .hero-title span { color: var(--green); }
+    .hero-subtitle {
+      font-size: clamp(16px, 2vw, 19px);
+      color: var(--muted); max-width: 500px; margin: 0 auto 48px;
+    }
+    .hero-stats {
+      display: flex; gap: 0; justify-content: center;
+      margin-bottom: 48px; flex-wrap: wrap;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden;
+      max-width: 480px; width: 100%;
+    }
+    .hero-stat {
+      flex: 1; text-align: center; padding: 20px 16px;
+      border-right: 1px solid var(--border);
+    }
+    .hero-stat:last-child { border-right: none; }
+    .hero-stat .num { font-size: 26px; font-weight: 900; color: var(--green); }
+    .hero-stat .label { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+    .hero-levels {
+      display: flex; gap: 10px; justify-content: center;
+      margin-bottom: 40px; flex-wrap: wrap;
+    }
+    .level-chip {
+      padding: 7px 16px; border-radius: 50px;
+      font-size: 13px; font-weight: 600; border: 1.5px solid;
+    }
+    .level-chip.invisible    { color: #6B7280; border-color: #E5E7EB; background: #F9FAFB; }
+    .level-chip.construccion { color: #D97706; border-color: #FDE68A; background: #FFFBEB; }
+    .level-chip.visible      { color: #2563EB; border-color: #BFDBFE; background: #EFF6FF; }
+    .level-chip.referente    { color: #16A34A; border-color: #BBF7D0; background: #F0FDF4; }
+
+    /* ── HERO OSCURO ── */
+    #screen-hero { background: #0A0A0A !important; }
+    #screen-hero .hero-badge {
+      background: rgba(34,197,94,0.12);
+      border-color: rgba(34,197,94,0.25);
+      color: #22C55E;
+    }
+    #screen-hero .hero-title { color: #ffffff; }
+    #screen-hero .hero-subtitle { color: rgba(255,255,255,0.55); }
+    #screen-hero .hero-stats {
+      background: rgba(255,255,255,0.04);
+      border-color: rgba(255,255,255,0.08);
+    }
+    #screen-hero .hero-stat { border-color: rgba(255,255,255,0.08); }
+    #screen-hero .hero-stat .num { color: #22C55E; }
+    #screen-hero .hero-stat .label { color: rgba(255,255,255,0.4); }
+    #screen-hero .level-chip.invisible    { color: rgba(255,255,255,0.4);  border-color: rgba(255,255,255,0.1); background: rgba(255,255,255,0.04); }
+    #screen-hero .level-chip.construccion { color: #FBBF24; border-color: rgba(251,191,36,0.25); background: rgba(251,191,36,0.08); }
+    #screen-hero .level-chip.visible      { color: #60A5FA; border-color: rgba(96,165,250,0.25);  background: rgba(96,165,250,0.08); }
+    #screen-hero .level-chip.referente    { color: #22C55E; border-color: rgba(34,197,94,0.25);   background: rgba(34,197,94,0.08); }
+
+    /* ── PROBLEMA BAR ── */
+    .hero-problem-bar {
+      display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;
+      align-items: center;
+      padding: 20px 24px;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      margin-top: 36px; max-width: 680px; width: 100%;
+    }
+    .hero-problem-bar span { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.5; text-align: center; }
+    .hero-problem-bar .hp-highlight { color: rgba(255,255,255,0.75); font-weight: 600; }
+    .hero-problem-sep { color: rgba(255,255,255,0.15) !important; font-size: 18px !important; }
+
+    /* ── CÓMO FUNCIONA ── */
+    .hero-how-works {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 28px 20px 8px; max-width: 700px; width: 100%;
+      flex-wrap: wrap; justify-content: center;
+    }
+    .how-step {
+      display: flex; align-items: flex-start; gap: 12px;
+      flex: 1; min-width: 175px; max-width: 200px;
+    }
+    .how-step-num {
+      width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0;
+      background: rgba(34,197,94,0.12); border: 1px solid rgba(34,197,94,0.3);
+      color: #22C55E; font-size: 13px; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .how-step-text { display: flex; flex-direction: column; gap: 3px; }
+    .how-step-text strong { color: #fff; font-size: 13px; font-weight: 700; }
+    .how-step-text span { color: rgba(255,255,255,0.38); font-size: 12px; line-height: 1.4; }
+    .how-arrow { color: rgba(255,255,255,0.15); font-size: 16px; padding-top: 7px; flex-shrink: 0; }
+    @media (max-width: 540px) { .how-arrow { display: none; } .how-step { min-width: 100%; max-width: 100%; } }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 15px 32px; border-radius: 50px; font-size: 15px; font-weight: 700;
+      cursor: pointer; border: none; transition: all 0.18s; text-decoration: none;
+      font-family: inherit;
+    }
+    .btn-primary {
+      background: var(--green); color: #fff;
+      box-shadow: 0 4px 20px rgba(34,197,94,0.35);
+    }
+    .btn-primary:hover { background: var(--green-dark); transform: translateY(-1px); box-shadow: 0 8px 28px rgba(34,197,94,0.4); }
+    .btn-secondary {
+      background: var(--navy); color: #fff;
+      box-shadow: 0 2px 8px rgba(15,23,42,0.15);
+    }
+    .btn-secondary:hover { background: #1E293B; transform: translateY(-1px); }
+    .btn-ghost {
+      background: transparent; color: var(--muted);
+      border: 1.5px solid var(--border);
+    }
+    .btn-ghost:hover { border-color: var(--border-strong); color: var(--text); }
+    .btn-sm { padding: 10px 22px; font-size: 14px; }
+
+    /* ── ONBOARDING ── */
+    #screen-onboarding { gap: 20px; background: var(--bg-alt); }
+    .onboard-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px; max-width: 520px; width: 100%;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .onboard-card h2 { font-size: 22px; font-weight: 800; margin-bottom: 6px; color: var(--text); }
+    .onboard-card p { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+    .field { margin-bottom: 20px; }
+    .field label {
+      display: block; font-size: 12px; font-weight: 700; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 8px;
+    }
+    .field input, .field select {
+      width: 100%; padding: 12px 16px;
+      background: var(--bg); border: 1.5px solid var(--border);
+      border-radius: 10px; color: var(--text);
+      font-family: inherit; font-size: 15px; transition: border-color 0.2s;
+    }
+    .field input:focus, .field select:focus { outline: none; border-color: var(--green); }
+    .field select option { background: #fff; color: var(--text); }
+    .field input::placeholder { color: var(--muted-light); }
+
+    /* ── QUIZ ── */
+    #screen-quiz { justify-content: flex-start; padding-top: 56px; background: var(--bg-alt); }
+    .quiz-wrap { max-width: 620px; width: 100%; }
+
+    .progress-header { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; }
+    .progress-back {
+      background: var(--card); border: 1.5px solid var(--border);
+      border-radius: 50%; width: 36px; height: 36px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--muted); cursor: pointer; font-size: 16px; transition: all 0.15s; flex-shrink: 0;
+    }
+    .progress-back:hover { border-color: var(--border-strong); color: var(--text); }
+    .progress-info { flex: 1; }
+    .progress-block {
+      font-size: 11px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 1px; color: var(--green-dark); margin-bottom: 6px;
+    }
+    .progress-bar-wrap { height: 5px; background: var(--border); border-radius: 3px; overflow: hidden; }
+    .progress-bar-fill {
+      height: 100%; background: var(--green);
+      border-radius: 3px; transition: width 0.4s ease;
+    }
+    .progress-count { font-size: 13px; color: var(--muted); white-space: nowrap; font-weight: 600; }
+
+    .question-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 32px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      animation: fadeSlide 0.25s ease;
+    }
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .question-num { font-size: 11px; font-weight: 700; color: var(--muted-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+    .question-text { font-size: 19px; font-weight: 700; line-height: 1.35; margin-bottom: 8px; color: var(--text); }
+
+    .tooltip-trigger {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; color: var(--green-dark); cursor: pointer;
+      margin-bottom: 24px; background: none; border: none; padding: 0;
+      font-family: inherit; font-weight: 500;
+    }
+    .tooltip-trigger:hover { text-decoration: underline; }
+
+    .tooltip-box {
+      display: none; background: var(--green-light);
+      border: 1px solid #BBF7D0; border-radius: 10px;
+      padding: 14px 16px; margin-bottom: 20px;
+      font-size: 14px; color: #166534; line-height: 1.6;
+      animation: fadeSlide 0.2s ease;
+    }
+    .tooltip-box.open { display: block; }
+
+    .options { display: flex; flex-direction: column; gap: 10px; }
+    .option {
+      display: flex; align-items: center; gap: 14px;
+      padding: 14px 18px;
+      background: var(--bg); border: 1.5px solid var(--border);
+      border-radius: 12px; cursor: pointer; transition: all 0.15s; text-align: left;
+    }
+    .option:hover { background: var(--card); border-color: var(--green); }
+    .option.selected { background: var(--green-light); border-color: var(--green); }
+    .option-dot {
+      width: 20px; height: 20px; border-radius: 50%;
+      border: 2px solid var(--border-strong); flex-shrink: 0; transition: all 0.15s;
+      display: flex; align-items: center; justify-content: center; background: var(--card);
+    }
+    .option.selected .option-dot { background: var(--green); border-color: var(--green); }
+    .option.selected .option-dot::after { content: '✓'; font-size: 11px; color: #fff; font-weight: 800; }
+    .option-label { font-size: 15px; font-weight: 600; color: var(--text); }
+    .option-sublabel { font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+    .quiz-nav { display: flex; justify-content: flex-end; margin-top: 20px; }
+
+    /* ── RESULTS ── */
+    #screen-results { justify-content: flex-start; padding-top: 56px; background: var(--bg-alt); }
+    .results-wrap { max-width: 660px; width: 100%; }
+
+    .result-hero {
+      text-align: center; background: var(--card);
+      border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 44px 36px; margin-bottom: 20px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .result-level-badge {
+      display: inline-block; padding: 7px 20px;
+      border-radius: 50px; font-size: 13px; font-weight: 700;
+      margin-bottom: 20px; letter-spacing: 0.3px;
+    }
+    .result-verdict { font-size: 17px; color: var(--muted); line-height: 1.6; max-width: 460px; margin: 0 auto; }
+
+    .score-ring-wrap { position: relative; width: 130px; height: 130px; margin: 0 auto 20px; }
+    .score-ring { transform: rotate(-90deg); }
+    .score-ring-bg { fill: none; stroke: var(--border); stroke-width: 8; }
+    .score-ring-fill { fill: none; stroke-width: 8; stroke-linecap: round; transition: stroke-dashoffset 1s ease; }
+    .score-ring-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); text-align: center; }
+    .score-ring-num { font-size: 30px; font-weight: 900; line-height: 1; color: var(--text); }
+    .score-ring-max { font-size: 13px; color: var(--muted); }
+
+    .blocks-grid { display: grid; gap: 14px; margin-bottom: 20px; }
+    .block-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 14px; padding: 22px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .block-header { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+    .block-icon { font-size: 22px; }
+    .block-name { font-size: 15px; font-weight: 700; color: var(--text); }
+    .block-score-label { font-size: 13px; margin-left: auto; font-weight: 700; }
+    .block-bar-wrap { height: 6px; background: var(--bg-alt); border-radius: 3px; overflow: hidden; margin-bottom: 12px; }
+    .block-bar-fill { height: 100%; border-radius: 3px; transition: width 1s ease 0.3s; }
+    .block-diagnosis { font-size: 14px; color: var(--muted); line-height: 1.55; margin-bottom: 12px; }
+    .block-actions { display: none; }
+    .block-actions.show { display: block; }
+    .block-action-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--muted-light); margin-bottom: 8px; }
+    .block-action-item { display: flex; gap: 8px; font-size: 13px; color: var(--text); margin-bottom: 7px; line-height: 1.5; }
+    .block-action-item::before { content: '→'; color: var(--green-dark); flex-shrink: 0; font-weight: 700; }
+
+    .priority-card {
+      background: #F0FDF4; border: 1.5px solid #BBF7D0;
+      border-radius: 14px; padding: 24px; margin-bottom: 20px;
+    }
+    .priority-card h3 { font-size: 17px; font-weight: 800; margin-bottom: 6px; color: var(--text); }
+    .priority-card p { font-size: 14px; color: #166534; margin-bottom: 18px; line-height: 1.6; }
+
+    .share-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 14px; padding: 24px; text-align: center; margin-bottom: 20px;
+    }
+    .share-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+    .share-card p { font-size: 14px; color: var(--muted); margin-bottom: 18px; }
+    .share-buttons { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+    .share-btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 9px 18px; border-radius: 50px; font-size: 13px; font-weight: 600;
+      cursor: pointer; border: none; transition: all 0.18s; text-decoration: none;
+    }
+    .share-linkedin { background: #0a66c2; color: #fff; }
+    .share-twitter  { background: #000; color: #fff; }
+    .share-whatsapp { background: #25d366; color: #fff; }
+    .share-copy { background: var(--bg-alt); color: var(--text); border: 1.5px solid var(--border); }
+    .share-btn:hover { opacity: 0.85; transform: translateY(-1px); }
+
+    .restart-wrap { text-align: center; padding-bottom: 60px; }
+
+    /* ── TOP ACCIONES POR IMPACTO ── */
+    .top-actions-card {
+      background: var(--navy); border-radius: 16px;
+      padding: 24px; margin-bottom: 16px;
+    }
+    .top-actions-card h3 { font-size: 17px; font-weight: 800; color: #fff; margin-bottom: 4px; }
+    .top-actions-card .sub { font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 18px; }
+    .top-action-item {
+      display: flex; gap: 12px; align-items: flex-start;
+      padding: 14px 16px; border-radius: 12px; margin-bottom: 10px;
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08);
+    }
+    .top-action-item:last-child { margin-bottom: 0; }
+    .top-action-rank {
+      width: 28px; height: 28px; border-radius: 50%; background: var(--green);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 900; color: #fff; flex-shrink: 0;
+    }
+    .top-action-body { flex: 1; }
+    .top-action-block { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--green); margin-bottom: 4px; }
+    .top-action-text { font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.5; }
+    .impact-badge {
+      display: inline-block; font-size: 9px; font-weight: 800;
+      letter-spacing: 1px; text-transform: uppercase;
+      padding: 2px 7px; border-radius: 20px; margin-left: 6px; vertical-align: middle;
+    }
+    .impact-alto { background: rgba(239,68,68,0.15); color: #F87171; border: 1px solid rgba(239,68,68,0.25); }
+    .impact-medio { background: rgba(245,158,11,0.15); color: #FBBf24; border: 1px solid rgba(245,158,11,0.25); }
+
+    /* ── GAP ANALYSIS ── */
+    .gap-card {
+      background: #FFF7ED; border: 1.5px solid #FED7AA;
+      border-radius: 16px; padding: 24px; margin-bottom: 16px;
+    }
+    .gap-card h3 { font-size: 17px; font-weight: 800; color: #111827; margin-bottom: 4px; }
+    .gap-card .sub { font-size: 13px; color: #92400E; margin-bottom: 16px; }
+    .gap-item {
+      display: flex; gap: 10px; align-items: flex-start;
+      padding: 10px 14px; border-radius: 10px; margin-bottom: 8px;
+      background: rgba(255,255,255,0.7); border: 1px solid #FED7AA;
+    }
+    .gap-item:last-child { margin-bottom: 0; }
+    .gap-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+    .gap-text { font-size: 13px; color: #374151; line-height: 1.55; }
+    .gap-text strong { color: #111827; }
+
+    .action-step {
+      display: flex; gap: 12px; align-items: flex-start;
+      padding: 12px 14px; border-radius: 10px;
+      background: rgba(255,255,255,0.7); border: 1px solid rgba(0,0,0,0.06);
+    }
+    .action-step-num {
+      width: 24px; height: 24px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 800; flex-shrink: 0; color: #fff;
+    }
+    .action-step-text { font-size: 14px; line-height: 1.5; color: #111827; }
+    .action-step-text strong { display: block; font-weight: 700; margin-bottom: 2px; }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.08); opacity: 0.8; }
+    }
+
+    @media (max-width: 480px) {
+      .question-card { padding: 22px; }
+      .result-hero { padding: 28px 20px; }
+      .hero-stats { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOPBAR EG DATOS -->
+<nav class="eg-topbar">
+  <a href="../" class="eg-topbar-logo">E<span>&</span>G <span style="color:rgba(255,255,255,0.35);font-weight:400;margin:0 6px;">·</span> <span style="color:#22C55E;">AuditIA</span></a>
+  <a href="../#contacto" class="eg-topbar-link">← Volver a servicios</a>
+</nav>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- SCREEN 1 · HERO                             -->
+<!-- ════════════════════════════════════════════ -->
+<div id="screen-hero" class="screen active">
+  <div style="font-size:11px; font-weight:700; letter-spacing:2px; color:rgba(255,255,255,0.3); margin-bottom:16px; text-transform:uppercase;">E&amp;G · AuditIA</div>
+  <div class="hero-badge">⚡ Diagnóstico gratuito · 3 minutos</div>
+  <h1 class="hero-title">¿La <span>IA predictiva</span><br>sabe que existes?</h1>
+  <p class="hero-subtitle">Descubre si ChatGPT, Perplexity o Google AI te mencionan cuando alguien busca lo que vendes — y exactamente qué cambiar.</p>
+
+  <div class="hero-levels">
+    <div class="level-chip invisible">😶 Invisible</div>
+    <div class="level-chip construccion">🔧 En construcción</div>
+    <div class="level-chip visible">👁️ Visible</div>
+    <div class="level-chip referente">⭐ Referente</div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="num">4</div><div class="label">bloques auditados</div></div>
+    <div class="hero-stat"><div class="num">8</div><div class="label">preguntas clave</div></div>
+    <div class="hero-stat"><div class="num">3′</div><div class="label">de tu tiempo</div></div>
+    <div class="hero-stat"><div class="num">0</div><div class="label">registro previo</div></div>
+  </div>
+
+  <button class="btn btn-primary" onclick="goTo('onboarding')" style="font-size:18px; padding: 18px 48px;">
+    Descubrir mi visibilidad →
+  </button>
+
+  <!-- PROBLEMA -->
+  <div class="hero-problem-bar">
+    <span class="hp-highlight">El 40% de las búsquedas terminan sin un clic.</span>
+    <span class="hero-problem-sep">·</span>
+    <span>La gente pregunta directamente a la IA.</span>
+    <span class="hero-problem-sep">·</span>
+    <span class="hp-highlight">¿Estás ahí cuando te buscan?</span>
+  </div>
+
+  <!-- CÓMO FUNCIONA -->
+  <div class="hero-how-works">
+    <div class="how-step">
+      <div class="how-step-num">1</div>
+      <div class="how-step-text">
+        <strong>Responde 8 preguntas</strong>
+        <span>Contenido, autoridad, estructura y presencia</span>
+      </div>
+    </div>
+    <div class="how-arrow">→</div>
+    <div class="how-step">
+      <div class="how-step-num">2</div>
+      <div class="how-step-text">
+        <strong>Analizamos 4 bloques</strong>
+        <span>Lo que la IA necesita para recomendarte</span>
+      </div>
+    </div>
+    <div class="how-arrow">→</div>
+    <div class="how-step">
+      <div class="how-step-num">3</div>
+      <div class="how-step-text">
+        <strong>Tu playbook personalizado</strong>
+        <span>Las acciones exactas para salir del punto ciego</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- SCREEN 2 · ONBOARDING                        -->
+<!-- ════════════════════════════════════════════ -->
+<div id="screen-onboarding" class="screen">
+  <div class="onboard-card" style="max-width:540px;">
+
+    <!-- MODO IA AUTOMÁTICO -->
+    <div style="margin-bottom:28px; padding:22px; background:#F0FDF4; border:1.5px solid #BBF7D0; border-radius:16px;">
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
+        <span style="font-size:22px;">🤖</span>
+        <span style="font-weight:800; font-size:16px; color:#111827;">La IA analiza tu tienda sola</span>
+        <span style="background:#22C55E; color:#fff; font-size:10px; font-weight:700; padding:3px 8px; border-radius:50px;">NUEVO</span>
+      </div>
+      <p style="font-size:13px; color:#6B7280; margin-bottom:16px; line-height:1.5;">
+        Introduce la URL y el agente analiza automáticamente el contenido, busca menciones externas y puntúa los 4 bloques. Sin responder preguntas.
+      </p>
+      <div style="display:flex; gap:10px;">
+        <input type="text" id="ai-url" placeholder="tutienda.com"
+          style="flex:1; padding:12px 16px; background:#fff; border:1.5px solid #BBF7D0; border-radius:10px; color:#111827; font-family:inherit; font-size:14px; outline:none;"
+          onkeydown="if(event.key==='Enter') startAiAnalysis()"
+        />
+        <button class="btn btn-primary btn-sm" onclick="startAiAnalysis()">Analizar →</button>
+      </div>
+    </div>
+
+    <div style="display:flex; align-items:center; gap:12px; margin-bottom:24px;">
+      <div style="flex:1; height:1px; background:#E5E7EB;"></div>
+      <span style="font-size:12px; color:#9CA3AF; font-weight:600; white-space:nowrap;">O RESPONDE TÚ LAS PREGUNTAS</span>
+      <div style="flex:1; height:1px; background:#E5E7EB;"></div>
+    </div>
+
+    <!-- MODO MANUAL -->
+    <h2 style="font-size:17px; margin-bottom:6px;">Auditoría manual</h2>
+    <p style="margin-bottom:20px; font-size:14px;">12 preguntas con tooltips explicativos. Útil si prefieres hacerlo tú.</p>
+
+    <div class="field">
+      <label>URL de tu tienda (opcional)</label>
+      <input type="text" id="store-url" placeholder="ej: mitienda.com" autocomplete="off" />
+    </div>
+    <div class="field">
+      <label>Sector</label>
+      <select id="store-sector">
+        <option value="">Selecciona tu sector…</option>
+        <option value="Moda y calzado">Moda y calzado</option>
+        <option value="Alimentación y bebidas">Alimentación y bebidas</option>
+        <option value="Hogar y decoración">Hogar y decoración</option>
+        <option value="Salud y belleza">Salud y belleza</option>
+        <option value="Deportes y outdoor">Deportes y outdoor</option>
+        <option value="Electrónica y tecnología">Electrónica y tecnología</option>
+        <option value="Infantil y bebé">Infantil y bebé</option>
+        <option value="Mascotas">Mascotas</option>
+        <option value="Joyería y accesorios">Joyería y accesorios</option>
+        <option value="Jardinería">Jardinería</option>
+        <option value="Otro">Otro</option>
+      </select>
+    </div>
+
+    <button class="btn btn-secondary" style="width:100%;" onclick="startQuiz()">
+      Iniciar auditoría manual →
+    </button>
+  </div>
+  <button class="btn btn-secondary btn-sm" style="margin-top:16px" onclick="goTo('hero')">← Volver</button>
+</div>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- SCREEN 2.5 · ANALIZANDO (spinner IA)         -->
+<!-- ════════════════════════════════════════════ -->
+<div id="screen-analyzing" class="screen">
+  <div class="onboard-card" style="max-width:460px; text-align:center;">
+    <div style="font-size:48px; margin-bottom:20px; animation: pulse 2s infinite;">🤖</div>
+    <div style="font-weight:900; font-size:13px; letter-spacing:1.5px; color:var(--green); text-transform:uppercase; margin-bottom:6px;">AuditIA</div>
+    <h2 style="margin-bottom:12px;">Analizando tu visibilidad en IA</h2>
+    <p id="analyzing-status" style="font-size:14px; color:#6B7280; margin-bottom:28px; min-height:20px; line-height:1.5;">Iniciando análisis…</p>
+
+    <!-- Progress dots -->
+    <div style="display:flex; flex-direction:column; gap:10px; text-align:left; margin-bottom:28px;" id="analyzing-log"></div>
+
+    <!-- Spinner bar -->
+    <div style="height:4px; background:#E5E7EB; border-radius:2px; overflow:hidden;">
+      <div id="analyzing-bar" style="height:100%; width:0%; background:linear-gradient(90deg,#22C55E,#16A34A); border-radius:2px; transition:width 0.5s ease;"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- SCREEN 3 · QUIZ                              -->
+<!-- ════════════════════════════════════════════ -->
+<div id="screen-quiz" class="screen">
+  <div class="quiz-wrap">
+    <div class="progress-header">
+      <button class="progress-back" onclick="prevQuestion()">←</button>
+      <div class="progress-info">
+        <div class="progress-block" id="progress-block-label">Bloque 1 · Contenido</div>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar-fill" id="progress-bar" style="width:0%"></div>
+        </div>
+      </div>
+      <div class="progress-count" id="progress-count">1 / 12</div>
+    </div>
+
+    <div class="question-card" id="question-card">
+      <!-- Injected by JS -->
+    </div>
+
+    <div class="quiz-nav">
+      <button class="btn btn-primary btn-sm" id="btn-next" onclick="nextQuestion()" disabled>
+        Siguiente →
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- SCREEN 3.5 · EMAIL GATE                      -->
+<!-- ════════════════════════════════════════════ -->
+<div id="screen-email" class="screen">
+  <div class="onboard-card" style="max-width:480px; text-align:center;">
+    <div style="font-size:48px; margin-bottom:16px;">🎯</div>
+    <h2 style="margin-bottom:12px;">Tu diagnóstico está listo</h2>
+    <p style="color:var(--muted); font-size:14px; margin-bottom:24px; line-height:1.6;">
+      1 email semanal con lo que la IA predictiva necesita para recomendarte. Sin spam. Date de alta y ve tus resultados ahora.
+    </p>
+
+    <div style="background:#F0FDF4; border:1px solid #BBF7D0; border-radius:12px; padding:14px 18px; margin-bottom:20px; text-align:left; display:flex; gap:12px; align-items:flex-start;">
+      <span style="font-size:20px; flex-shrink:0;">📬</span>
+      <div>
+        <div style="font-weight:700; font-size:14px; color:#111827; margin-bottom:2px;">Newsletter de visibilidad IA</div>
+        <div style="font-size:13px; color:#166534; line-height:1.5;">1 email semanal · Estrategias reales · Gratis</div>
+      </div>
+    </div>
+
+    <div class="field" style="text-align:left;">
+      <label>Tu email</label>
+      <input type="email" id="email-address" placeholder="tu@email.com" autocomplete="email"/>
+    </div>
+
+    <button class="btn btn-primary" style="width:100%; margin-bottom:14px;" onclick="submitEmail()">
+      Ver mi diagnóstico →
+    </button>
+    <p style="font-size:11px; color:var(--muted-light); margin-top:12px;">Sin spam. Baja cuando quieras. Datos protegidos según RGPD.</p>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- SCREEN 4 · RESULTS                           -->
+<!-- ════════════════════════════════════════════ -->
+<div id="screen-results" class="screen">
+  <div class="results-wrap">
+    <div class="result-hero">
+      <div class="result-level-badge" id="result-badge">⭐ Referente</div>
+
+      <div class="score-ring-wrap">
+        <svg class="score-ring" width="140" height="140" viewBox="0 0 140 140">
+          <circle class="score-ring-bg" cx="70" cy="70" r="58"/>
+          <circle class="score-ring-fill" id="score-ring-circle" cx="70" cy="70" r="58"
+            stroke-dasharray="364.4"
+            stroke-dashoffset="364.4"/>
+        </svg>
+        <div class="score-ring-text">
+          <div class="score-ring-num" id="score-ring-num">0</div>
+          <div class="score-ring-max">/ 24</div>
+        </div>
+      </div>
+
+      <div class="result-verdict" id="result-verdict">Tu diagnóstico aparece aquí.</div>
+    </div>
+
+    <!-- TEST DE VISIBILIDAD REAL (solo modo IA) -->
+    <div id="ai-test-card" style="display:none; background:var(--card); border:1px solid var(--border); border-radius:16px; padding:24px; margin-bottom:16px;">
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:4px;">
+        <span style="font-size:22px;">🔎</span>
+        <span style="font-weight:800; font-size:16px;">Visibilidad real en motores de IA</span>
+        <span id="ai-test-real-badge" style="display:none; background:#F0FDF4; color:#16A34A; font-size:10px; font-weight:700; padding:3px 8px; border-radius:50px; border:1px solid #BBF7D0;">TEST REAL</span>
+      </div>
+      <p style="font-size:12px; color:var(--muted-light); margin-bottom:14px;">Hemos preguntado directamente a cada motor de IA si te recomienda</p>
+
+      <!-- Vista por motor (modo real) -->
+      <div id="ai-engines-grid" style="display:none; gap:10px; margin-bottom:16px; grid-template-columns:1fr 1fr 1fr;"></div>
+
+      <!-- Vista simple (modo DuckDuckGo) -->
+      <div id="ai-test-simple">
+        <div id="ai-test-verdict" style="font-size:26px; font-weight:900; margin-bottom:8px;"></div>
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+          <span style="font-size:13px; color:var(--muted);">Apareció en</span>
+          <div id="ai-test-dots" style="display:flex; gap:6px;"></div>
+          <span id="ai-test-score-label" style="font-size:13px; color:var(--muted);"></span>
+        </div>
+      </div>
+
+      <p id="ai-test-explanation" style="font-size:14px; color:#6B7280; line-height:1.6; margin-bottom:12px;"></p>
+      <div id="ai-test-evidence" style="display:flex; flex-direction:column; gap:8px;"></div>
+    </div>
+
+    <!-- GAP ANALYSIS — primero el por qué -->
+    <div class="gap-card" id="gap-card" style="display:none;">
+      <h3>🔍 Por qué la IA predictiva te ignora</h3>
+      <div class="sub" id="gap-subtitle">Señales concretas que le faltan a tu negocio</div>
+      <div id="gap-list"></div>
+    </div>
+
+    <!-- PLAYBOOK — después el qué hacer -->
+    <div class="top-actions-card" id="top-actions-card" style="display:none;">
+      <h3>⚡ Tu playbook de visibilidad IA</h3>
+      <div class="sub">Las 3 acciones exactas para que la IA predictiva te recomiende</div>
+      <div id="top-actions-list"></div>
+    </div>
+
+    <!-- QUÉ HACER AHORA -->
+    <div id="action-plan-card" style="display:none; border-radius:16px; padding:24px; margin-bottom:16px; border:2px solid;">
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+        <span style="font-size:22px;" id="action-plan-icon">🚨</span>
+        <span style="font-weight:800; font-size:17px;" id="action-plan-title">Tu plan de visibilidad</span>
+      </div>
+      <div id="action-plan-steps" style="display:flex; flex-direction:column; gap:10px;"></div>
+    </div>
+
+    <div class="blocks-grid" id="blocks-grid">
+      <!-- injected by JS -->
+    </div>
+
+    <div class="priority-card" id="priority-card">
+      <h3 id="priority-title">Tu mayor palanca de mejora</h3>
+      <p id="priority-text"></p>
+      <button class="btn btn-primary btn-sm" onclick="scrollToBlock()">Ver todas las acciones →</button>
+    </div>
+
+    <div class="share-card">
+      <h3>¿Conoces a alguien invisible para la IA?</h3>
+      <p>Pásale este diagnóstico. Tu resultado es privado — solo se comparte el enlace.</p>
+      <div class="share-buttons">
+        <a class="share-btn share-linkedin" id="share-linkedin" href="#" target="_blank">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <a class="share-btn share-twitter" id="share-twitter" href="#" target="_blank">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.857L1.505 2.25H8.08l4.262 5.633L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          X / Twitter
+        </a>
+        <a class="share-btn share-whatsapp" id="share-whatsapp" href="#" target="_blank">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+        <button class="share-btn share-copy" onclick="copyLink()">📋 Copiar enlace</button>
+      </div>
+    </div>
+
+    <!-- CTA EG DATOS -->
+    <div id="eg-cta-card" style="display:none; background:#0a0a0a; border-radius:20px; padding:32px 28px; margin-bottom:16px; text-align:center;">
+      <div style="font-size:11px; font-weight:700; letter-spacing:2px; color:#22C55E; text-transform:uppercase; margin-bottom:12px;">E&amp;G Datos de Producto</div>
+      <h3 style="color:#fff; font-size:1.3rem; font-weight:800; line-height:1.3; margin-bottom:10px;">¿Quieres que lo resolvamos por ti?</h3>
+      <p style="color:rgba(255,255,255,0.55); font-size:0.88rem; line-height:1.65; margin-bottom:24px;">Ayudamos a negocios como el tuyo a aparecer en ChatGPT, Perplexity y Google AI — con estrategia de contenido y presencia digital que la IA predictiva puede leer y recomendar.</p>
+      <a href="../#contacto" style="display:inline-block; background:#22C55E; color:#fff; padding:14px 32px; border-radius:100px; font-weight:700; font-size:0.95rem; text-decoration:none; box-shadow:0 4px 20px rgba(34,197,94,0.35);">Diagnóstico gratuito →</a>
+      <p style="color:rgba(255,255,255,0.3); font-size:0.75rem; margin-top:14px;">Sin coste · Respuesta en menos de 24h</p>
+    </div>
+
+    <div class="restart-wrap">
+      <button class="btn btn-secondary" onclick="restart()">↺ Nueva auditoría</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════
+// DATA
+// ═══════════════════════════════════════════════
+
+const BLOCKS = [
+  {
+    id: 'contenido',
+    name: 'Contenido comprensible',
+    icon: '📝',
+    color: '#818cf8',
+    shortDesc: 'Lo que la IA puede entender de tus fichas',
+    diagnoses: {
+      low:  'Tus fichas de producto no aportan información que la IA no tenga ya de otras mil fuentes. Eres genérico e intercambiable.',
+      mid:  'Tienes algo de contenido propio, pero la mayor parte sigue siendo texto estándar. La IA te ve, pero no te distingue.',
+      high: 'Tu contenido es único y útil. La IA tiene motivos reales para citarte cuando alguien pregunta sobre tu categoría.',
+    },
+    actions: {
+      low: [
+        { text: 'Reescribe la descripción de tus 3 productos más vendidos con voz propia: historia, contexto, para quién y por qué.', impact: 'alto' },
+        { text: 'Añade en cada ficha una sección "¿Para quién es esto?" con 2-3 perfiles de comprador concretos.', impact: 'alto' },
+        { text: 'Crea una guía de compra para tu categoría principal: responde las 5 preguntas que más te hace la gente antes de comprar.', impact: 'medio' },
+      ],
+      mid: [
+        { text: 'Audita tus 10 fichas con más tráfico: ¿cuánto texto es tuyo vs. del fabricante? Sustituye todo lo genérico.', impact: 'medio' },
+        { text: 'Añade comparativas internas: "¿Cuál elegir si...?" — esto responde preguntas de intención que la IA busca activamente.', impact: 'medio' },
+      ],
+    },
+  },
+  {
+    id: 'autoridad',
+    name: 'Autoridad verificable',
+    icon: '🏆',
+    color: '#f59e0b',
+    shortDesc: 'Señales externas que la IA puede comprobar',
+    diagnoses: {
+      low:  'La IA no tiene referencias externas de tu marca. Desde su perspectiva, solo existes en tu propia web — y eso no es suficiente.',
+      mid:  'Hay algunas menciones externas, pero son escasas o poco relevantes. La IA te conoce de oídas, no como referente.',
+      high: 'Tienes presencia verificable fuera de tu web. La IA puede cruzar referencias y recomendarte con confianza.',
+    },
+    actions: {
+      low: [
+        { text: 'Identifica 5 blogs o medios de tu sector y ofréceles contenido editorial (no publicitario): guías, datos, perspectivas.', impact: 'alto' },
+        { text: 'Activa y completa tu ficha en Trustpilot o Google Reviews — las reseñas externas son señales de autoridad que la IA lee.', impact: 'alto' },
+        { text: 'Busca en Google "[tu categoría] mejores tiendas" y contacta a los autores de esos artículos para que te incluyan.', impact: 'medio' },
+      ],
+      mid: [
+        { text: 'Convierte menciones sociales en menciones web: si alguien te ha citado en Instagram, pídele que lo incluya también en su blog.', impact: 'medio' },
+        { text: 'Crea un caso de estudio o estudio sectorial con datos propios — es el tipo de contenido que otros citan y enlaza la IA.', impact: 'medio' },
+      ],
+    },
+  },
+  {
+    id: 'estructura',
+    name: 'Estructura técnica',
+    icon: '⚙️',
+    color: '#60a5fa',
+    shortDesc: 'Cómo de bien puede leer tu web la IA',
+    diagnoses: {
+      low:  'La IA tiene dificultades para entender qué vendes, a quién y por qué. Tu arquitectura de datos no le ayuda nada.',
+      mid:  'Hay estructura básica, pero faltan señales técnicas importantes que los asistentes usan para catalogarte correctamente.',
+      high: 'Tu web está bien estructurada. La IA puede extraer datos de producto, entender tu propuesta de valor y catalogarte correctamente.',
+    },
+    actions: {
+      low: [
+        { text: 'Implementa schema.org/Product en todas tus fichas: nombre, precio, disponibilidad, valoraciones. Valídalo en search.google.com/test/rich-results.', impact: 'alto' },
+        { text: 'Revisa tus titles y meta descriptions: deben responder "¿qué es?, ¿para quién? y ¿por qué aquí?" en menos de 160 caracteres.', impact: 'alto' },
+        { text: 'Crea o mejora tu página "Sobre nosotros": quién eres, qué vendes, a quién, qué te diferencia. Es lo primero que lee la IA para entenderte.', impact: 'medio' },
+      ],
+      mid: [
+        { text: 'Añade breadcrumbs con schema.org/BreadcrumbList para que la IA entienda la jerarquía de tu catálogo.', impact: 'medio' },
+        { text: 'Revisa que todas tus fichas tengan la etiqueta H1 única y descriptiva — no "Producto 1234" sino el nombre real con contexto.', impact: 'medio' },
+      ],
+    },
+  },
+  {
+    id: 'presencia',
+    name: 'Presencia en fuentes clave',
+    icon: '📡',
+    color: '#10b981',
+    shortDesc: 'Dónde busca la IA para hacer recomendaciones',
+    diagnoses: {
+      low:  'No estás en los lugares donde la IA busca referencias. Aunque tu web sea buena, los asistentes no la encuentran en su proceso.',
+      mid:  'Tienes presencia en algunas fuentes, pero hay huecos importantes. La IA te encuentra en un circuito, pero no en todos.',
+      high: 'Apareces en las plataformas y directorios que los asistentes de IA usan como fuentes primarias de recomendación.',
+    },
+    actions: {
+      low: [
+        { text: 'Optimiza tu Google Business Profile completo: categoría, descripción, productos, fotos, horarios — es una fuente primaria para AI Overviews.', impact: 'alto' },
+        { text: 'Lista tus productos en Google Shopping y/o Amazon aunque no vendas allí activamente: la presencia ya cuenta para la IA.', impact: 'alto' },
+        { text: 'Publica en tu sector al menos 2 veces al mes en un canal propio (blog, newsletter): crea historial de expertise en tu categoría.', impact: 'medio' },
+      ],
+      mid: [
+        { text: 'Identifica los directorios sectoriales de tu nicho (ej: Glamira en joyería, Idealo en electrónica) y asegura tu ficha allí.', impact: 'medio' },
+        { text: 'Responde activamente a preguntas en foros y comunidades de tu sector — Quora, Reddit, grupos de Facebook — con tu marca visible.', impact: 'medio' },
+      ],
+    },
+  },
+];
+
+const QUESTIONS = [
+  // Bloque 0 · Contenido (2 preguntas)
+  {
+    block: 0,
+    text: '¿Las descripciones de tus productos son únicas o del fabricante?',
+    tooltip: 'Copia una frase de tu ficha y búscala en Google entre comillas. Si aparece en 5+ sitios, es texto genérico.',
+    options: [
+      { label: '✍️ Únicas, escritas por nosotros', sub: 'Nuestro texto no aparece en otras webs', score: 2 },
+      { label: '🔀 Mezcla de propio y del fabricante', sub: 'Algunas fichas propias, otras copiadas', score: 1 },
+      { label: '📋 Del fabricante sin modificar', sub: 'Apenas hemos tocado el texto original', score: 0 },
+    ],
+  },
+  {
+    block: 0,
+    text: '¿Explicas para quién es ideal cada producto?',
+    tooltip: 'La IA responde "¿qué producto es mejor para Y?". Sin perfiles de uso, tu tienda no puede ser la respuesta.',
+    options: [
+      { label: '🎯 Sí, cada ficha tiene casos de uso', sub: '"Ideal para...", "Perfecto si eres..."', score: 2 },
+      { label: '🔸 En algunos productos, no en todos', sub: 'Lo hacemos a veces pero no siempre', score: 1 },
+      { label: '❌ No, solo tenemos specs técnicas', sub: 'Nos centramos en características', score: 0 },
+    ],
+  },
+  // Bloque 1 · Autoridad (2 preguntas)
+  {
+    block: 1,
+    text: '¿Tu tienda aparece mencionada en medios, blogs o comparadores?',
+    tooltip: 'Busca en Google: "tu marca" -site:tudominio.com. Si no aparece nada, la IA tampoco tiene referencias externas.',
+    options: [
+      { label: '📰 Sí, en varios medios relevantes', sub: 'Prensa, blogs del sector, comparadores', score: 2 },
+      { label: '🔸 Alguna mención puntual', sub: 'Una o dos referencias, no sistemáticas', score: 1 },
+      { label: '❌ No que yo sepa', sub: 'No hemos trabajado presencia externa', score: 0 },
+    ],
+  },
+  {
+    block: 1,
+    text: '¿Tienes reseñas verificadas en plataformas externas?',
+    tooltip: 'Reseñas en Google, Trustpilot o Amazon son señales que la IA puede verificar sin depender de lo que tú dices.',
+    options: [
+      { label: '⭐ Sí, +50 reseñas en 2+ plataformas', sub: 'Presencia activa en reseñas externas', score: 2 },
+      { label: '🔸 Pocas o solo en una plataforma', sub: 'Tenemos reseñas pero son escasas', score: 1 },
+      { label: '❌ No tenemos reseñas externas', sub: 'Solo reseñas en nuestra propia web', score: 0 },
+    ],
+  },
+  // Bloque 2 · Estructura (2 preguntas)
+  {
+    block: 2,
+    text: '¿Tus títulos y metas describen qué vendes, a quién y para qué?',
+    tooltip: 'Abre una ficha en incógnito. ¿Cómo aparece en Google? "Producto #1234" o descripción vacía = trabajo urgente.',
+    options: [
+      { label: '✅ Sí, optimizados y descriptivos', sub: 'Cada página tiene title y meta únicos', score: 2 },
+      { label: '🔸 Algunos están bien, otros no', sub: 'Hemos optimizado los más importantes', score: 1 },
+      { label: '❌ Son genéricos o están vacíos', sub: 'Usamos los títulos por defecto', score: 0 },
+    ],
+  },
+  {
+    block: 2,
+    text: '¿Tienes una página "Sobre nosotros" con propuesta de valor clara?',
+    tooltip: 'Es la primera que leen los asistentes de IA para entenderte. Si no existe o es genérica, eres opaco para la IA.',
+    options: [
+      { label: '✅ Sí, explica quiénes somos y por qué', sub: 'Propuesta de valor específica y diferenciadora', score: 2 },
+      { label: '🔸 Existe pero es genérica', sub: '"Somos una empresa con pasión por..."', score: 1 },
+      { label: '❌ No tenemos esa página', sub: 'O no la hemos trabajado', score: 0 },
+    ],
+  },
+  // Bloque 3 · Presencia (2 preguntas)
+  {
+    block: 3,
+    text: '¿Tienes Google Business Profile completo y actualizado?',
+    tooltip: 'Es una fuente principal de AI Overviews de Google. Sin ficha completa eres invisible para esa capa.',
+    options: [
+      { label: '✅ Sí, completo con fotos y descripción', sub: 'Perfil activo con todo al día', score: 2 },
+      { label: '🔸 Existe pero está incompleto', sub: 'Reclamado pero con datos mínimos', score: 1 },
+      { label: '❌ No tenemos ficha de Google', sub: 'O no la hemos reclamado', score: 0 },
+    ],
+  },
+  {
+    block: 3,
+    text: '¿Apareces en Amazon, Google Shopping u otros comparadores?',
+    tooltip: 'No necesitas vender ahí — con estar listado ya construyes señal para la IA.',
+    options: [
+      { label: '✅ Sí, en varios canales externos', sub: 'Amazon, Google Shopping, Idealo u otros', score: 2 },
+      { label: '🔸 En alguno pero sin gestionarlo', sub: 'Estamos listados pero no activamente', score: 1 },
+      { label: '❌ Solo vendemos en nuestra web', sub: 'Sin presencia en canales externos', score: 0 },
+    ],
+  },
+];
+
+// ═══════════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════════
+let currentQ = 0;
+let answers = new Array(8).fill(null);
+let storeUrl = '';
+let storeSector = '';
+
+// ═══════════════════════════════════════════════
+// NAVIGATION
+// ═══════════════════════════════════════════════
+function goTo(screen) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById('screen-' + screen).classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+function startQuiz() {
+  storeUrl = document.getElementById('store-url').value.trim();
+  storeSector = document.getElementById('store-sector').value;
+  currentQ = 0;
+  answers = new Array(8).fill(null);
+  renderQuestion();
+  goTo('quiz');
+}
+
+function restart() {
+  currentQ = 0;
+  answers = new Array(8).fill(null);
+  document.getElementById('store-url').value = '';
+  document.getElementById('store-sector').value = '';
+  goTo('hero');
+}
+
+// ═══════════════════════════════════════════════
+// QUIZ
+// ═══════════════════════════════════════════════
+function renderQuestion() {
+  const q = QUESTIONS[currentQ];
+  const block = BLOCKS[q.block];
+
+  // Progress
+  const pct = ((currentQ) / 8) * 100;
+  document.getElementById('progress-bar').style.width = pct + '%';
+  document.getElementById('progress-block-label').textContent =
+    `Bloque ${q.block + 1} · ${block.name}`;
+  document.getElementById('progress-count').textContent =
+    `${currentQ + 1} / 8`;
+
+  // Next button label
+  const btnNext = document.getElementById('btn-next');
+  btnNext.textContent = currentQ === 7 ? 'Ver resultados →' : 'Siguiente →';
+  btnNext.disabled = answers[currentQ] === null;
+
+  const card = document.getElementById('question-card');
+  card.innerHTML = `
+    <div class="question-num">Pregunta ${currentQ + 1} de 8</div>
+    <div class="question-text">${q.text}</div>
+    <button class="tooltip-trigger" onclick="toggleTooltip(this)">
+      <span class="tooltip-icon">💡</span> ¿Cómo comprobarlo?
+    </button>
+    <div class="tooltip-box">${q.tooltip}</div>
+    <div class="options">
+      ${q.options.map((opt, i) => `
+        <div class="option ${answers[currentQ] === i ? 'selected' : ''}"
+             onclick="selectOption(${i})">
+          <div class="option-dot"></div>
+          <div>
+            <div class="option-label">${opt.label}</div>
+            <div class="option-sublabel">${opt.sub}</div>
+          </div>
+        </div>
+      `).join('')}
+    </div>
+  `;
+}
+
+function toggleTooltip(btn) {
+  const box = btn.nextElementSibling;
+  box.classList.toggle('open');
+  btn.textContent = box.classList.contains('open')
+    ? '💡 Cerrar explicación'
+    : '💡 ¿Cómo comprobarlo?';
+}
+
+function selectOption(i) {
+  answers[currentQ] = i;
+  document.querySelectorAll('.option').forEach((el, idx) => {
+    el.classList.toggle('selected', idx === i);
+  });
+  document.getElementById('btn-next').disabled = false;
+  // Auto-avance tras breve pausa visual
+  setTimeout(() => nextQuestion(), 420);
+}
+
+function nextQuestion() {
+  if (answers[currentQ] === null) return;
+  if (currentQ < 7) {
+    currentQ++;
+    renderQuestion();
+    window.scrollTo(0, 0);
+  } else {
+    goTo('email');
+  }
+}
+
+function prevQuestion() {
+  if (currentQ > 0) {
+    currentQ--;
+    renderQuestion();
+    window.scrollTo(0, 0);
+  } else {
+    goTo('onboarding');
+  }
+}
+
+// ═══════════════════════════════════════════════
+// RESULTS
+// ═══════════════════════════════════════════════
+function showResults() {
+  // Calculate scores
+  const blockScores = [0, 0, 0, 0];
+  QUESTIONS.forEach((q, i) => {
+    if (answers[i] !== null) {
+      blockScores[q.block] += QUESTIONS[i].options[answers[i]].score;
+    }
+  });
+  const total = blockScores.reduce((a, b) => a + b, 0);
+
+  // Level
+  let level, levelColor, levelEmoji, verdict;
+  if (total <= 8) {
+    level = 'Invisible'; levelColor = '#94a3b8'; levelEmoji = '😶';
+    verdict = 'La IA prácticamente no te conoce. Para ChatGPT, Perplexity o Google AI Overview, tu tienda es un punto ciego — aunque vendas bien. El potencial de mejora es enorme.';
+  } else if (total <= 14) {
+    level = 'En construcción'; levelColor = '#f59e0b'; levelEmoji = '🔧';
+    verdict = 'La IA te encuentra pero no te recomienda con confianza. Tienes base, pero faltan señales suficientes para que los asistentes te citen como referencia en tu categoría.';
+  } else if (total <= 19) {
+    level = 'Visible'; levelColor = '#60a5fa'; levelEmoji = '👁️';
+    verdict = 'La IA te conoce y a veces te menciona. Estás en la conversación, pero no eres la primera opción. Con trabajo específico en los bloques débiles, puedes llegar a Referente.';
+  } else {
+    level = 'Referente'; levelColor = '#10b981'; levelEmoji = '⭐';
+    verdict = 'La IA te recomienda activamente. Cuando alguien pregunta por tu categoría, tienes muchas posibilidades de aparecer como referencia. Sigue manteniendo todas las señales.';
+  }
+
+  goTo('results');
+
+  // Badge
+  const badge = document.getElementById('result-badge');
+  badge.textContent = `${levelEmoji} ${level}`;
+  badge.style.background = levelColor + '22';
+  badge.style.color = levelColor;
+  badge.style.border = `1px solid ${levelColor}55`;
+
+  // Ring animation
+  setTimeout(() => {
+    const circle = document.getElementById('score-ring-circle');
+    const circumference = 364.4;
+    const offset = circumference - (total / 24) * circumference;
+    circle.style.strokeDashoffset = offset;
+    circle.style.stroke = levelColor;
+    document.getElementById('score-ring-num').textContent = total;
+  }, 100);
+
+  document.getElementById('result-verdict').textContent = verdict;
+
+  // Plan de acción
+  renderActionPlan(total, level, blockScores, null);
+
+  // Blocks grid
+  const grid = document.getElementById('blocks-grid');
+  grid.innerHTML = BLOCKS.map((block, bi) => {
+    const score = blockScores[bi];
+    const maxScore = 6;
+    const pct = (score / maxScore) * 100;
+    const diagKey = score <= 2 ? 'low' : score <= 4 ? 'mid' : 'high';
+    const hasActions = (score <= 4) && block.actions[diagKey];
+    const scoreLabel = score <= 2 ? 'Crítico' : score <= 4 ? 'Mejorable' : 'Bien';
+    const scoreLabelColor = score <= 2 ? '#ef4444' : score <= 4 ? '#f59e0b' : '#10b981';
+
+    return `
+      <div class="block-card" id="block-${bi}">
+        <div class="block-header">
+          <span class="block-icon">${block.icon}</span>
+          <span class="block-name">${block.name}</span>
+          <span class="block-score-label" style="color:${scoreLabelColor}">${score}/6 · ${scoreLabel}</span>
+        </div>
+        <div class="block-bar-wrap">
+          <div class="block-bar-fill" style="width:0%; background:${block.color}" data-pct="${pct}"></div>
+        </div>
+        <div class="block-diagnosis">${block.diagnoses[diagKey]}</div>
+        ${hasActions ? `
+          <div class="block-actions show">
+            <div class="block-action-title">Acciones prioritarias</div>
+            ${block.actions[diagKey].map(a => {
+              const text = typeof a === 'object' ? a.text : a;
+              const impact = typeof a === 'object' ? a.impact : null;
+              return `<div class="block-action-item">${text}${impact ? `<span class="impact-badge impact-${impact}" style="margin-left:6px;">${impact === 'alto' ? '🔴 Alto' : '🟡 Medio'}</span>` : ''}</div>`;
+            }).join('')}
+          </div>
+        ` : ''}
+      </div>
+    `;
+  }).join('');
+
+  // Animate bars
+  setTimeout(() => {
+    document.querySelectorAll('.block-bar-fill').forEach(bar => {
+      bar.style.width = bar.dataset.pct + '%';
+    });
+  }, 200);
+
+  // Priority card
+  const worstBlockIdx = blockScores.indexOf(Math.min(...blockScores));
+  const worstBlock = BLOCKS[worstBlockIdx];
+  document.getElementById('priority-title').textContent = `Tu mayor palanca: ${worstBlock.name}`;
+  document.getElementById('priority-text').textContent =
+    `Con ${blockScores[worstBlockIdx]}/6 puntos, este es el bloque donde tienes más impacto potencial. ` +
+    `Mejorar aquí puede ser la diferencia entre que la IA te ignore o te recomiende. Mira las acciones concretas del bloque.`;
+  document.getElementById('priority-card').querySelector('button').onclick =
+    () => document.getElementById('block-' + worstBlockIdx).scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+  // Top 3 acciones + Gap analysis
+  renderTopActions(blockScores);
+  renderGapAnalysis(blockScores);
+
+  // Share buttons
+  const shareUrl = window.location.href.split('?')[0];
+  const shareText = encodeURIComponent(`Acabo de hacer la AuditIA de mi negocio y he sacado ${total}/24 (${level}). ¿Sabe la IA predictiva que tu negocio existe? → `);
+  document.getElementById('share-linkedin').href =
+    `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`;
+  document.getElementById('share-twitter').href =
+    `https://twitter.com/intent/tweet?text=${shareText}${encodeURIComponent(shareUrl)}`;
+  document.getElementById('share-whatsapp').href =
+    `https://api.whatsapp.com/send?text=${shareText}${encodeURIComponent(shareUrl)}`;
+
+  // Mostrar CTA EG Datos si la puntuación no es Referente
+  if (total < 16) {
+    document.getElementById('eg-cta-card').style.display = 'block';
+  }
+}
+
+// ═══════════════════════════════════════════════
+// PLAN DE ACCIÓN SEGÚN VEREDICTO
+// ═══════════════════════════════════════════════
+function renderActionPlan(total, level, blockScores, aiVerdict) {
+  const card = document.getElementById('action-plan-card');
+  const stepsEl = document.getElementById('action-plan-steps');
+  const titleEl = document.getElementById('action-plan-title');
+  const iconEl = document.getElementById('action-plan-icon');
+
+  // Bloque con menor puntuación
+  const blockNames = ['Contenido', 'Autoridad externa', 'Estructura técnica', 'Presencia en fuentes'];
+  const worstIdx = blockScores.indexOf(Math.min(...blockScores));
+  const worstName = blockNames[worstIdx];
+  const worstScore = blockScores[worstIdx];
+
+  let steps = [];
+  let bgColor, borderColor, numColor;
+
+  if (level === 'Invisible' || (aiVerdict && aiVerdict === 'NO APARECE')) {
+    bgColor = '#FFF1F2'; borderColor = '#FECDD3'; numColor = '#EF4444';
+    iconEl.textContent = '🚨';
+    titleEl.textContent = 'La IA no te encuentra — empieza por aquí';
+    steps = [
+      {
+        title: 'Esta semana: crea tu ficha de Google Business Profile',
+        desc: 'Es gratis, tarda 30 minutos y es la fuente número 1 que usa Google AI para recomendaciones locales. Sin esto, eres invisible para cualquier búsqueda con intención local.'
+      },
+      {
+        title: 'Este mes: reescribe las descripciones de tus 3 productos estrella',
+        desc: 'Añade para quién es, en qué situación, qué problema resuelve y por qué tú. La IA solo te citará si tiene algo que citar.'
+      },
+      {
+        title: 'Próximo mes: consigue 1 mención externa real',
+        desc: 'Contacta a un blog de tu sector y ofrece un artículo, datos o una guía. Una mención editorial en un sitio externo vale más que 100 posts en tus redes.'
+      }
+    ];
+  } else if (level === 'En construcción' || (aiVerdict && aiVerdict === 'A VECES')) {
+    bgColor = '#FFFBEB'; borderColor = '#FDE68A'; numColor = '#F59E0B';
+    iconEl.textContent = '⚠️';
+    titleEl.textContent = 'Punto ciego parcial — esto marca la diferencia';
+    steps = [
+      {
+        title: `Prioridad 1: refuerza tu bloque más débil (${worstName}, ${worstScore}/6)`,
+        desc: 'Con un bloque en rojo, la IA no puede construir una recomendación completa de tu tienda. Mira las acciones de ese bloque abajo y elige una para esta semana.'
+      },
+      {
+        title: 'Prioridad 2: activa Trustpilot o Google Reviews',
+        desc: 'Las reseñas externas son la señal de confianza más rápida de conseguir. 10 reseñas en Trustpilot pueden cambiar cómo la IA te presenta.'
+      },
+      {
+        title: 'Prioridad 3: publica 1 pieza de contenido sobre tu categoría al mes',
+        desc: 'Un artículo que responde "¿cuál es el mejor [tu producto] para [perfil]?" posiciona tu tienda como referente. La constancia convierte presencia ocasional en presencia habitual.'
+      }
+    ];
+  } else if (level === 'Visible') {
+    bgColor = '#EFF6FF'; borderColor = '#BFDBFE'; numColor = '#3B82F6';
+    iconEl.textContent = '👁️';
+    titleEl.textContent = 'Visible — ahora hay que consolidar';
+    steps = [
+      {
+        title: `Consolida tu punto débil: ${worstName} (${worstScore}/6)`,
+        desc: 'Estás bien en general, pero este bloque arrastra tu puntuación. Una mejora aquí puede llevarte a Referente.'
+      },
+      {
+        title: 'Busca artículos donde ya aparezcas y pide actualización',
+        desc: 'Si algún blog o comparador te menciona, contacta al autor para que añada más detalle o un enlace directo. Ampliar menciones existentes es más fácil que crear nuevas.'
+      },
+      {
+        title: 'Activa un canal de contenido regular (aunque sea pequeño)',
+        desc: 'Una newsletter mensual o un blog con 1 artículo al mes construye historial de expertise. La IA premia la consistencia.'
+      }
+    ];
+  } else {
+    // Referente
+    bgColor = '#F0FDF4'; borderColor = '#BBF7D0'; numColor = '#22C55E';
+    iconEl.textContent = '⭐';
+    titleEl.textContent = 'Referente — mantén el estándar';
+    steps = [
+      {
+        title: 'Audita tus señales cada trimestre',
+        desc: 'La IA actualiza sus fuentes. Revisa que tus menciones externas sigan activas, tus reseñas sigan creciendo y tus datos estructurados sigan siendo correctos.'
+      },
+      {
+        title: 'Expande a nuevas categorías o casos de uso',
+        desc: 'Ya eres referente en lo que tienes. Crea contenido sobre subcategorías o perfiles de comprador adyacentes para capturar más consultas de IA.'
+      },
+      {
+        title: 'Comparte tu caso: cómo conseguiste visibilidad IA',
+        desc: 'Un artículo propio explicando tu estrategia genera menciones, backlinks y te posiciona como autoridad del sector — no solo como tienda.'
+      }
+    ];
+  }
+
+  card.style.display = 'block';
+  card.style.background = bgColor;
+  card.style.borderColor = borderColor;
+
+  stepsEl.innerHTML = steps.map((s, i) => `
+    <div class="action-step">
+      <div class="action-step-num" style="background:${numColor};">${i + 1}</div>
+      <div class="action-step-text">
+        <strong>${s.title}</strong>
+        ${s.desc}
+      </div>
+    </div>
+  `).join('');
+}
+
+// ═══════════════════════════════════════════════
+// TOP 3 ACCIONES POR IMPACTO
+// ═══════════════════════════════════════════════
+function renderTopActions(blockScores) {
+  // Sort blocks by score ascending (worst first)
+  const ranked = blockScores
+    .map((score, idx) => ({ score, idx, block: BLOCKS[idx] }))
+    .sort((a, b) => a.score - b.score);
+
+  const topActions = [];
+
+  for (const { score, idx, block } of ranked) {
+    if (topActions.length >= 3) break;
+    const diagKey = score <= 2 ? 'low' : score <= 4 ? 'mid' : null;
+    if (!diagKey || !block.actions[diagKey]) continue;
+    const actions = block.actions[diagKey];
+    // Alto impact first
+    const sorted = [...actions].sort((a, b) => {
+      const ia = typeof a === 'object' ? a.impact : 'medio';
+      const ib = typeof b === 'object' ? b.impact : 'medio';
+      return (ia === 'alto' ? 0 : 1) - (ib === 'alto' ? 0 : 1);
+    });
+    for (const action of sorted) {
+      if (topActions.length >= 3) break;
+      const text = typeof action === 'object' ? action.text : action;
+      const impact = typeof action === 'object' ? action.impact : 'medio';
+      topActions.push({ text, impact, blockName: block.name, blockIcon: block.icon });
+    }
+  }
+
+  if (topActions.length === 0) return;
+
+  const card = document.getElementById('top-actions-card');
+  const list = document.getElementById('top-actions-list');
+  card.style.display = 'block';
+
+  list.innerHTML = topActions.map((a, i) => `
+    <div class="top-action-item">
+      <div class="top-action-rank">${i + 1}</div>
+      <div class="top-action-body">
+        <div class="top-action-block">${a.blockIcon} ${a.blockName}</div>
+        <div class="top-action-text">
+          ${a.text}
+          <span class="impact-badge impact-${a.impact}">${a.impact === 'alto' ? '🔴 Alto impacto' : '🟡 Medio impacto'}</span>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ═══════════════════════════════════════════════
+// GAP ANALYSIS — POR QUÉ NO TE MENCIONA LA IA
+// ═══════════════════════════════════════════════
+function renderGapAnalysis(blockScores) {
+  const gaps = [];
+
+  const GAP_MESSAGES = [
+    // Contenido
+    { qIdx: 0, score: 0, text: '<strong>Contenido duplicado:</strong> Tus descripciones son del fabricante. La IA no puede citarte porque tu contenido ya existe en cientos de webs.' },
+    { qIdx: 1, score: 0, text: '<strong>Sin casos de uso:</strong> La IA responde "¿qué producto es mejor para X?". Sin perfiles de uso en tus fichas, nunca eres la respuesta.' },
+    // Autoridad
+    { qIdx: 2, score: 0, text: '<strong>Sin menciones externas:</strong> La IA cruza fuentes. Si nadie habla de ti fuera de tu web, no tienes autoridad verificable.' },
+    { qIdx: 3, score: 0, text: '<strong>Sin reseñas verificadas:</strong> Las reseñas en Google o Trustpilot son señales que la IA puede comprobar. Sin ellas, tu credibilidad no existe para ella.' },
+    // Estructura
+    { qIdx: 4, score: 0, text: '<strong>Metadatos genéricos:</strong> Tus titles y metas no le dicen a la IA qué vendes, a quién ni por qué. Eres opaco técnicamente.' },
+    { qIdx: 5, score: 0, text: '<strong>Sin propuesta de valor clara:</strong> La IA lee tu "Sobre nosotros" para entenderte. Si no existe o es genérica, no puede recomendarte con contexto.' },
+    // Presencia
+    { qIdx: 6, score: 0, text: '<strong>Sin Google Business Profile:</strong> Es la fuente principal de AI Overviews de Google. Sin ficha completa, eres invisible para cualquier búsqueda local o de categoría.' },
+    { qIdx: 7, score: 0, text: '<strong>Solo en tu web:</strong> Sin presencia en Google Shopping, Amazon u otros canales, la IA no tiene referencias cruzadas de tu negocio.' },
+  ];
+
+  for (const gap of GAP_MESSAGES) {
+    if (answers[gap.qIdx] === 2) { // score 0 = peor opción = index 2
+      gaps.push(gap.text);
+    }
+  }
+
+  if (gaps.length === 0) return;
+
+  const card = document.getElementById('gap-card');
+  const list = document.getElementById('gap-list');
+  const sub = document.getElementById('gap-subtitle');
+  card.style.display = 'block';
+  sub.textContent = `${gaps.length} señal${gaps.length > 1 ? 'es' : ''} que le falta${gaps.length > 1 ? 'n' : ''} a tu negocio para que la IA te recomiende`;
+
+  list.innerHTML = gaps.map(g => `
+    <div class="gap-item">
+      <span class="gap-icon">⚠️</span>
+      <div class="gap-text">${g}</div>
+    </div>
+  `).join('');
+}
+
+function submitEmail() {
+  // Validar email
+  const emailEl = document.getElementById('email-address');
+  const email = emailEl.value.trim();
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    emailEl.style.borderColor = '#ef4444';
+    emailEl.style.boxShadow = '0 0 0 3px rgba(239,68,68,0.15)';
+    emailEl.placeholder = 'Email válido requerido';
+    emailEl.focus();
+    return;
+  }
+  emailEl.style.borderColor = '';
+  emailEl.style.boxShadow = '';
+
+  // Validar RGPD — obligatorio
+  const gdpr = document.getElementById('gdpr-check');
+  if (gdpr && !gdpr.checked) {
+    const lbl = gdpr.closest('label') || gdpr.parentElement;
+    lbl.style.outline = '2px solid #EF4444';
+    lbl.style.borderRadius = '8px';
+    lbl.style.padding = '6px';
+    lbl.style.background = '#FEF2F2';
+    gdpr.scrollIntoView({behavior:'smooth', block:'center'});
+    let err = document.getElementById('gdpr-error');
+    if (!err) {
+      err = document.createElement('p');
+      err.id = 'gdpr-error';
+      err.style.cssText = 'color:#EF4444;font-size:12px;margin:4px 0 0 28px;';
+      err.textContent = 'Debes aceptar antes de continuar.';
+      lbl.after(err);
+    }
+    return;
+  }
+  const errEl = document.getElementById('gdpr-error');
+  if (errEl) errEl.remove();
+
+  // TODO: conectar con Mailchimp / ConvertKit / Brevo
+  console.log('Suscripción newsletter:', { email, url: storeUrl, sector: storeSector });
+
+  // Animación de análisis antes de mostrar resultados
+  goTo('analyzing');
+  document.getElementById('analyzing-status').textContent = 'Procesando tus respuestas…';
+  document.getElementById('analyzing-log').innerHTML = '';
+  document.getElementById('analyzing-bar').style.width = '0%';
+  document.getElementById('analyzing-bar').style.background = 'linear-gradient(90deg,#22C55E,#16A34A)';
+
+  const analysisSteps = [
+    'Evaluando contenido de producto…',
+    'Verificando autoridad externa…',
+    'Analizando estructura técnica…',
+    'Comprobando presencia en fuentes IA…',
+    'Generando tu playbook de visibilidad…',
+  ];
+  const logEl = document.getElementById('analyzing-log');
+  const barEl = document.getElementById('analyzing-bar');
+  const statusEl2 = document.getElementById('analyzing-status');
+
+  analysisSteps.forEach((msg, i) => {
+    setTimeout(() => {
+      const el = document.createElement('div');
+      el.style.cssText = 'font-size:13px; color:#374151; padding:8px 12px; background:#F1F3F5; border-radius:8px; border-left:2px solid #22C55E;';
+      el.textContent = '✅ ' + msg;
+      logEl.appendChild(el);
+      barEl.style.width = ((i + 1) / analysisSteps.length * 100) + '%';
+      statusEl2.textContent = msg;
+      if (i === analysisSteps.length - 1) {
+        setTimeout(() => showResults(), 500);
+      }
+    }, i * 380);
+  });
+}
+
+// skipEmail deshabilitado — el registro es obligatorio
+function skipEmail() { /* bloqueado */ }
+
+// ═══════════════════════════════════════════════
+// MODO IA AUTOMÁTICO
+// ═══════════════════════════════════════════════
+const API_BASE = 'http://localhost:8765';
+
+function startAiAnalysis() {
+  let url = document.getElementById('ai-url').value.trim();
+  if (!url) {
+    document.getElementById('ai-url').style.borderColor = '#ef4444';
+    return;
+  }
+  if (!url.startsWith('http')) url = 'https://' + url;
+
+  // Resetear pantalla de análisis
+  document.getElementById('analyzing-status').textContent = 'Conectando con el agente…';
+  document.getElementById('analyzing-log').innerHTML = '';
+  document.getElementById('analyzing-bar').style.width = '5%';
+  goTo('analyzing');
+
+  let progress = 5;
+  const logEl = document.getElementById('analyzing-log');
+  const statusEl = document.getElementById('analyzing-status');
+  const barEl = document.getElementById('analyzing-bar');
+
+  const addLog = (msg) => {
+    const el = document.createElement('div');
+    el.style.cssText = 'font-size:13px; color:#374151; padding:8px 12px; background:#F1F3F5; border-radius:8px; border-left:2px solid #22C55E;';
+    el.textContent = msg;
+    logEl.appendChild(el);
+    logEl.scrollTop = logEl.scrollHeight;
+  };
+
+  const es = new EventSource(`${API_BASE}/analyze/stream?url=${encodeURIComponent(url)}`);
+
+  es.onmessage = (e) => {
+    const data = JSON.parse(e.data);
+
+    if (data.event === 'start') {
+      statusEl.textContent = data.message;
+      progress = 10;
+      barEl.style.width = progress + '%';
+      addLog('✅ Conexión establecida');
+    }
+
+    if (data.event === 'progress') {
+      addLog(data.message);
+      progress = Math.min(progress + 15, 85);
+      barEl.style.width = progress + '%';
+      statusEl.textContent = data.message;
+    }
+
+    if (data.event === 'result') {
+      es.close();
+      barEl.style.width = '100%';
+      statusEl.textContent = '¡Análisis completado!';
+      setTimeout(() => renderAiResults(data), 600);
+    }
+
+    if (data.event === 'error') {
+      es.close();
+      statusEl.textContent = '❌ ' + data.message;
+      addLog('Error: ' + data.message);
+      barEl.style.background = '#ef4444';
+    }
+  };
+
+  es.onerror = () => {
+    es.close();
+    statusEl.textContent = '❌ No se pudo conectar con el agente. ¿Está corriendo server.py?';
+    barEl.style.background = '#ef4444';
+  };
+}
+
+function renderAiResults(data) {
+  // Mapear datos de la API al formato de showResults()
+  const blockOrder = ['contenido', 'autoridad', 'estructura', 'presencia'];
+  const blockScores = blockOrder.map(id => {
+    const b = data.blocks.find(b => b.id === id);
+    return b ? b.score : 0;
+  });
+
+  // Llenar answers simuladas para que showResults() calcule bien
+  // (no usamos answers en la ruta IA, vamos directamente a resultados)
+  goTo('results');
+
+  // Nivel
+  const total = data.total;
+  let level = data.level;
+  const levelMap = {
+    'Invisible':       { color: '#94a3b8', emoji: '😶' },
+    'En construcción': { color: '#f59e0b', emoji: '🔧' },
+    'Visible':         { color: '#60a5fa', emoji: '👁️' },
+    'Referente':       { color: '#10b981', emoji: '⭐' },
+  };
+  const lv = levelMap[level] || levelMap['Invisible'];
+
+  const badge = document.getElementById('result-badge');
+  badge.textContent = `${lv.emoji} ${level}`;
+  badge.style.background = lv.color + '22';
+  badge.style.color = lv.color;
+  badge.style.border = `1px solid ${lv.color}55`;
+
+  setTimeout(() => {
+    const circle = document.getElementById('score-ring-circle');
+    circle.style.strokeDashoffset = 364.4 - (total / 24) * 364.4;
+    circle.style.stroke = lv.color;
+    document.getElementById('score-ring-num').textContent = total;
+  }, 100);
+
+  document.getElementById('result-verdict').textContent = data.summary;
+
+  // Plan de acción
+  const aiVerdict = data.ai_visibility_test ? data.ai_visibility_test.verdict : null;
+  const aiBlockScores = ['contenido','autoridad','estructura','presencia'].map(id => {
+    const b = data.blocks.find(b => b.id === id); return b ? b.score : 0;
+  });
+  renderActionPlan(total, level, aiBlockScores, aiVerdict);
+
+  // ── Test de visibilidad IA (Capa 1) ──
+  if (data.ai_visibility_test) {
+    const avt = data.ai_visibility_test;
+    const card = document.getElementById('ai-test-card');
+    card.style.display = 'block';
+
+    const verdictMap = {
+      'APARECE':     { label: '✅ Aparece en búsquedas de IA', color: '#10b981' },
+      'A VECES':     { label: '⚠️ Aparece a veces',           color: '#f59e0b' },
+      'NO APARECE':  { label: '❌ No aparece en búsquedas de IA', color: '#ef4444' },
+    };
+    const vm = verdictMap[avt.verdict] || verdictMap['NO APARECE'];
+
+    // ── Modo real: mostrar los 3 motores ──
+    if (avt.engines && Object.keys(avt.engines).length > 0) {
+      document.getElementById('ai-test-real-badge').style.display = 'inline';
+      document.getElementById('ai-test-simple').style.display = 'none';
+      const enginesGrid = document.getElementById('ai-engines-grid');
+      enginesGrid.style.display = 'grid';
+
+      const engineIcons = { perplexity: '🔵', gemini: '🔴', chatgpt: '🟢' };
+      enginesGrid.innerHTML = Object.entries(avt.engines).map(([id, eng]) => {
+        const ev = verdictMap[eng.verdict] || verdictMap['NO APARECE'];
+        const dots = Array.from({length: eng.max || 3}, (_, i) =>
+          `<div style="width:10px;height:10px;border-radius:50%;background:${i < eng.score ? ev.color : '#E5E7EB'};"></div>`
+        ).join('');
+        return `
+          <div style="background:var(--bg-alt); border-radius:12px; padding:14px; text-align:center;">
+            <div style="font-size:13px; font-weight:700; color:var(--text); margin-bottom:8px;">${engineIcons[id] || '🔎'} ${eng.name}</div>
+            <div style="font-size:18px; font-weight:900; color:${ev.color}; margin-bottom:6px;">${eng.verdict === 'APARECE' ? '✅' : eng.verdict === 'A VECES' ? '⚠️' : '❌'}</div>
+            <div style="font-size:11px; color:var(--muted); margin-bottom:8px;">${eng.verdict}</div>
+            <div style="display:flex; gap:4px; justify-content:center;">${dots}</div>
+            <div style="font-size:11px; color:var(--muted-light); margin-top:4px;">${eng.score}/${eng.max} consultas</div>
+          </div>
+        `;
+      }).join('');
+    } else {
+      // ── Modo DuckDuckGo: vista simple ──
+      document.getElementById('ai-test-verdict').textContent = vm.label;
+      document.getElementById('ai-test-verdict').style.color = vm.color;
+    }
+
+    // Dots globales (modo simple, solo si no es real)
+    if (!avt.engines) {
+    // Dots: 5 círculos, rellenos según score
+    const dotsEl = document.getElementById('ai-test-dots');
+    dotsEl.innerHTML = Array.from({length: avt.max || 5}, (_, i) => {
+      const filled = i < avt.score;
+      return `<div style="width:14px;height:14px;border-radius:50%;background:${filled ? vm.color : '#E5E7EB'};border:1.5px solid ${filled ? vm.color : '#D1D5DB'};"></div>`;
+    }).join('');
+      document.getElementById('ai-test-score-label').textContent =
+        `${avt.score} de ${avt.max || 5} búsquedas`;
+    } // fin if (!avt.engines)
+
+    document.getElementById('ai-test-explanation').textContent = avt.explanation || '';
+
+    // Evidencias
+    if (avt.evidence && avt.evidence.length) {
+      const evEl = document.getElementById('ai-test-evidence');
+      evEl.innerHTML = avt.evidence.slice(0,3).map(ev => `
+        <div style="padding:10px 14px; background:#F1F3F5; border-radius:8px; border-left:2px solid ${ev.found ? '#10b981' : '#E5E7EB'};">
+          <div style="font-size:12px; color:var(--muted); margin-bottom:3px;">${ev.found ? '✅' : '—'} "${ev.query}"</div>
+          ${ev.context ? `<div style="font-size:13px; color:#374151;">${ev.context}</div>` : ''}
+        </div>
+      `).join('');
+    }
+  }
+
+  // Bloques
+  const BLOCK_META = {
+    contenido:  { icon: '📝', color: '#818cf8' },
+    autoridad:  { icon: '🏆', color: '#f59e0b' },
+    estructura: { icon: '⚙️', color: '#60a5fa' },
+    presencia:  { icon: '📡', color: '#10b981' },
+  };
+
+  const grid = document.getElementById('blocks-grid');
+  grid.innerHTML = data.blocks.map(block => {
+    const meta = BLOCK_META[block.id] || { icon: '📊', color: '#818cf8' };
+    const pct = (block.score / 6) * 100;
+    const scoreLabel = block.score <= 2 ? 'Crítico' : block.score <= 4 ? 'Mejorable' : 'Bien';
+    const scoreColor = block.score <= 2 ? '#ef4444' : block.score <= 4 ? '#f59e0b' : '#10b981';
+
+    return `
+      <div class="block-card" id="block-ai-${block.id}">
+        <div class="block-header">
+          <span class="block-icon">${meta.icon}</span>
+          <span class="block-name">${block.name}</span>
+          <span class="block-score-label" style="color:${scoreColor}">${block.score}/6 · ${scoreLabel}</span>
+        </div>
+        <div class="block-bar-wrap">
+          <div class="block-bar-fill" style="width:0%; background:${meta.color}" data-pct="${pct}"></div>
+        </div>
+        <div class="block-diagnosis">${block.diagnosis}</div>
+        ${block.actions && block.actions.length ? `
+          <div class="block-actions show">
+            <div class="block-action-title">Acciones prioritarias</div>
+            ${block.actions.map(a => `<div class="block-action-item">${a}</div>`).join('')}
+          </div>
+        ` : ''}
+      </div>
+    `;
+  }).join('');
+
+  setTimeout(() => {
+    document.querySelectorAll('.block-bar-fill').forEach(bar => {
+      bar.style.width = bar.dataset.pct + '%';
+    });
+  }, 200);
+
+  // Prioridad
+  const worst = data.blocks.find(b => b.id === data.worst_block) || data.blocks[0];
+  document.getElementById('priority-title').textContent = `Tu mayor palanca: ${worst.name}`;
+  document.getElementById('priority-text').textContent =
+    `Con ${worst.score}/6, este bloque tiene el mayor impacto potencial. ${worst.diagnosis.split('.')[0]}.`;
+  document.getElementById('priority-card').querySelector('button').onclick =
+    () => document.getElementById('block-ai-' + worst.id)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+  // Share
+  const shareUrl = window.location.href.split('?')[0];
+  const shareText = encodeURIComponent(`Acabo de pasar mi ecommerce por AuditIA y he sacado ${total}/24 (${level}). ¿Sabe ChatGPT que tu tienda existe? → `);
+  document.getElementById('share-linkedin').href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`;
+  document.getElementById('share-twitter').href = `https://twitter.com/intent/tweet?text=${shareText}${encodeURIComponent(shareUrl)}`;
+  document.getElementById('share-whatsapp').href = `https://api.whatsapp.com/send?text=${shareText}${encodeURIComponent(shareUrl)}`;
+
+  // CTA EG Datos para resultados del agente IA
+  if (total < 16) {
+    document.getElementById('eg-cta-card').style.display = 'block';
+  }
+}
+
+function copyLink() {
+  navigator.clipboard.writeText(window.location.href.split('?')[0])
+    .then(() => alert('¡Enlace copiado!'))
+    .catch(() => prompt('Copia este enlace:', window.location.href.split('?')[0]));
+}
+
+function scrollToBlock() {}
+</script>
+</body>
+</html>
