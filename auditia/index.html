@@ -222,6 +222,73 @@
     .how-arrow { color: rgba(255,255,255,0.15); font-size: 16px; padding-top: 7px; flex-shrink: 0; }
     @media (max-width: 540px) { .how-arrow { display: none; } .how-step { min-width: 100%; max-width: 100%; } }
 
+    /* ── HERO ENTRANCE ANIMATIONS ── */
+    @keyframes heroFadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes chipPop {
+      0%   { opacity: 0; transform: scale(0.75); }
+      75%  { transform: scale(1.07); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    /* Stagger — cada hijo del hero entra escalonado */
+    #screen-hero.active > *:nth-child(1)  { animation: heroFadeUp 0.5s ease 0.04s both; }
+    #screen-hero.active > *:nth-child(2)  { animation: heroFadeUp 0.5s ease 0.12s both; }
+    #screen-hero.active > *:nth-child(3)  { animation: heroFadeUp 0.5s ease 0.22s both; }
+    #screen-hero.active > *:nth-child(4)  { animation: heroFadeUp 0.5s ease 0.32s both; }
+    #screen-hero.active > *:nth-child(5)  { animation: heroFadeUp 0.5s ease 0.42s both; }
+    #screen-hero.active > *:nth-child(6)  { animation: heroFadeUp 0.5s ease 0.52s both; }
+    #screen-hero.active > *:nth-child(7)  { animation: heroFadeUp 0.5s ease 0.62s both; }
+    #screen-hero.active > *:nth-child(8)  { animation: heroFadeUp 0.5s ease 0.80s both; }
+    #screen-hero.active > *:nth-child(9)  { animation: heroFadeUp 0.5s ease 0.98s both; }
+    #screen-hero.active > *:nth-child(10) { animation: heroFadeUp 0.5s ease 1.12s both; }
+
+    /* Level chips pop con rebote */
+    .hero-levels .level-chip:nth-child(1) { animation: chipPop 0.35s ease 0.40s both; }
+    .hero-levels .level-chip:nth-child(2) { animation: chipPop 0.35s ease 0.47s both; }
+    .hero-levels .level-chip:nth-child(3) { animation: chipPop 0.35s ease 0.54s both; }
+    .hero-levels .level-chip:nth-child(4) { animation: chipPop 0.35s ease 0.61s both; }
+
+    /* ── PREVIEW CARD ── */
+    .hero-preview-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 20px;
+      padding: 18px 22px;
+      max-width: 460px; width: 100%;
+    }
+    .preview-label {
+      font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; color: rgba(255,255,255,0.22); margin-bottom: 14px;
+    }
+    .preview-content { display: flex; align-items: center; gap: 18px; }
+    .preview-ring-wrap { position: relative; flex-shrink: 0; width: 76px; height: 76px; }
+    .preview-ring-text {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%); text-align: center; line-height: 1;
+    }
+    #preview-score-num { font-size: 19px; font-weight: 900; color: #60a5fa; display: block; }
+    .preview-ring-max { font-size: 10px; color: rgba(255,255,255,0.25); }
+    .preview-info { flex: 1; display: flex; flex-direction: column; gap: 9px; min-width: 0; }
+    .preview-badge-mini {
+      display: inline-block; font-size: 11px; font-weight: 700;
+      color: #60a5fa; background: rgba(96,165,250,0.12);
+      border: 1px solid rgba(96,165,250,0.2); border-radius: 50px;
+      padding: 3px 10px; width: fit-content;
+    }
+    .preview-bars { display: flex; flex-direction: column; gap: 6px; }
+    .preview-bar-row { display: flex; align-items: center; gap: 7px; font-size: 12px; }
+    .preview-bar-track {
+      flex: 1; height: 4px; background: rgba(255,255,255,0.07);
+      border-radius: 2px; overflow: hidden;
+    }
+    .preview-bar-fill {
+      height: 100%; border-radius: 2px; width: 0%;
+      transition: width 1.3s cubic-bezier(0.4,0,0.2,1);
+    }
+
     /* ── BUTTONS ── */
     .btn {
       display: inline-flex; align-items: center; justify-content: center; gap: 8px;
@@ -524,6 +591,48 @@
   <button class="btn btn-primary" onclick="goTo('onboarding')" style="font-size:18px; padding: 18px 48px;">
     Descubrir mi visibilidad →
   </button>
+
+  <!-- PREVIEW DIAGNÓSTICO -->
+  <div class="hero-preview-card">
+    <div class="preview-label">Ejemplo de resultado</div>
+    <div class="preview-content">
+      <div class="preview-ring-wrap">
+        <svg width="76" height="76" viewBox="0 0 76 76">
+          <circle cx="38" cy="38" r="30" stroke="rgba(255,255,255,0.06)" stroke-width="5" fill="none"/>
+          <circle id="preview-ring-circle" cx="38" cy="38" r="30"
+            stroke="#60a5fa" stroke-width="5" fill="none"
+            stroke-dasharray="188.5" stroke-dashoffset="188.5"
+            stroke-linecap="round"
+            transform="rotate(-90 38 38)"/>
+        </svg>
+        <div class="preview-ring-text">
+          <span id="preview-score-num">0</span>
+          <span class="preview-ring-max">/24</span>
+        </div>
+      </div>
+      <div class="preview-info">
+        <div class="preview-badge-mini">👁️ Visible</div>
+        <div class="preview-bars">
+          <div class="preview-bar-row">
+            <span>📝</span>
+            <div class="preview-bar-track"><div class="preview-bar-fill" style="background:#818cf8" data-w="55"></div></div>
+          </div>
+          <div class="preview-bar-row">
+            <span>🏆</span>
+            <div class="preview-bar-track"><div class="preview-bar-fill" style="background:#f59e0b" data-w="80"></div></div>
+          </div>
+          <div class="preview-bar-row">
+            <span>⚙️</span>
+            <div class="preview-bar-track"><div class="preview-bar-fill" style="background:#60a5fa" data-w="65"></div></div>
+          </div>
+          <div class="preview-bar-row">
+            <span>📡</span>
+            <div class="preview-bar-track"><div class="preview-bar-fill" style="background:#10b981" data-w="75"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- PROBLEMA -->
   <div class="hero-problem-bar">
@@ -1784,6 +1893,67 @@ function copyLink() {
 }
 
 function scrollToBlock() {}
+
+// ═══════════════════════════════════════════════
+// HERO ANIMATIONS
+// ═══════════════════════════════════════════════
+function animateCounter(el, target, duration, delay) {
+  if (isNaN(target)) return;
+  setTimeout(() => {
+    let start = null;
+    el.textContent = '0';
+    const step = (ts) => {
+      if (!start) start = ts;
+      const p = Math.min((ts - start) / duration, 1);
+      const ease = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.floor(ease * target);
+      if (p < 1) requestAnimationFrame(step);
+      else el.textContent = target;
+    };
+    requestAnimationFrame(step);
+  }, delay);
+}
+
+function animatePreviewCard() {
+  const circle = document.getElementById('preview-ring-circle');
+  const numEl  = document.getElementById('preview-score-num');
+  if (!circle || !numEl) return;
+
+  const targetScore   = 18;
+  const circumference = 188.5;
+  const targetOffset  = circumference - (targetScore / 24) * circumference;
+
+  // Ring
+  setTimeout(() => {
+    circle.style.transition = 'stroke-dashoffset 1.6s cubic-bezier(0.4,0,0.2,1)';
+    circle.style.strokeDashoffset = targetOffset;
+  }, 1000);
+
+  // Contador del score
+  animateCounter(numEl, targetScore, 1600, 1000);
+
+  // Barras de bloques
+  setTimeout(() => {
+    document.querySelectorAll('.preview-bar-fill').forEach(bar => {
+      bar.style.width = bar.dataset.w + '%';
+    });
+  }, 1100);
+}
+
+function animateHeroStats() {
+  const els     = document.querySelectorAll('.hero-stat .num');
+  const targets = [4, 8, null, 0];
+  els.forEach((el, i) => {
+    const t = targets[i];
+    if (t === null || t === 0) return;
+    animateCounter(el, t, 900, 550 + i * 90);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  animateHeroStats();
+  animatePreviewCard();
+});
 </script>
 </body>
 </html>
